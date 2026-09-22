@@ -402,10 +402,7 @@ Most recent · Hackathon
 
 Pathway · Final round · **Finalist**
 
-The brief asked for an explainer rather than a product. Pick one frontier idea
-in machine learning, build something a working engineer can interact with, and
-make the idea click. Connect it to the host's own architecture. Every claim on
-the page has to be defe...
+The brief asked for an explainer rather than a product. Pick one frontier idea in machine learning, build something a working engineer can interact with, and make the idea click. Connect it to the host's own architecture.
 
 [Read the case](https://conyso.com/certamus/pathway.html)
 

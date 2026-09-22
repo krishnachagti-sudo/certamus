@@ -30,6 +30,29 @@
   root.classList.add("ce-js");
   if (reduce) { root.classList.add("ce-reduce"); }
 
+  // -- 0. the nav strip on a phone ------------------------------------------
+  // Below 40rem the section links scroll sideways between the mark and the
+  // Conyso link, with a fade on the right to say there is more. Two jobs:
+  // fade only the side that has more behind it, so the last link is not left
+  // half-faded with nothing after it; and bring the current page's link into
+  // view, since About is off the right edge on first paint. Without script
+  // the strip still scrolls and every link still works.
+  var strip = document.querySelector(".ce-nav-list");
+  if (strip) {
+    var atEnd = function () {
+      strip.classList.toggle("is-end",
+        strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 2);
+      strip.classList.toggle("is-moved", strip.scrollLeft > 2);
+    };
+    var here = strip.querySelector('[aria-current="page"]');
+    if (here && here.offsetLeft + here.offsetWidth > strip.clientWidth) {
+      strip.scrollLeft = here.offsetLeft - 8;
+    }
+    atEnd();
+    strip.addEventListener("scroll", atEnd, { passive: true });
+    window.addEventListener("resize", atEnd);
+  }
+
   // -- 4b. the slide rails --------------------------------------------------
   // Buttons, a progress bar, and a marker on whichever slide is currently
   // snapped. The rail already works without any of this: it is a scroll
@@ -241,14 +264,19 @@
   // The bar is scaled from its own left edge. transform-box: fill-box keeps the
   // origin on the rect rather than the whole SVG, which is the bit that is easy
   // to get wrong and produces bars that slide in from the left instead.
-  var figs = document.querySelectorAll(".ce-fig svg");
-  Array.prototype.forEach.call(figs, function (svg) {
-    var bars = svg.querySelectorAll("rect");
-    onceVisible(svg, function () {
+  //
+  // Watched per <figure>, not per <svg>. Each chart ships a wide and a narrow
+  // drawing and CSS hides one; a display:none svg never intersects, so its
+  // bars would stay at scaleX(0) and appear empty after a rotate or resize.
+  var figs = document.querySelectorAll(".ce-fig");
+  Array.prototype.forEach.call(figs, function (fig) {
+    var bars = fig.querySelectorAll("svg rect");
+    if (!bars.length) { return; }
+    onceVisible(fig, function () {
       Array.prototype.forEach.call(bars, function (b, i) {
         setTimeout(function () { b.classList.add("is-in"); }, 90 + i * 70);
       });
-      var labels = svg.querySelectorAll("text");
+      var labels = fig.querySelectorAll("svg text");
       Array.prototype.forEach.call(labels, function (t, i) {
         setTimeout(function () { t.classList.add("is-in"); }, 120 + i * 35);
       });

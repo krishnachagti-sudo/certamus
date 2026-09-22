@@ -92,7 +92,6 @@ body.ce a, body.ce button, body.ce summary,
 body.ce [role="button"] { cursor: pointer; }
 
 /* --- layout ------------------------------------------------------------- */
-body.ce .ce-head,
 body.ce .ce-hero,
 body.ce .ce-band,
 body.ce .ce-foot {
@@ -101,21 +100,12 @@ body.ce .ce-foot {
     padding-inline: var(--ce-pad);
 }
 
-body.ce .ce-head {
-    display: flex; align-items: baseline; justify-content: space-between;
-    gap: 1.5rem; flex-wrap: wrap;
-    padding-block: 1.75rem;
-    border-bottom: 1px solid var(--cy-rule);
-}
-body.ce .ce-word {
-    font-family: var(--cy-serif); font-size: 1.35rem; letter-spacing: 0.01em;
-    color: var(--cy-ink); text-decoration: none;
-}
-body.ce .ce-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-body.ce .ce-nav a {
-    font-size: 0.9rem; color: var(--cy-ink-2); text-decoration: none;
-}
-body.ce .ce-nav a:hover { color: var(--cy-gold); }
+/* The scaffold's .ce-head, .ce-word and .ce-nav rules were here. Nothing has
+   rendered a .ce-head or .ce-word since the nav was rebuilt, but the .ce-nav
+   pair still applied: at (0,2,1) they outranked every rule in the real nav
+   section below, so its gap, its font size and its no-wrap were all silently
+   overridden. On a phone that wrapped the bar onto three lines and made it
+   199px tall, a quarter of the screen, stuck to the top on every page. */
 
 body.ce .ce-hero { padding-block: clamp(3rem, 10vh, 6rem) 2rem; }
 body.ce .ce-hero h1 {
@@ -1261,3 +1251,194 @@ body.ce .ce-more {
 body.ce .ce-more::after { content: "\2192"; font-family: var(--cy-sans); }
 body.ce .ce-more:hover { background: var(--cy-ink); transform: translateY(-2px); }
 body.ce .ce-more:focus-visible { outline: 2px solid var(--cy-accent); outline-offset: 3px; }
+
+/* -- scrollbars ------------------------------------------------------------
+   style.css sets `* { scrollbar-color: #BF953F <near-black> }` for the main
+   site's dark theme, and * reaches everything here: the page scrollbar was a
+   gold thumb on a black track beside a cobalt-on-paper page, and every
+   sideways-scrolling diagram frame drew a gold bar under itself.
+
+   :where() keeps this at zero specificity, the same as *, so it wins by
+   coming later and still loses to anything that sets its own colours, which
+   is what the slide rails do on their dark band. */
+:where(body.ce, body.ce *) {
+  scrollbar-color: rgba(15,20,25,0.32) transparent;
+}
+/* The page scrollbar belongs to <html>, which style.css styles by element
+   name at (0,0,1), so it needs a real selector rather than :where(). */
+html:has(> body.ce) { scrollbar-color: rgba(15,20,25,0.32) #F4F6FA; }
+
+/* -- charts: one drawing per width ---------------------------------------
+   certamus_figs ships every chart twice, wide and narrow, and exactly one is
+   shown. display: none also drops the other from the accessibility tree, so
+   the chart is announced once. */
+/* Scoped to .ce-fig on purpose: .ce-fig svg { display: block } scores (0,1,1)
+   and a bare .ce-fig-narrow at (0,1,0) lost to it, so on first build both
+   drawings rendered one under the other. */
+.ce-fig svg.ce-fig-narrow { display: none; }
+.ce-dia-hint { display: none; }
+
+/* ==========================================================================
+   Phones
+
+   Everything above was designed and measured at desktop widths, and at 375px
+   the loud version fell back to a quiet one: a wordmark filling two thirds of
+   the line, the counts stacked one per row, a record whose rows were stretched
+   by desktop cell padding, case titles at 38px, slides 250px wide and chart
+   labels at 6px. This is the same page at phone scale, not a smaller one.
+
+   It sits last in the file on purpose. Several rules it overrides score
+   (0,2,1) or (0,2,2), and matching them later at equal specificity is what
+   lets these win without !important.
+   ========================================================================== */
+@media (max-width: 40rem) {
+  body.ce { --ce-gut: 1.1rem; }
+  .ce-wrap { padding-inline: var(--ce-gut); }
+  body.ce .ce-alt { margin-inline: calc(-1 * var(--ce-gut));
+    padding-inline: var(--ce-gut); border-radius: 0; }
+
+  /* -- nav: one row, 49px ------------------------------------------------
+     The mark and the way out stay put; the section links scroll between
+     them. Each link keeps a 44px tall target. */
+  .ce-nav { flex-wrap: nowrap; gap: 0.9rem; padding: 0 var(--ce-gut); }
+  .ce-nav-mark { flex: none; margin-right: 0; }
+  body.ce .ce-nav-mark { font-size: 1.2rem; }
+  .ce-nav-list {
+    flex: 1 1 auto; min-width: 0; flex-wrap: nowrap; gap: 1.05rem;
+    overflow-x: auto; scrollbar-width: none; overscroll-behavior-x: contain;
+    padding-right: 1.4rem;
+    -webkit-mask-image: linear-gradient(90deg, #000 78%, transparent);
+            mask-image: linear-gradient(90deg, #000 78%, transparent);
+  }
+  .ce-nav-list::-webkit-scrollbar { display: none; }
+  /* Fade whichever side has more behind it: right at rest, both in the
+     middle, left at the end, none if the links happen to fit. */
+  .ce-nav-list.is-moved {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 78%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 14%, #000 78%, transparent);
+  }
+  .ce-nav-list.is-moved.is-end {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%);
+            mask-image: linear-gradient(90deg, transparent, #000 14%);
+  }
+  .ce-nav-list.is-end:not(.is-moved) { -webkit-mask-image: none; mask-image: none; }
+  .ce-nav-list a, .ce-nav-out {
+    font-size: 0.8rem; letter-spacing: 0.01em; white-space: nowrap;
+    padding: 0.85rem 0 calc(0.85rem - 2px);
+  }
+  .ce-nav-out { flex: none; margin-left: 0; font-weight: 600; }
+
+  /* -- index hero ---------------------------------------------------------
+     The wordmark is sized to the line, not to a clamp. Anton's CERTAMUS is
+     3.95em wide (a Range measured 253px of glyphs at 64px), so dividing the
+     column by 4.1 fills it with a few pixels to spare at every phone width
+     from 320 up. Capped at the tablet size so the two ranges meet. */
+  .ce-title { padding: 0; margin: 1.5rem 0 1.4rem; }
+  .ce-title-inner { position: relative; }
+  body.ce .ce-h1.ce-wordmark {
+    font-size: min(calc((100vw - 2 * var(--ce-gut)) / 4.1), 8rem);
+    line-height: 0.84; margin: 0.35rem 0 0;
+  }
+  /* The crest was a 46px mark alone on its own line between the wordmark
+     and the counts. It moves up beside the lemma, which is short enough on
+     every phone width to leave it the corner. */
+  .ce-title-mark { position: absolute; top: -0.85rem; right: 0; margin: 0; }
+  .ce-title-mark .ce-crest { width: 34px; height: 34px; }
+  .ce-lemma { font-size: 0.62rem; letter-spacing: 0.22em; margin: 0; }
+
+  /* The counts side by side under a heavy rule, like a scoreboard, instead
+     of one per row down the screen. */
+  .ce-title .ce-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0 1rem;
+    margin-top: 1.2rem; padding-top: 0.9rem; border-top: 3px solid var(--cy-ink);
+  }
+  body.ce .ce-title .ce-stat-n { font-size: 3.6rem; line-height: 0.9; }
+  .ce-title .ce-stat-k { font-size: 0.64rem; letter-spacing: 0.12em; margin-top: 0.35rem; }
+  body.ce .ce-title-side .ce-lede-wide { margin-top: 1.5rem; font-size: 1.02rem; }
+  .ce-pace { font-size: 0.88rem; }
+
+  /* -- case, guide and member heroes -------------------------------------
+     These sat inside .ce-wrap AND carried the scaffold's own inline padding,
+     so the title was inset 44px from a 375px screen, and set at the
+     scaffold's 38px. */
+  body.ce .ce-hero { padding: 1.8rem 0 1.4rem; }
+  body.ce .ce-hero h1 { font-size: clamp(2.8rem, 13.5vw, 3.6rem); line-height: 0.92;
+    margin-bottom: 0.8rem; }
+  body.ce .ce-hero .ce-mark .ce-crest { width: 40px; height: 40px; }
+  body.ce .ce-hero .ce-mark { margin-bottom: 0.7rem; }
+
+  /* -- the record: each row a compact card -------------------------------
+     Date and result on one line, the competition under them at display
+     size, format and line-up at the foot. The desktop rule gives every
+     cell 1.1rem of padding top and bottom; stacked, that was 35px of air
+     between five short lines. */
+  .ce-record tr {
+    display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas: "date date res" "comp comp comp" "fmt who who";
+    align-items: center; gap: 0.5rem 0.7rem; padding: 1.25rem 0;
+  }
+  body.ce .ce-record td { padding: 0; width: auto; }
+  .ce-t-date { grid-area: date; font-size: 0.7rem; letter-spacing: 0.12em;
+    text-transform: uppercase; }
+  .ce-t-comp { grid-area: comp; }
+  .ce-t-fmt  { grid-area: fmt; }
+  .ce-t-who  { grid-area: who; font-size: 0.8rem; color: var(--cy-ink-2); line-height: 1.4; }
+  .ce-t-res  { grid-area: res; text-align: right; }
+  body.ce .ce-t-comp a { font-size: 1.75rem; line-height: 1; }
+  body.ce .ce-t-res .ce-stage { display: none; }   /* every row says Final round */
+
+  /* -- lanes and team ----------------------------------------------------- */
+  .ce-lane { padding: 1.3rem 1.1rem; }
+  body.ce .ce-team .ce-face { width: 96px; height: 96px; }
+  .ce-team { gap: 1.8rem 0.8rem; justify-content: space-between; }
+  .ce-person { width: calc(50% - 0.4rem); }
+
+  /* -- method and guide cards: one column, tighter ------------------------ */
+  body.ce .ce-methods { grid-template-columns: minmax(0, 1fr); gap: 0.8rem; }
+  body.ce .ce-method a { padding: 1.05rem 1.1rem 1.15rem; }
+  body.ce .ce-method a::before { font-size: 1.7rem; margin-bottom: 0.4rem; }
+
+  /* -- slide rails --------------------------------------------------------
+     A slide 250px wide is a thumbnail. Each one now takes the screen less
+     a sliver, so the next one peeks in and says the row moves. */
+  /* No scrollbar: on a phone it is drawn over the content, and here that
+     put a grey line through the last line of every caption. The progress bar
+     in the rail foot already says where you are. */
+  .ce-rail-track { padding-inline: var(--ce-gut); scroll-padding-left: var(--ce-gut);
+    gap: 0.75rem; scrollbar-width: none; }
+  .ce-rail-track::-webkit-scrollbar { display: none; }
+  .ce-rail-cell { flex-basis: calc(100vw - 2 * var(--ce-gut) - 1rem); }
+  .ce-rail-foot { padding-inline: var(--ce-gut); }
+  body.ce .ce-rail-n { font-size: 1.9rem; margin-bottom: 0.55rem; }
+  .ce-railslide .ce-fig-cap { font-size: 0.84rem; line-height: 1.55; }
+  /* The rule further up that hides these on a phone loses to
+     .ce-rail.is-wired .ce-rail-nav on specificity, so they were showing:
+     two 38px buttons, under the 44px a thumb needs, beside a row the thumb
+     already swipes. */
+  .ce-rail.is-wired .ce-rail-nav { display: none; }
+
+  /* -- charts and diagrams ------------------------------------------------ */
+  .ce-fig svg.ce-fig-wide { display: none; }
+  .ce-fig svg.ce-fig-narrow { display: block; }
+  .ce-dia-frame {
+    overflow-x: auto; overscroll-behavior-x: contain;
+    margin-inline: calc(-1 * var(--ce-gut)); padding: 0 var(--ce-gut) 0.5rem;
+    scrollbar-width: thin;
+  }
+  .ce-dia-frame svg { width: auto; max-width: none; height: auto; }
+  .ce-dia-frame:focus-visible { outline: 2px solid var(--cy-accent); outline-offset: -2px; }
+  .ce-dia-hint {
+    display: block; margin: 0.35rem 0 0; font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--cy-ink-faint);
+  }
+  .ce-dia-arrow { color: var(--cy-accent); margin-right: 0.4rem; font-size: 0.9rem; }
+
+  /* -- guide contents, under the article on a phone ----------------------- */
+  .ce-toc li { margin-bottom: 0.1rem; }
+  .ce-toc a { padding-block: 0.55rem; }
+  .ce-toc a::before { top: 0.6rem; }
+
+  /* -- calls to action: full width, a thumb's height ---------------------- */
+  body.ce .ce-feature .ce-more { display: flex; justify-content: center;
+    padding-block: 0.95rem; font-size: 1.05rem; }
+}
