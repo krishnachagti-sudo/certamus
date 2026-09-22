@@ -651,9 +651,9 @@ body.ce .ce-lede a:hover, body.ce .ce-bio a:hover { color: var(--cy-ink); }
       scrollable row of readable slides.
 
    Colours are redeclared here rather than reused: the page tokens are tuned
-   for ink on paper and every one of them is wrong on this band. #7A5F18 gold
-   on #16130F is 1.8:1 and unreadable, so the accent is lifted to #E0B94A
-   (9.6:1) and the caption ink to #E8E3D8 (13.5:1).
+   for dark ink on a light ground and every one of them is wrong on this band.
+   The page accent #2A3FD4 on #0F1218 is 2.46:1 and unreadable, so it is lifted
+   to periwinkle #8FA6FF (8.09:1) and the caption ink to #E4E8F0 (15.3:1).
    ========================================================================== */
 .ce-rail {
   --rail-bg:    #0F1218;
