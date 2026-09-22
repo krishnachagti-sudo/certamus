@@ -187,7 +187,7 @@ body.ce summary:focus-visible {
    data-value attributes are what the build asserts against. */
 .ce-stats { display: flex; flex-wrap: wrap; gap: 2.5rem; padding: 2rem 0 0; }
 .ce-stat { display: flex; flex-direction: column; }
-.ce-stat-n { font-family: var(--cy-sans); font-weight: 800;
+.ce-stat-n { font-family: var(--cy-sans); font-weight: 700;
   font-size: clamp(2.6rem, 5.5vw, 3.8rem); letter-spacing: -0.05em; line-height: 0.92;
   font-variant-numeric: tabular-nums;
   color: var(--cy-ink); }
@@ -413,7 +413,7 @@ body.ce .ce-lede-wide { max-width: 40rem; margin: 0 0 1rem; text-align: left;
    Same information, stated as a heavy number: sophisticated ground, bold
    mark. The crest stays, because that is Conyso's device and not decoration. */
 .ce-num { font-family: var(--cy-sans); font-size: clamp(1.9rem, 4.2vw, 3.1rem);
-  font-weight: 800; letter-spacing: -0.045em; line-height: 0.9;
+  font-weight: 700; letter-spacing: -0.045em; line-height: 0.9;
   color: var(--cy-accent); display: block; margin-bottom: 0.15rem;
   font-variant-numeric: tabular-nums; }
 @media (min-width: 64rem) {
@@ -1084,3 +1084,65 @@ html.ce-js:not(.ce-reduce) .ce-dia.is-in {
   body.ce .ce-title-side .ce-lede-wide { margin-top: 0; }
 }
 .ce-title-side .ce-stats { padding-top: 1.6rem; }
+
+/* ==========================================================================
+   Display type: Anton
+
+   Chosen over two faces the site already hosts (Playfair Display 900 and
+   Montserrat 700 in caps), from rendered options. The brief was bolder,
+   louder, challenging; Playfair at its heaviest still reads classical, and
+   Montserrat stops at 700 here. Anton is a condensed poster face: it reads
+   like a fight card, which is what a record of contests should.
+
+   Self-hosted from /fonts/anton-400-latin.woff2 like every other face, so the
+   page makes no request to Google at runtime. It has one weight and it is
+   heavy by design, so everything below sets 400 and lets the face carry it.
+
+   Display only. Body copy, captions and the long guides stay in Montserrat:
+   condensed caps are for being seen, not for reading six hundred words.
+
+   The mottos are deliberately left out. They are sentences in each person's
+   own voice, in quotation marks, and set in poster caps they would stop
+   reading as something a person said.
+   ========================================================================== */
+body.ce {
+  --ce-display: 'Anton', 'Impact', 'Arial Narrow Bold', sans-serif;
+}
+/* body.ce .ce-hero h1 is listed on purpose. The scaffold's rule of that name
+   scores (0,2,2) because of the element selector, which beats body.ce .ce-h1
+   at (0,2,1) regardless of order, so every case, guide and member title
+   stayed in the serif while their section headings went to Anton. Matching it
+   at equal specificity, later in the file, is what lets this one win. */
+body.ce .ce-h1, body.ce .ce-hero h1, body.ce .ce-wordmark, body.ce .ce-h2,
+body.ce .ce-feat-h, body.ce .ce-alt-h, body.ce .ce-lane-h {
+  font-family: var(--ce-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.005em;
+}
+/* .ce-h1.ce-wordmark, not .ce-wordmark: the element carries both classes, and
+   body.ce .ce-h1 below has the same specificity and comes later, so it won and
+   shrank the wordmark to heading size (68.8px, smaller than the 98px it was).
+   In the two-column hero it is capped so "CERTAMUS" fits its 451px column,
+   measured with a Range: at 6.75rem the glyphs are about 427px wide. */
+body.ce .ce-h1.ce-wordmark { font-size: clamp(4rem, 9vw, 6.75rem); line-height: 0.88; }
+@media (max-width: 61.99rem) {
+  body.ce .ce-h1.ce-wordmark { font-size: clamp(4rem, 17vw, 8rem); }
+}
+body.ce .ce-h1  { font-size: clamp(2.6rem, 5.6vw, 4.3rem); line-height: 0.95; }
+body.ce .ce-h2  { font-size: clamp(1.8rem, 3.1vw, 2.6rem); line-height: 1.02; }
+body.ce .ce-nav-mark {
+  font-family: var(--ce-display); font-weight: 400;
+  text-transform: uppercase; letter-spacing: 0.03em; font-size: 1.3rem;
+}
+
+/* Numerals and scores in the same face. These were declared at weight 800,
+   which this site does not host for Montserrat (it stops at 700), so they
+   were always rendering at 700 while the commits described them as 800.
+   Anton removes the question: one weight, and it is the heavy one. */
+body.ce .ce-stat-n, body.ce .ce-num, body.ce .ce-lane-n, body.ce .ce-bigres,
+body.ce .ce-rail-n {
+  font-family: var(--ce-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}

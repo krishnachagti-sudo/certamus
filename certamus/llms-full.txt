@@ -1084,9 +1084,9 @@ them sounds like a team that understands its own evidence.
 
 ## The panel already knows
 
-This is the part teams do not believe until it happens. The judges have read
-the brief more times than you have, and in a case competition they have often
-seen six other teams present on it that morning.
+This is the part teams do not believe until it happens. The judges know the
+brief well, and in a final they have usually just heard other teams present
+on it.
 
 They know where the model is soft. The only question is whether you do, and
 whether you will say so unprompted. That is the whole mechanism: you are not
@@ -1717,8 +1717,8 @@ first was not going to survive Q&A either.
 It is not the agenda. It is not the team introduction. It is not a restatement
 of the brief the panel wrote.
 
-Each of those spends the most valuable thirty seconds you have on information
-the room already has. The agenda in particular is a habit carried in from
+Each of those spends the opening, which is the most attention you will get,
+on information the room already has. The agenda in particular is a habit carried in from
 school presentations, and it tells a judge nothing except that the next eight
 minutes will be structured.
 
@@ -1779,8 +1779,8 @@ line is a slide you built because it was interesting.
 
 ## Hiding the load-bearing assumption
 
-Every recommendation rests on one input more than the others. The panel will
-find it, because they have read the brief more times than you have.
+Every recommendation rests on one input more than the others. Assume the
+panel will find it, because they know the brief better than you do.
 
 Teams bury it, usually not deliberately. It ends up in the appendix, or stated
 once quickly, or phrased so it sounds settled. Then a judge surfaces it in Q&A
@@ -1797,7 +1797,7 @@ ragged and the timing is wrong and someone overruns and the close gets cut.
 The analysis was fine. The delivery of it was not, and only the delivery is
 marked.
 
-This one is almost universal and almost never admitted. Treat your practice
+It is a common failure, and an uncomfortable one to admit. Treat your practice
 run as the real deadline. Whatever is not finished by then ships unfinished.
 
 ## Nine recommendations
@@ -1824,8 +1824,8 @@ There is a deck shape that feels rigorous and loses anyway. It walks the panel
 through the method: here is what we gathered, here is how we sorted it, here
 is what we found, and therefore, on slide nine, here is what you should do.
 
-It loses because a panel decides early whether you have an answer, and this
-shape withholds one for eight slides. By the time it arrives they have already
+It loses because a panel forms a view early about whether you have an answer,
+and this shape withholds one for eight slides. By the time it arrives they have already
 categorised you as a team that did the work without reaching a conclusion.
 
 Invert it. The answer first, then what it rests on. We open on the answer in
@@ -1840,7 +1840,7 @@ has heard eight minutes of setup and no recommendation, and they will mark what
 they heard.
 
 Rehearse against a clock that is two minutes shorter than the one you are
-given, because the real run is always slower than the practice run: you will
+given, because the real run tends to be slower than the practice run: you will
 speak more carefully, someone will fumble a handoff, and a judge may interrupt.
 If it only fits at your fastest, it does not fit.
 
@@ -2067,7 +2067,8 @@ Name what you would need, say how long it would take, and say what you would
 expect to find. "We did not model competitor response. It needs their pricing
 history, which is a day of work, and I would expect it to shrink the advantage
 rather than remove it." That is a professional answer. "Good question, we did
-consider that" is not, and panels have heard it several hundred times.
+consider that" is not: it answers nothing and is the reply a panel expects
+from a team that did not.
 
 ## The one who has not spoken
 
