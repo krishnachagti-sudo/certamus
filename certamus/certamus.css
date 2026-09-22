@@ -1146,3 +1146,118 @@ body.ce .ce-rail-n {
   font-weight: 400;
   letter-spacing: 0.01em;
 }
+
+/* ==========================================================================
+   The rest of the page, at the same volume
+
+   Anton went onto the titles and headings and the page below the hero stayed
+   quiet: a plain record table, a team grid in small type, the method and
+   guide lists as grey text between hairlines, and a classical lozenge
+   ornament between every section. This carries the display face and the
+   cobalt into each of those.
+   ========================================================================== */
+
+/* -- section breaks: the lozenge ornament was the last classical flourish
+      left on the page. A short heavy bar says the same thing louder. */
+body.ce .ce-divider { justify-content: flex-start; padding: 2.4rem 0 0.4rem; }
+body.ce .ce-divider .ce-orn { display: none; }
+body.ce .ce-divider::after {
+  content: ""; display: block; width: 3.5rem; height: 5px;
+  background: var(--cy-accent); border-radius: 1px;
+}
+
+/* -- the record ------------------------------------------------------------ */
+body.ce .ce-record th {
+  font-family: var(--cy-sans); font-weight: 700; font-size: 0.68rem;
+  letter-spacing: 0.14em; color: var(--cy-ink);
+  border-bottom: 2px solid var(--cy-ink);
+}
+body.ce .ce-record td { padding-top: 1.1rem; padding-bottom: 1.1rem; }
+body.ce .ce-t-comp a {
+  font-family: var(--ce-display); font-weight: 400; text-transform: uppercase;
+  font-size: 1.35rem; letter-spacing: 0.01em; line-height: 1.05;
+  text-decoration: none; color: var(--cy-ink);
+  border-bottom: 2px solid transparent; transition: border-color 0.2s, color 0.2s;
+}
+body.ce .ce-t-comp a:hover { color: var(--cy-accent); border-bottom-color: var(--cy-accent); }
+body.ce .ce-record tbody tr { transition: background 0.2s; }
+body.ce .ce-record tbody tr:hover { background: var(--cy-bg-soft); }
+
+/* Results as badges, so the column reads at a glance. White on the cobalt
+   measures 7.03:1; the pending outline uses the cobalt as text at 7.03:1. */
+.ce-badge {
+  display: inline-block; font-family: var(--cy-sans); font-weight: 700;
+  font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.32rem 0.6rem; border-radius: 2px; line-height: 1;
+}
+.ce-badge-winner, .ce-badge-finalist, .ce-badge-runner-up, .ce-badge-track-winner {
+  background: var(--cy-accent); color: #F4F6FA; }
+.ce-badge-pending {
+  background: transparent; color: var(--cy-accent);
+  box-shadow: inset 0 0 0 2px var(--cy-accent); }
+body.ce .ce-t-res .ce-stage { display: block; margin-top: 0.45rem; }
+
+/* -- the team -------------------------------------------------------------- */
+body.ce .ce-team .ce-face {
+  width: 104px; height: 104px;
+  box-shadow: 0 0 0 3px var(--cy-bg), 0 0 0 5px transparent;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+body.ce .ce-person a:hover .ce-face,
+body.ce .ce-person a:focus-visible .ce-face {
+  box-shadow: 0 0 0 3px var(--cy-bg), 0 0 0 5px var(--cy-accent);
+  transform: translateY(-3px);
+}
+body.ce .ce-team .ce-name {
+  font-family: var(--ce-display); font-weight: 400; text-transform: uppercase;
+  font-size: 1.2rem; letter-spacing: 0.01em; line-height: 1.05;
+}
+
+/* -- method and guide lists: numbered cards instead of text between rules -- */
+/* background: transparent is the fix, not a default. An earlier rule paints
+   .ce-methods var(--cy-rule), which drew hairlines between rows by letting
+   the container show through a 1px gap. Under this grid the same background
+   showed through the 16px gaps and filled the empty third track beside the
+   fifth card as a solid grey block: the hazard .cy-proof-list's comment in
+   style.css warns about, arrived at from the other direction. */
+body.ce .ce-methods {
+  background: transparent;
+  list-style: none; padding: 0; margin: 1.6rem 0 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1rem; counter-reset: ce-m;
+}
+body.ce .ce-method { counter-increment: ce-m; border: 0; margin: 0; padding: 0; }
+body.ce .ce-method a {
+  display: block; height: 100%; text-decoration: none;
+  padding: 1.25rem 1.3rem 1.3rem; background: var(--cy-bg-soft);
+  border: 1px solid var(--cy-rule); border-top: 4px solid var(--cy-ink);
+  border-radius: 2px; transition: border-top-color 0.2s, transform 0.2s;
+}
+body.ce .ce-method a:hover { border-top-color: var(--cy-accent); transform: translateY(-3px); }
+body.ce .ce-method a::before {
+  content: counter(ce-m, decimal-leading-zero);
+  display: block; font-family: var(--ce-display); font-size: 2rem; line-height: 1;
+  color: var(--cy-accent); margin-bottom: 0.6rem;
+}
+body.ce .ce-m-t {
+  display: block; font-family: var(--ce-display); font-weight: 400;
+  text-transform: uppercase; font-size: 1.3rem; line-height: 1.05;
+  letter-spacing: 0.01em; color: var(--cy-ink); margin-bottom: 0.5rem;
+}
+body.ce .ce-m-b { display: block; font-size: 0.9rem; line-height: 1.55; color: var(--cy-ink-2); }
+
+/* -- the lanes ------------------------------------------------------------- */
+body.ce .ce-lane-n { font-size: clamp(2.4rem, 4vw, 3.2rem); line-height: 0.9; }
+
+/* -- calls to action: a button, not a quiet underlined line --------------- */
+body.ce .ce-more {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--ce-display); font-weight: 400; text-transform: uppercase;
+  font-size: 1rem; letter-spacing: 0.04em; text-decoration: none;
+  color: #F4F6FA; background: var(--cy-accent);
+  padding: 0.75rem 1.2rem; border-radius: 2px;
+  transition: background 0.2s, transform 0.2s;
+}
+body.ce .ce-more::after { content: "\2192"; font-family: var(--cy-sans); }
+body.ce .ce-more:hover { background: var(--cy-ink); transform: translateY(-2px); }
+body.ce .ce-more:focus-visible { outline: 2px solid var(--cy-accent); outline-offset: 3px; }
