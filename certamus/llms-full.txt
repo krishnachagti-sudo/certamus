@@ -396,22 +396,6 @@ It will change. That is the point: when it changes, you know something.
 
 Source: https://conyso.com/certamus/
 
-Conyso enters case competitions and hackathons under its own
-name. These are the ones we reached the final of, and the ones we won: what we argued,
-and how it went.
-
-We started in September 2026 and have registered for more than fifty
-since. This page is deliberately shorter than that: a case goes up when we still have
-the deck we submitted, so what is missing here is paperwork rather than result.
-
-3
-
-finals reached
-
-1
-
-awaiting a result
-
 Most recent · Hackathon
 
 ## [DataForge 2026, Pathway track](https://conyso.com/certamus/pathway.html)

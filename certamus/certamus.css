@@ -880,8 +880,13 @@ html.ce-js:not(.ce-reduce) .ce-rail.is-in {
 @supports not (backdrop-filter: blur(10px)) {
   .ce-nav { background: var(--cy-paper, #F7F5F0); }
 }
+/* Matched to .cy-wordmark on the parent site: same family, same 600 weight,
+   same 1.35rem. It was 1.05rem at the inherited 400, which is 22% smaller and
+   two hundred weight units lighter than the mark it sits beside on conyso.com,
+   and it read as timid next to it. */
 .ce-nav-mark {
-  font-family: var(--cy-serif); font-size: 1.05rem; letter-spacing: -0.02em;
+  font-family: var(--cy-serif); font-weight: 600; font-size: 1.35rem;
+  letter-spacing: -0.01em;
   color: var(--cy-ink); text-decoration: none; margin-right: auto;
 }
 .ce-nav-mark:hover { color: var(--cy-accent); }
@@ -889,10 +894,14 @@ html.ce-js:not(.ce-reduce) .ce-rail.is-in {
   display: flex; gap: 1.1rem; list-style: none; margin: 0; padding: 0;
   flex-wrap: wrap;
 }
+/* Sentence case at 0.82rem/500, which is what the parent nav uses. Uppercase
+   at 0.72rem with 0.1em tracking is a decorative small-cap treatment: it reads
+   as a label rather than as navigation, and beside conyso.com's plain nav it
+   looked like a different and lesser site. */
 .ce-nav-list a, .ce-nav-out {
-  font-family: var(--cy-sans); font-size: 0.72rem; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--cy-ink-2); text-decoration: none;
+  font-family: var(--cy-sans); font-size: 0.82rem; font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--cy-ink-dim); text-decoration: none;
   padding: 0.5rem 0; display: inline-block;   /* 24px tap target */
   border-bottom: 2px solid transparent;
 }
@@ -1034,3 +1043,26 @@ html.ce-js:not(.ce-reduce) .ce-dia.is-in {
   border-radius: 2px;
 }
 @media (max-width: 46rem) { .ce-alt { margin-inline: -1.25rem; padding: 1.3rem 1.25rem; } }
+
+/* The index hero was a wordmark alone on the left with the entire right half
+   of the page empty above the fold, and the lede, the pace note and the counts
+   stacked underneath it. Beside conyso.com, whose hero fills its measure and
+   then opens into a two-column band, it read as an unfinished page.
+
+   The mark keeps the left, and everything that explains it takes the right. */
+@media (min-width: 62rem) {
+  .ce-title {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 0 4rem;
+    align-items: end;
+  }
+  /* "Certamus" is one unbreakable word. At 8rem its glyphs measure 531px in a
+     451px column, so it overflowed by 81 and ran 17px into the right column,
+     which getBoundingClientRect cannot see because it reports the box and the
+     box is the column. Capped so the word fits the column it is in. */
+  .ce-wordmark { font-size: clamp(3.4rem, 7vw, 6.25rem); }
+  .ce-title-side { padding-bottom: 0.4rem; }
+  body.ce .ce-title-side .ce-lede-wide { margin-top: 0; }
+}
+.ce-title-side .ce-stats { padding-top: 1.6rem; }
