@@ -145,6 +145,45 @@ What never gets cut is the assumption slide and the sensitivity. Those are the
 two that make everything else believable, and they are always the first ones a
 team under pressure reaches for.
 
+## The headline carries the slide
+
+If the reader takes only the top line of every slide and puts them end to end,
+that should be the argument. Titles like "Analysis" or "Market overview" fail
+this immediately: they name a topic and assert nothing.
+
+Write the finding into the title. "Seventeen risks across four domains;
+operations carries the most" tells a judge what to look for in the chart below
+it. "Risk classification" makes them work it out.
+
+## Put the weak spots on the results slide
+
+The instinct is to put the caveats after the results, where they read as a
+retreat from a claim just made.
+
+In [Seeking Alpha](https://conyso.com/certamus/seeking-alpha.html) the results slide carried its own weak
+spots: the switch adds no return, the alpha after factors is about zero, five
+years is not long enough for significance. On the same slide as the result. A
+panel reading that has nothing left to catch you with.
+
+## One idea, and the chart that proves it
+
+A slide with three charts has no argument, it has an inventory. Pick the one
+chart that makes the point and move the others to the appendix, where they
+exist to be turned to.
+
+If a chart needs more than a sentence of explanation before it means anything,
+it is the wrong chart for a talk, whatever it is worth in a report.
+
+## Design is a clarity budget, not a decoration budget
+
+Every visual decision either makes the argument faster to read or slower.
+Gradients, shadows, stock photography and animated transitions all cost
+attention and return nothing.
+
+The things worth spending on are the boring ones: consistent alignment so the
+eye knows where to go, one accent colour used only for what matters, and enough
+white space that the important number is obviously the important number.
+
 
 ======================================================================
 
@@ -204,6 +243,45 @@ This is the only rule on this page that matters.
 The teams that place consistently are not the ones entering the most. They are
 the ones whose fourth competition benefits from everything learned in the first
 three, which only happens if the first three were actually finished.
+
+## Read the brief before you register
+
+A surprising number of teams commit to a competition on the strength of the
+prize and the poster, then discover the brief is a domain nobody on the team
+can reason about.
+
+The brief is usually available, or the previous year's is. Read it first. A
+brief you find interesting on the first reading is one you will still be
+thinking about on day five, and that matters more than the prize does.
+
+## Fit beats prestige, early on
+
+A big competition you place nowhere in teaches less than a small one where you
+reach a final and get questioned hard for twenty minutes.
+
+Q&A is the part you cannot practise alone, and reaching a late round is the
+only way to get it. Early on, optimise for rounds survived rather than for the
+name of the host.
+
+## Count the real cost
+
+The entry is a week, not an evening, and the weeks overlap. Three competitions
+in a month is three weeks where nothing else moves, and the third deck is
+usually visibly worse than the first.
+
+We have reached a final and not contested it because exams ran the same week,
+which is written up on [People Matrix](https://conyso.com/certamus/people-matrix.html). That is a better
+outcome than arriving unprepared, and a worse one than having looked at the
+calendar first.
+
+## Enter the ones you would do anyway
+
+The reliable filter: if the prize were nothing and no recruiter would ever see
+it, would you still want to spend a week on this problem?
+
+If yes, enter. The work is better, the team argues more usefully, and you learn
+the thing that lasts, which is how to reason about a domain rather than how to
+assemble a deck.
 
 
 ======================================================================
@@ -274,6 +352,40 @@ Every one of these steps produces something a panel can push on: an assumed
 revenue base, a grouping rule, a sensitivity that moves. Those go in the talk,
 in our own words, before anyone asks. That is its own habit, and it is set out
 in [say the weak part first](https://conyso.com/certamus/say-the-weak-part-first.html).
+
+## Set the test before you do the grouping
+
+Any pile of incidents can be sorted into three tidy causes if you are willing
+to push hard enough, and a panel can tell when you have.
+
+So fix the rule first and let it fail. In [Sankriya](https://conyso.com/certamus/sankriya-11.html) a fault
+only counted if fixing it would have made at least three past incidents shorter
+or cheaper. Competitive pressure failed that test, so it was left outside the
+answer rather than made into a fourth box, and the slide said so.
+
+Announcing the test before the result is what separates a classification from a
+rationalisation.
+
+## Decide what you are not doing
+
+A brief usually contains more than can be answered in eight minutes, and the
+teams that try to cover all of it produce a deck of headlines with nothing
+underneath.
+
+Choose, and say you chose. Naming the part you deliberately left out costs one
+sentence and buys the panel's trust for everything you did cover, because it
+demonstrates the judgement they are marking.
+
+## Write the recommendation before the analysis is finished
+
+Not to lock it in. To find out what the analysis needs to support.
+
+A draft recommendation written on day one tells you exactly which numbers are
+load-bearing, and therefore which of the twenty possible analyses are worth the
+time. Without it, teams analyse what is available and discover at the end that
+none of it decides anything.
+
+It will change. That is the point: when it changes, you know something.
 
 
 ======================================================================
@@ -734,6 +846,45 @@ out competitions they would have been good at, and the team does not get the
 benefit of matching a specialist to a brief. We think the compounding is worth
 more, but it is a trade rather than a free win.
 
+## Roles are for the room, not for the work
+
+Everyone works on everything during the week. The roles matter on the day,
+because a panel asking a question needs one obvious person to answer it and the
+team needs no visible negotiation about who that is.
+
+Assign them to sections rather than to skills. Whoever built the sizing takes
+sizing questions, whoever owns the recommendation closes. That is legible from
+the outside and it is also true, which is why it holds up under pressure.
+
+## What a fourth person is actually for
+
+Three people can write a deck. The fourth changes what the team can do in Q&A,
+because there is someone whose preparation was specifically the defence rather
+than the build.
+
+When the limit is three, the thing you lose is not a quarter of the analysis.
+It is the person who was going to take the hardest question, so somebody else
+has to prepare for it on top of their own section.
+
+## Rehearse the handoffs, not just the parts
+
+Most visible failures on stage are at the seams: two people talking at once, a
+pause while someone finds their place, the same sentence said twice.
+
+Each handoff should be one prepared line, and the person taking over should
+start with a statement rather than a re-introduction. It sounds small and it is
+most of what separates a team that looks rehearsed from one that does not.
+
+## Disagree before the room, not in it
+
+A team that has genuinely argued about the recommendation gives better answers,
+because every objection a panel raises has already been raised internally by
+someone who wanted to win the argument.
+
+Do that on the second day, not the last night. An argument settled the night
+before the final tends to get settled by whoever is least tired rather than by
+whoever is right.
+
 
 ======================================================================
 
@@ -921,6 +1072,41 @@ recovery drill that fails its target, gating the next phase of spend.
 A recommendation with no failure condition is not a recommendation, it is an
 opinion. Naming the condition is what makes it checkable, and checkable is the
 whole argument.
+
+## What counts as the weak part
+
+Not every caveat is worth the airtime, and a talk that leads with five of them
+sounds like a team apologising for its own work.
+
+There is usually one. It is the input that, if it moved, would change the
+recommendation rather than the decimals. In [Sankriya](https://conyso.com/certamus/sankriya-11.html) it was
+the 80% pass-through assumption, because at 40% the payback moved by five
+months. In [Seeking Alpha](https://conyso.com/certamus/seeking-alpha.html) it was that five years is not
+long enough for the alpha to be significant, which is the sentence that could
+have ended the whole argument if a judge had said it first.
+
+Find that one and say it. Everything else is a footnote.
+
+## Saying it without undercutting yourself
+
+There is a way to name a weakness that costs you the room, and it is the
+apologetic version: "we were not able to", "unfortunately we could not",
+"obviously this is limited".
+
+The version that works states the bound and then what survives it. "Five years
+is not long enough to call this significant, and the ranking holds in 69 to 79%
+of the simulated paths, which is the claim we are making." Same fact. One of
+them sounds like a team that understands its own evidence.
+
+## The panel already knows
+
+This is the part teams do not believe until it happens. The judges have read
+the brief more times than you have, and in a case competition they have often
+seen six other teams present on it that morning.
+
+They know where the model is soft. The only question is whether you do, and
+whether you will say so unprompted. That is the whole mechanism: you are not
+revealing a weakness, you are demonstrating that you found it.
 
 
 ======================================================================
@@ -1115,6 +1301,49 @@ the sharpest judge in the room was about to ask.
 
 If it does not hold, you have found that out in a working session rather than
 in a final, which is exactly where you want to find it.
+
+## Build it in the open, in steps a judge can follow
+
+An estimate a panel cannot follow is worth nothing, however good it is.
+
+The chain that works is short, and each link is a stated assumption rather than
+a derived one. In [Sankriya](https://conyso.com/certamus/sankriya-11.html) the largest line went: the
+fixed-price book is 6,000 crore, the cost base under it is 5,580, fuel and
+wages are 45% of that at 2,510, costs rise about 6% a year against 3% priced
+in, so the gap is 75 crore, and at an 0.8 annual likelihood that is 60 crore a
+year. Four numbers and a multiplication, all visible.
+
+A judge who disagrees can now tell you which link they disagree with, which is
+a far better conversation than one about whether your answer is plausible.
+
+## Break your own ranking first
+
+The useful question is not whether the number is right. It is how wrong it
+could be before the recommendation changes.
+
+Run it yourself, before the room. Cut the biggest input by a third and see
+whether the order survives. Put that on the slide. In Sankriya the contract
+figures had to fall by about a third before the top of the list moved, and
+saying so removed the obvious attack before anyone could make it.
+
+## Say what kind of number it is
+
+Three things get called estimates and they are not the same: a figure from a
+source, a figure derived from case facts, and a figure the team chose.
+
+Mark them differently. Every rupee figure in the Sankriya register was labelled
+a team estimate on the slide, and the sources that were real carried their
+citation. A panel that cannot tell which is which has to assume the worst about
+all of them.
+
+## The ranking is the finding
+
+This is the part that takes the pressure off. You are almost never being asked
+for the true number, because nobody in the room has it either.
+
+You are being asked which thing is biggest and what follows from that. Say so
+out loud: the finding is the ranking, not the rupees. It is honest, it is
+correct, and it moves the argument onto ground you can actually defend.
 
 
 ======================================================================
@@ -1406,6 +1635,47 @@ better than the panel does. Which is the same discipline as
 [say the weak part first](https://conyso.com/certamus/say-the-weak-part-first.html), arriving from the
 other end.
 
+## Pre-empting is not the same as hiding
+
+Answering the likely questions inside the presentation is the core of how this
+team prepares, and it has a failure mode: a presentation stuffed with pre-empted
+objections becomes a defence brief nobody asked for.
+
+The test is whether the objection is load-bearing. If the answer changes what
+the panel should do, it belongs in the talk. If it only proves you thought
+about it, it belongs in the appendix, and the appendix exists to be opened in
+Q&A rather than skipped in the talk.
+
+## The appendix is a weapon, not a dump
+
+An appendix that is everything you could not fit is useless, because you cannot
+find anything in it under pressure.
+
+Build it as answers to named questions, one slide each, titled with the
+question. Then "what happens if the currency assumption is wrong" is a slide
+you turn to in four seconds, and turning to it is itself an answer: it says the
+question was expected.
+
+## Silence is a tactic they will use
+
+A panel that says nothing after your answer is often testing whether you will
+keep talking. Most teams do, and the extra sentence is usually the weakest one,
+because it was not prepared.
+
+Finish the answer and stop. If the silence holds, "happy to go deeper on any
+part of that" hands the floor back without adding to the argument.
+
+## Rehearsing the defence
+
+You cannot rehearse the questions, which is what makes Q&A hard. You can
+rehearse the shape of an answer until it is automatic under pressure, and you
+can rehearse the handoffs.
+
+The cheapest useful drill: each person writes the three questions they would
+least like to be asked, and hands them to someone else on the team to ask cold.
+The list is almost always right, because the person who built a section knows
+exactly where it is thin.
+
 
 ======================================================================
 
@@ -1458,6 +1728,43 @@ The risk is real: lead with the answer and a weak one gets found fast. We think
 that is the correct trade. A recommendation that cannot survive being said
 first was not going to survive Q&A either.
 
+## What the first slide is not
+
+It is not the agenda. It is not the team introduction. It is not a restatement
+of the brief the panel wrote.
+
+Each of those spends the most valuable thirty seconds you have on information
+the room already has. The agenda in particular is a habit carried in from
+school presentations, and it tells a judge nothing except that the next eight
+minutes will be structured.
+
+## The reframe is the whole slide
+
+The strongest opener is not the answer stated flatly. It is the answer stated
+as a correction to what the room expected.
+
+[People Matrix](https://conyso.com/certamus/people-matrix.html) opened on the line that the plan about to
+be recommended handed roughly half the founders' own store profit away, on
+evidence from two hand-picked outlets. That is an answer and a reframe at once:
+the panel came expecting a yes-with-conditions and now has to follow the
+argument to find out why it is not.
+
+## One number, chosen carefully
+
+The number under the claim should be the one that makes the claim inevitable,
+not the largest one you found.
+
+In [Sankriya](https://conyso.com/certamus/sankriya-11.html) the largest number was the 291 crore of annual
+expected loss, and the one that did the work was 53%, the share of it coming
+from risk nobody had priced. The big number describes the problem. The small
+one picks the fight.
+
+## Write it last
+
+The first slide is easiest to write once you know what the deck concluded, and
+teams that write it first spend the week defending an opener they chose before
+the analysis.
+
 
 ======================================================================
 
@@ -1481,6 +1788,10 @@ did not pose.
 The fix is mechanical. At the end, put the prompt next to your headline slides
 and check them off line by line. If a requirement in the brief has no slide
 against it, you have found your gap.
+
+The reverse check is worth as much and takes a minute. Go through your slides
+and ask which line of the brief each one answers. A slide that cannot name its
+line is a slide you built because it was interesting.
 
 ## Hiding the load-bearing assumption
 
@@ -1522,6 +1833,58 @@ uncertainty.
 close it" reads as competence. A confident number invented in the moment reads
 as the opposite, and once a panel catches one they re-examine everything else
 you said.
+
+## Presenting the analysis instead of the answer
+
+There is a deck shape that feels rigorous and loses anyway. It walks the panel
+through the method: here is what we gathered, here is how we sorted it, here
+is what we found, and therefore, on slide nine, here is what you should do.
+
+It loses because a panel decides early whether you have an answer, and this
+shape withholds one for eight slides. By the time it arrives they have already
+categorised you as a team that did the work without reaching a conclusion.
+
+Invert it. The answer first, then what it rests on. We open on the answer in
+every case here, and in [Sankriya](https://conyso.com/certamus/sankriya-11.html) the first line was that
+none of the seventeen incidents were the company's fault, which is a claim, not
+a finding, and it forced everything after it to earn its place.
+
+## Winning the argument and losing the clock
+
+Time is the constraint nobody models. A panel that stops you at nine minutes
+has heard eight minutes of setup and no recommendation, and they will mark what
+they heard.
+
+Rehearse against a clock that is two minutes shorter than the one you are
+given, because the real run is always slower than the practice run: you will
+speak more carefully, someone will fumble a handoff, and a judge may interrupt.
+If it only fits at your fastest, it does not fit.
+
+## Being right about the wrong quantity
+
+A subtler loss: the analysis is correct, the number is accurate, and it is not
+the number that decides anything.
+
+In [Seeking Alpha](https://conyso.com/certamus/seeking-alpha.html) the tempting analysis was factor
+selection, because factors are interesting and there is a large literature to
+show you have read. The finding was that company size explained the period and
+factor choice mostly did not, so the whole factor discussion was true, careful
+and irrelevant to the decision.
+
+Before you build a number, ask what you would do differently if it came out
+twice as large. If the answer is nothing, it is not the number you need.
+
+## Letting the panel discover the disagreement
+
+On a team of four, two people often disagree about the recommendation and
+resolve it by softening the slide until both can live with it.
+
+The panel then reads a hedge, asks which it is, and gets two different answers
+from two members. That is worse than either position would have been.
+
+Settle it before the room. If you genuinely cannot, put the disagreement on the
+slide as a decision with a stated trigger, which is an answer. A sentence that
+means both things is not.
 
 
 ======================================================================
@@ -1581,6 +1944,48 @@ you found it.
 
 So find it, and say it first. There is more on that in
 [say the weak part first](https://conyso.com/certamus/say-the-weak-part-first.html).
+
+## What the first week actually feels like
+
+Mostly it feels like not knowing whether you are behind. There is no marking
+scheme visible, no feedback until the room, and a brief that could be answered
+twenty ways.
+
+The teams that cope have one habit in common: they decide the answer early and
+spend the week trying to break it, rather than gathering material and hoping a
+conclusion appears. Gathering has no natural end. Breaking a claim does.
+
+## You are not being marked on effort
+
+This is the hardest thing to accept in the first one. Nobody in the room knows
+you read forty pages of industry reports, and nothing in the marking rewards it
+unless it changed the recommendation.
+
+Judges mark what they can see in eight minutes: whether there is an answer,
+whether the number under it is built rather than asserted, whether you know
+where it is weak, and whether it holds in Q&A. Everything else is preparation
+for those four things or it is not worth the hours.
+
+## Read the brief three times, on three days
+
+Once to understand it, once to find what it is not saying, and once after you
+have a draft answer, when you will notice requirements you have quietly
+dropped.
+
+The third reading is the one that catches the loss described in
+[what actually loses](https://conyso.com/certamus/what-actually-loses.html): an excellent answer to a
+question the brief did not pose.
+
+## Losing the first one is the normal outcome
+
+Most teams do not reach a final early, and the ones that improve fastest are
+the ones who write down why immediately afterwards, while the room is still
+fresh: the question nobody could answer, the slide the panel skipped, the
+moment the timing went.
+
+That list is worth more than the result. Ours is on every case page, in the
+section on what we would do differently, which exists because the honest
+version of that note is the only part of a loss that compounds.
 
 
 ======================================================================
@@ -1646,3 +2051,46 @@ Take the content, leave the tone. Answer as though it had been asked neutrally.
 If there is a fair point inside an aggressive question, agree with that part
 out loud before you respond to the rest. Agreeing with a true criticism costs
 you nothing and buys you the room.
+
+## The question behind the question
+
+Most questions are not really about what they ask. "How did you get the growth
+rate?" is usually "do you know this number is load-bearing?" and the answer
+that satisfies it names the sensitivity, not the arithmetic.
+
+Answer the literal question first, in one sentence, then the one underneath it.
+Reversing that order sounds like you are avoiding the literal one.
+
+## When you are wrong
+
+It happens, and it is survivable if you do it in one move. Say that they are
+right, say what it changes, and say what survives.
+
+"That is a fair catch. It moves the payback from month twenty-five to about
+month thirty. The ranking does not change, because the gap between the top two
+is larger than that error." A panel will take that. What they will not take is
+three minutes of defending a number you already know is wrong.
+
+The teams that handle this well are the ones who worked out in advance which
+of their numbers could be wrong and by how much, which is the same work as
+[sizing what you are not given](https://conyso.com/certamus/sizing-what-you-are-not-given.html).
+
+## Questions you cannot answer
+
+Some questions are outside what you built, and the honest answer is short.
+
+Name what you would need, say how long it would take, and say what you would
+expect to find. "We did not model competitor response. It needs their pricing
+history, which is a day of work, and I would expect it to shrink the advantage
+rather than remove it." That is a professional answer. "Good question, we did
+consider that" is not, and panels have heard it several hundred times.
+
+## The one who has not spoken
+
+Panels notice when one person answers everything. It reads as a team with one
+person who understands the work.
+
+Route deliberately: whoever owns the section owns the question. If a question
+lands on the wrong person, hand it across in the open. "Krishay built the
+sizing, so he should take that." That costs three seconds and buys the
+impression it is meant to buy, because it is true.
