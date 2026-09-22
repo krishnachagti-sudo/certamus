@@ -27,17 +27,24 @@ body.ce {
        paragraphs. 17px across 36rem is about 68. */
     --ce-measure:    36rem;
 
-    --cy-bg:         #F7F5F0;              /* page ground: body, hero, footer */
-    --cy-bg-soft:    #EFECE4;              /* alternating bands, cards, raised panels */
-    --cy-ink:        #1A1712;              /* primary text and headings */
-    --cy-ink-1:      rgba(26,23,18,0.88);  /* body copy one step down from headings */
-    --cy-ink-2:      rgba(26,23,18,0.62);  /* captions, meta, footer links */
-    --cy-ink-dim:    rgba(26,23,18,0.70);  /* subheads and lede paragraphs */
-    --cy-ink-faint:  rgba(26,23,18,0.64);  /* labels and eyebrows; 0.58 measures 4.27 on this ground, under AA */
-    --cy-muted:      rgba(26,23,18,0.55);  /* disabled and de-emphasised text */
-    --cy-rule:       rgba(26,23,18,0.12);  /* section dividers and card borders */
-    --cy-rule-faint: rgba(26,23,18,0.08);  /* hairlines inside light bands */
-    --cy-gold:       #7A5F18;              /* the shared brand metal: this venture's accent */
+    /* Court. The estate's warm paper and gold is the holding company's
+       register, and this is a record of contests between students. The ground
+       cools, the ink goes near-black, and the metal becomes cobalt: sharper,
+       and still a sibling rather than a stranger.
+
+       Measured on this ground, not assumed: ink 17.1:1, accent 7.03:1,
+       against 16.4 and 5.54 for the gold it replaces. */
+    --cy-bg:         #F4F6FA;              /* page ground: body, hero, footer */
+    --cy-bg-soft:    #E9EDF5;              /* alternating bands, cards, raised panels */
+    --cy-ink:        #0F1419;              /* primary text and headings */
+    --cy-ink-1:      rgba(15,20,25,0.88);  /* body copy one step down from headings */
+    --cy-ink-2:      rgba(15,20,25,0.62);  /* captions, meta, footer links */
+    --cy-ink-dim:    rgba(15,20,25,0.70);  /* subheads and lede paragraphs */
+    --cy-ink-faint:  rgba(15,20,25,0.64);  /* labels and eyebrows; 0.58 measures under AA on this ground */
+    --cy-muted:      rgba(15,20,25,0.55);  /* disabled and de-emphasised text */
+    --cy-rule:       rgba(15,20,25,0.13);  /* section dividers and card borders */
+    --cy-rule-faint: rgba(15,20,25,0.08);  /* hairlines inside light bands */
+    --cy-gold:       #2A3FD4;              /* the shared brand metal: this venture's accent */
 
     /* --- type ------------------------------------------------------------
        Half of a distinct look, and not in CONTRACT_TOKENS, so it has to be
@@ -381,7 +388,8 @@ html.ce-js:not(.ce-reduce) .ce-mycase.is-in {
 .ce-title { position: relative; margin: 2.6rem 0 1.6rem; padding: 0; text-align: left; }
 .ce-title-inner { position: relative; }
 .ce-crest { display: block; margin: 0; }
-.ce-title-mark { margin-top: 0.4rem; opacity: 0.9; }
+.ce-title-mark { margin-top: 1.1rem; opacity: 0.9; }
+.ce-title-mark .ce-crest { width: 46px; height: 46px; }
 .ce-wordmark { font-size: clamp(3.4rem, 13vw, 8rem); line-height: 0.88;
   letter-spacing: -0.045em; margin: 0.2rem 0 0; }
 .ce-lemma { font-size: 0.66rem; letter-spacing: 0.3em; text-transform: uppercase;
@@ -578,8 +586,8 @@ body.ce .ce-lede-wide { max-width: 40rem; margin: 0 0 1rem; text-align: left;
 body.ce {
   background-color: var(--cy-bg);
   background-image:
-    radial-gradient(130% 70% at 50% -8%, rgba(122,95,24,0.055), rgba(122,95,24,0) 62%),
-    radial-gradient(90% 55% at 108% 2%, rgba(26,23,18,0.040), rgba(26,23,18,0) 58%);
+    radial-gradient(130% 70% at 50% -8%, rgba(42,63,212,0.060), rgba(42,63,212,0) 62%),
+    radial-gradient(90% 55% at 108% 2%, rgba(15,20,25,0.040), rgba(15,20,25,0) 58%);
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
@@ -648,10 +656,10 @@ body.ce .ce-lede a:hover, body.ce .ce-bio a:hover { color: var(--cy-ink); }
    (9.6:1) and the caption ink to #E8E3D8 (13.5:1).
    ========================================================================== */
 .ce-rail {
-  --rail-bg:    #16130F;
-  --rail-ink:   #E8E3D8;
-  --rail-faint: rgba(232,227,216,0.58);
-  --rail-gold:  #E0B94A;
+  --rail-bg:    #0F1218;
+  --rail-ink:   #E4E8F0;
+  --rail-faint: rgba(228,232,240,0.58);
+  --rail-gold:  #8FA6FF;
 
   margin-inline: calc(50% - 50vw);
   width: 100vw;
@@ -791,22 +799,22 @@ html.ce-js:not(.ce-reduce) .ce-rail.is-in {
    checked against their own foreground: #EDE6D6 on #241B12 is 12.9:1, and the
    gold #F0C75A on #241B12 is 9.8:1. */
 .ce-rail-warm {
-  --rail-bg:    #241B12;
-  --rail-ink:   #EDE6D6;
-  --rail-faint: rgba(237,230,214,0.56);
-  --rail-gold:  #F0C75A;
+  --rail-bg:    #161B2B;
+  --rail-ink:   #E8ECF6;
+  --rail-faint: rgba(232,236,246,0.56);
+  --rail-gold:  #A8BBFF;
 }
 .ce-rail-warm::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(120% 90% at 82% 0%,
-    rgba(240,199,90,0.11), rgba(240,199,90,0) 62%);
+    rgba(168,187,255,0.10), rgba(168,187,255,0) 62%);
 }
 
 /* the cool one gets its own wash, from the other corner */
 .ce-rail::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: radial-gradient(120% 90% at 12% 0%,
-    rgba(224,185,74,0.09), rgba(224,185,74,0) 58%);
+    rgba(143,166,255,0.09), rgba(143,166,255,0) 58%);
 }
 
 /* --- rail footer: count, progress, buttons -------------------------------- */
@@ -872,13 +880,13 @@ html.ce-js:not(.ce-reduce) .ce-rail.is-in {
   position: sticky; top: 0; z-index: 30;
   display: flex; align-items: center; gap: 1.2rem;
   padding: 0.7rem max(1.25rem, calc(50vw - 34rem));
-  background: rgba(247,245,240,0.88);
+  background: rgba(244,246,250,0.88);
   backdrop-filter: saturate(150%) blur(10px);
   -webkit-backdrop-filter: saturate(150%) blur(10px);
   border-bottom: 1px solid var(--cy-rule);
 }
 @supports not (backdrop-filter: blur(10px)) {
-  .ce-nav { background: var(--cy-paper, #F7F5F0); }
+  .ce-nav { background: var(--cy-bg, #F4F6FA); }
 }
 /* Matched to .cy-wordmark on the parent site: same family, same 600 weight,
    same 1.35rem. It was 1.05rem at the inherited 400, which is 22% smaller and
@@ -1055,7 +1063,10 @@ html.ce-js:not(.ce-reduce) .ce-dia.is-in {
     display: grid;
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
     gap: 0 4rem;
-    align-items: end;
+    /* start, not end. Bottom-aligning a short left column against a tall right
+       one pushed the mark down the page and left roughly 400px of nothing
+       above it, which is the void that made this look unfinished. */
+    align-items: start;
   }
   /* "Certamus" is one unbreakable word. At 8rem its glyphs measure 531px in a
      451px column, so it overflowed by 81 and ran 17px into the right column,
