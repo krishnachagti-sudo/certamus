@@ -107,6 +107,55 @@
   });
 
 
+  // -- 4c. the contents rail follows the reader --------------------------
+  // .ce-toc a.is-here was styled and never set: the only is-here in this file
+  // was the rail cell marker, so the highlight was dead CSS on every guide.
+  //
+  // Driven by scroll position rather than IntersectionObserver. Not because IO
+  // is wrong for this, but because it could not be verified: an observer
+  // created inside a headless iframe fired zero callbacks, so any IO version
+  // of this would have shipped untested. A line at 28% of the viewport and a
+  // rect comparison is deterministic and can be checked by setting scrollTop.
+  //
+  // Wired above the motion gate because knowing where you are in a long page
+  // is orientation, not decoration, and a reader who asked for no motion still
+  // wants it.
+  var toc = document.querySelector(".ce-toc");
+  if (toc) {
+    var tocLinks = {};
+    Array.prototype.forEach.call(toc.querySelectorAll("a[href^='#']"), function (a) {
+      tocLinks[a.getAttribute("href").slice(1)] = a;
+    });
+    var tocHeads = [].slice.call(
+      document.querySelectorAll(".ce-guide-main .ce-section[id]"));
+    var tocMarked = null;
+
+    function tocSpy() {
+      tocTick = false;
+      if (!tocHeads.length) { return; }
+      var line = window.innerHeight * 0.28;
+      var id = tocHeads[0].id;
+      for (var i = 0; i < tocHeads.length; i++) {
+        // the last section whose top has passed the line; scrolled to the very
+        // bottom the final section wins even if it is short
+        if (tocHeads[i].getBoundingClientRect().top <= line) { id = tocHeads[i].id; }
+      }
+      if (id === tocMarked || !tocLinks[id]) { return; }
+      if (tocMarked && tocLinks[tocMarked]) {
+        tocLinks[tocMarked].classList.remove("is-here");
+      }
+      tocLinks[id].classList.add("is-here");
+      tocMarked = id;
+    }
+
+    var tocTick = false;
+    window.addEventListener("scroll", function () {
+      if (!tocTick) { tocTick = true; window.requestAnimationFrame(tocSpy); }
+    }, { passive: true });
+    window.addEventListener("resize", tocSpy, { passive: true });
+    tocSpy();
+  }
+
   // Everything past this point is motion, and a reader who asked for no
   // motion gets none of it. The rails are wired ABOVE this line on purpose:
   // buttons and a progress bar are function, not decoration, and returning

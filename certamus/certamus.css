@@ -652,13 +652,13 @@ body.ce .ce-lede a:hover, body.ce .ce-bio a:hover { color: var(--cy-ink); }
 
    Colours are redeclared here rather than reused: the page tokens are tuned
    for dark ink on a light ground and every one of them is wrong on this band.
-   The page accent #2A3FD4 on #0F1218 is 2.46:1 and unreadable, so it is lifted
-   to periwinkle #8FA6FF (8.09:1) and the caption ink to #E4E8F0 (15.3:1).
+   The page accent #2A3FD4 on #121417 is 2.43:1 and unreadable, so it is lifted
+   to periwinkle #8FA6FF (7.97:1) and the caption ink to #E7E9EC (15.17:1).
    ========================================================================== */
 .ce-rail {
-  --rail-bg:    #0F1218;
-  --rail-ink:   #E4E8F0;
-  --rail-faint: rgba(228,232,240,0.58);
+  --rail-bg:    #121417;
+  --rail-ink:   #E7E9EC;
+  --rail-faint: rgba(231,233,236,0.58);
   --rail-gold:  #8FA6FF;
 
   margin-inline: calc(50% - 50vw);
@@ -796,12 +796,19 @@ html.ce-js:not(.ce-reduce) .ce-rail.is-in {
    Several rails down one page read as one repeated black bar. Every other one
    takes a warm brown-black with a lifted gold, so scrolling the case moves
    through two temperatures rather than flashing the same band. Both are
-   checked against their own foreground: #EDE6D6 on #241B12 is 12.9:1, and the
-   gold #F0C75A on #241B12 is 9.8:1. */
+   checked against their own foreground: #EBEDF0 on #1C1F24 is 14.09:1 and the
+   accent #A8BBFF on it is 8.83:1.
+
+   Both grounds are NEUTRAL dark rather than tinted toward the page's cobalt.
+   The slides on them are the team's own submitted work and arrive in whatever
+   palette the deck was designed in, which for every deck so far is warm cream
+   and gold. A blue-black band made those read as a mistake rather than as an
+   exhibit. A neutral ground does not fight any of them, and it is the only
+   choice that still works when a future deck is not warm. */
 .ce-rail-warm {
-  --rail-bg:    #161B2B;
-  --rail-ink:   #E8ECF6;
-  --rail-faint: rgba(232,236,246,0.56);
+  --rail-bg:    #1C1F24;
+  --rail-ink:   #EBEDF0;
+  --rail-faint: rgba(235,237,240,0.56);
   --rail-gold:  #A8BBFF;
 }
 .ce-rail-warm::before {
