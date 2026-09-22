@@ -1,0 +1,1648 @@
+# Certamus — full content
+
+
+
+======================================================================
+
+# About Certamus
+
+> What this page is, what goes on it, and what deliberately does not.
+
+Source: https://conyso.com/certamus/about.html
+
+## What this is
+
+Certamus is the competition record of Conyso. Four people from IIM Sirmaur
+enter case competitions under the company's own name rather than as a team
+assembled for each one, and one of them enters hackathons with a collaborator
+from outside the institute.
+
+The name is Latin for a contest. It is also first person: we contend.
+
+## What goes on it
+
+Two rules decide what appears here, and both of them keep pages off.
+
+**Only finals and wins.** A competition reaches this page if we reached its
+final round or won it. Early exits are not recorded. This is a record of
+results, not an activity log, and a page that listed everything would tell you
+nothing about whether any of it went well.
+
+**Only with the deck.** A case is published when we still have the file we
+submitted. That sounds like a technicality and it is the more restrictive of
+the two rules in practice: we have reached finals whose decks nobody kept, and
+those are not here. What is missing from the record is usually paperwork
+rather than result.
+
+The effect is a page shorter than the work behind it. We started in September
+2026 and have registered for more than fifty competitions since. Four cases
+are published.
+
+## What the pages actually contain
+
+Each case is written as an argument rather than a summary. What the brief
+asked, what we decided the real question was, what we got wrong, and what we
+would do differently. The slides are the ones actually submitted, shown at a
+size where you can read the numbers on them, not redrawn.
+
+Where a chart appears that is not a slide, it was rebuilt from the team's own
+figures so it could be read on a phone and by a screen reader. Those are
+labelled as ours. The slides are labelled as theirs.
+
+## On the briefs
+
+A competition brief belongs to the organiser who wrote it. Unless a case page
+says otherwise, the brief on it is restated in our own words and everything
+that follows is our own work. Where an organiser has given permission to
+reproduce theirs, the page says so and names the permission.
+
+## On the numbers
+
+Competition cases are built on assumptions, because the briefs withhold most
+of the financials on purpose. Every case here states its assumptions rather
+than burying them, and says plainly which part of the finding is robust and
+which part rests on a number we chose. Where a figure is a team estimate it is
+marked as one.
+
+Nothing on this site is a client engagement, and nothing here should be read
+as advice about a real company. The companies in these briefs are the
+organisers' inventions.
+
+## The two lanes
+
+Case competitions and hackathons are different problems and we do not pretend
+otherwise. A case is judged on whether the argument survives a panel. A
+hackathon is judged on whether the thing runs. The work, the preparation and
+the failure modes have almost nothing in common, so they are kept apart on the
+record and the roster for each is listed separately.
+
+
+======================================================================
+
+# Building the deck
+
+> One idea per slide, the headline doing the work, and an appendix that exists to be opened in Q&A rather than skipped in the talk.
+
+Source: https://conyso.com/certamus/building-the-deck.html
+
+## The headline is the slide
+
+Write the top line of every slide as a complete sentence that states the
+finding. Not "Revenue analysis" but "Forty per cent of revenue sits on
+contracts that cannot reprice."
+
+*A deck by the job each slide does rather than by topic. Four slides carry the argument on their own; the rest support it and are the first thing cut when the clock runs short.*
+
+Do that for every slide, then read only the headlines in order. If they tell
+the whole argument on their own, the deck is sound. If they read as a list of
+topics, you have built a table of contents with charts attached, and a judge
+skimming ahead will get nothing from it.
+
+This is the single highest-return habit in deck building and almost nobody
+does it, because topic headers are faster to write and feel more professional.
+
+## One idea per slide, and say which
+
+A slide carrying three ideas gets none of them across. Split it.
+
+The test is whether you can say what the slide is for in one clause. If the
+answer needs an "and", it is two slides. This costs you slide count, which
+feels expensive under a limit, and buys you comprehension, which is what is
+being marked.
+
+## The appendix is not a dumping ground
+
+An appendix exists for one purpose: to be opened when a judge asks. That makes
+it a design problem, not a folder.
+
+Put in it the things you expect to be challenged on. Every alternative you
+tested and rejected, with the numbers. The full assumption list. The
+sensitivity runs. The workings behind any figure that appears in the main deck
+without its arithmetic.
+
+Then label the slides so you can find one in four seconds while somebody is
+waiting. A brilliant appendix you cannot navigate live is worth nothing.
+
+The signal this sends matters as much as the content. A team that shows ten
+designs they tried, only one of which won, is telling the panel they did the
+work rather than the one run that flattered them.
+
+## Charts carry their own conclusion
+
+A chart with an axis label and no statement makes the reader do the work. Put
+the finding beside it: not "five-year returns by index" but "nine points of the
+gap is company size, not factor choice."
+
+And print the value on the bar. Nobody should have to measure a bar against a
+gridline to know what it says.
+
+## What to cut first
+
+When you are over length, the order is: context, methodology, and anything
+explaining what a framework is. Judges know what a framework is.
+
+What never gets cut is the assumption slide and the sensitivity. Those are the
+two that make everything else believable, and they are always the first ones a
+team under pressure reaches for.
+
+
+======================================================================
+
+# Choosing what to enter
+
+> You cannot enter everything. Pick for the brief you want to get better at, not for the prize, and treat the first round as the real filter.
+
+Source: https://conyso.com/certamus/choosing-what-to-enter.html
+
+## Enter fewer, and finish them
+
+The instinct is to register for everything and see what sticks. It produces a
+lot of abandoned submissions and no improvement, because nothing gets the time
+it needed.
+
+Pick fewer. Finish them properly, including rehearsal. Two competitions worked
+end to end teach more than eight half-entered, and a submitted deck you are
+not proud of costs you the one thing you are building, which is the habit of
+finishing.
+
+## Pick for the brief, not the prize
+
+Prize money is the worst selection criterion available. It is uncorrelated with
+how useful the competition is to you and strongly correlated with how many
+teams enter.
+
+Better questions: is this a kind of problem I want to be better at? Will the
+brief force me to build something I have not built before? Is the judging panel
+people whose questions I want to hear?
+
+A small competition with a sector you want to learn is worth more than a large
+one in a sector you already know.
+
+## Read the submission requirements before you commit
+
+Round one is usually a deck or an abstract with a hard cap. Ten slides, or
+three hundred words, or a single page.
+
+Check the cap first, because it determines how much analysis is even usable. A
+competition that wants three slides is not asking for the work you would do for
+one that wants fifteen, and teams routinely build the wrong size of answer and
+then cut badly under deadline.
+
+## Be honest about the calendar
+
+Competitions cluster. Two finals in one week is not twice the work, it is
+considerably more, because rehearsal is what gets squeezed and rehearsal is
+what decides finals.
+
+Look at the dates before you register, not after. If two overlap, pick one and
+enter the other next year rather than entering both at reduced strength.
+
+## One competition properly beats three badly
+
+This is the only rule on this page that matters.
+
+The teams that place consistently are not the ones entering the most. They are
+the ones whose fourth competition benefits from everything learned in the first
+three, which only happens if the first three were actually finished.
+
+
+======================================================================
+
+# How we work a case
+
+> Reduce the list to its causes, set the rule before the analysis, size what the case leaves out, and show the ranking rather than the decimals.
+
+Source: https://conyso.com/certamus/how-we-work-a-case.html
+
+## Count the incidents, then stop counting them
+
+A case brief usually hands you a pile of events. The instinct is to answer each
+one, and a deck with seventeen fixes in it is the result.
+
+*Seventeen incidents from the Sankriya brief, grouped by the internal fault that made each one worse. Three groups held. The fourth had no internal cause and was left out of the answer rather than rounded up to a tidy number.*
+
+That deck loses. It costs more than the problem, and the reason each event hurt
+is still sitting there untouched. So the first pass is to line the incidents up
+and ask what is common underneath them, then present the causes rather than the
+list. Three fixes that address why the damage kept happening beat seventeen
+that address what happened.
+
+## Set the test before you go looking
+
+Grouping symptoms into causes is exactly the kind of analysis that finds
+whatever shape you wanted. The guard against that is a rule written down before
+the grouping starts.
+
+One that has worked: a cause only counts if fixing it would have made at least
+three of the past incidents shorter or cheaper. Candidates that fail the rule
+get left out rather than argued in, even when they are interesting. Competitive
+pressure has been left out on exactly those grounds.
+
+## Size what the case does not give you
+
+Briefs routinely omit the financials the recommendation depends on. The options
+are to avoid the number, or to build it in the open.
+
+Build it. State the assumed revenue and margin, show the arithmetic step by
+step on the slide, and say plainly that the finding is the ranking rather than
+the rupees. Then test whether the ranking survives the guesswork: if the top of
+the list only changes when an input moves by a third, say so, because that is
+the fact a panel actually wants.
+
+## Count the money once
+
+One incident can belong in several categories at once. A systems breach is an
+operations problem, a compliance problem and a reputation problem
+simultaneously.
+
+Score it in each, because the exposure is real in each. Count its cost once.
+Totals that double-count are the fastest way to lose a panel that is paying
+attention, and they are very easy to produce by accident.
+
+## Separate a one-off from a pattern
+
+A strike is bad luck. A site that flooded twice in one year is not. Treating
+those the same way either inflates the plan or misses the thing that is
+actually going to recur.
+
+The distinction is usually available in the brief, and it changes which fixes
+earn their cost.
+
+## Say the weak part out loud
+
+Every one of these steps produces something a panel can push on: an assumed
+revenue base, a grouping rule, a sensitivity that moves. Those go in the talk,
+in our own words, before anyone asks. That is its own habit, and it is set out
+in [say the weak part first](https://conyso.com/certamus/say-the-weak-part-first.html).
+
+
+======================================================================
+
+# Certamus
+
+> Every case competition and hackathon Conyso has entered, what we argued, and how it went.
+
+Source: https://conyso.com/certamus/
+
+Conyso enters case competitions and hackathons under its own
+name. These are the ones we reached the final of, and the ones we won: what we argued,
+and how it went.
+
+We started in September 2026 and have registered for more than fifty
+since. This page is deliberately shorter than that: a case goes up when we still have
+the deck we submitted, so what is missing here is paperwork rather than result.
+
+3
+
+finals reached
+
+1
+
+awaiting a result
+
+Most recent · Hackathon
+
+## [DataForge 2026, Pathway track](https://conyso.com/certamus/pathway.html)
+
+Pathway · Final round · **Finalist**
+
+The brief asked for an explainer rather than a product. Pick one frontier idea
+in machine learning, build something a working engineer can interact with, and
+make the idea click. Connect it to the host's own architecture. Every claim on
+the page has to be defe...
+
+[Read the case](https://conyso.com/certamus/pathway.html)
+
+![A slide from the DataForge 2026, Pathway track submission](https://conyso.com/images/certamus/decks/pathway-02.webp)
+
+## Finals and wins
+
+| Date | Competition | Format | Who | Result |
+| --- | --- | --- | --- | --- |
+| 19 September 2026 | [DataForge 2026, Pathway track](https://conyso.com/certamus/pathway.html)Pathway | Hackathon | Krishna Chagti | Finalist Final round |
+| 19 September 2026 | [Sankriya 11.0](https://conyso.com/certamus/sankriya-11.html)Club Kaizen, IBS Hyderabad | Case | Krishna Chagti, Krishay Nayyar, Drishti Soni | Pending Final round |
+| 19 September 2026 | [Seeking Alpha 2026](https://conyso.com/certamus/seeking-alpha.html)Findmenon, NMIMS | Case | Krishna Chagti, Krishay Nayyar, Drishti Soni | Finalist Final round |
+| September 2026 | [People Matrix](https://conyso.com/certamus/people-matrix.html)CHRIST (Deemed to be University), Delhi NCR | Case | Krishna Chagti, Krishay Nayyar, Drishti Soni | Finalist did not contest it |
+
+## Two lanes
+
+The argument
+
+### Case competitions
+
+A brief, a week or a night, and a deck that has to survive a panel who will push on the weakest number in it. The work is judgement: framing the problem, sizing what the brief leaves out, and being able to defend the ranking.
+
+- Krishna ChagtiCaptain, and the framing
+- Krishay NayyarClassification, sizing, cost
+- Drishti SoniDelivery, and the close
+- Aksh KansaraDefence in Q&A
+
+3
+
+entered
+
+The build
+
+### Hackathons
+
+A different problem entirely. The output is something that runs, so the constraint is scope rather than argument, and it is judged on whether it works rather than on whether it convinces. The split is deliberate: Krishna works through AI heavily, Akshit is hands on.
+
+- Krishna ChagtiCaptain, and the framing
+- AkshitThe build
+
+1
+
+entered
+
+## The team
+
+- [Krishna ChagtiCaptain, and the framing“Say the weakest number out loud, before they find it.”](https://conyso.com/certamus/team-krishna.html)
+- [Krishay NayyarClassification, sizing, cost“Leadership is a responsibility, not a position.”](https://conyso.com/certamus/team-krishay.html)
+- [Drishti SoniDelivery, and the close](https://conyso.com/certamus/team-drishti.html)
+- [Aksh KansaraDefence in Q&A“It's not about how loud you talk; it's about what you build when no one is watching.”](https://conyso.com/certamus/team-aksh.html)
+- [AkshitThe buildCollaborator](https://conyso.com/certamus/team-akshit.html)
+
+## How we work
+
+How this team works a case, and why.
+
+- [How we work a caseReduce the list to its causes, set the rule before the analysis, size what the case leaves out, and show the ranking rather than the decimals.](https://conyso.com/certamus/how-we-work-a-case.html)
+- [The first slideRestate the question in one line, and let the answer ride on the restatement. If the reframe is right, the recommendation is already implied.](https://conyso.com/certamus/the-first-slide.html)
+- [Say the weak part firstEvery analysis has a soft spot. Naming it before the judges find it is not modesty, it is the cheapest way to keep the rest of your numbers believable.](https://conyso.com/certamus/say-the-weak-part-first.html)
+- [The defenceMost of Q&A should already be answered. We build the likely question list first, fold the answers into the talk, and keep the rest of the defence for what genuinely could not be anticipated.](https://conyso.com/certamus/the-defence.html)
+- [Picking the teamMost competitions allow four, so four of us go. When the limit is three it is the three who started this, because rehearsal time compounds and a settled line-up is worth more than an optimised one.](https://conyso.com/certamus/picking-the-team.html)
+
+## If you are entering one
+
+Practical guides for anyone about to do this for the first time. Written from what has worked for us, not from any organiser's rulebook.
+
+- [Your first case competitionWhat actually happens, what the deadline really means, and the three things that separate a team that places from one that submits.](https://conyso.com/certamus/your-first-case-competition.html)
+- [Sizing what you are not givenMost briefs withhold the number the recommendation depends on. Build it in the open, show the chain, and test whether your ranking survives being wrong.](https://conyso.com/certamus/sizing-what-you-are-not-given.html)
+- [Building the deckOne idea per slide, the headline doing the work, and an appendix that exists to be opened in Q&A rather than skipped in the talk.](https://conyso.com/certamus/building-the-deck.html)
+- [What actually losesNot weak analysis. Teams lose by answering a question nobody asked, by hiding the assumption that matters, and by running out of time to rehearse.](https://conyso.com/certamus/what-actually-loses.html)
+- [Surviving your first Q&AMost of Q&A is decided before it starts. Build the question list, answer the obvious ones inside the talk, and agree who speaks before anyone is under pressure.](https://conyso.com/certamus/your-first-qa.html)
+- [Choosing what to enterYou cannot enter everything. Pick for the brief you want to get better at, not for the prize, and treat the first round as the real filter.](https://conyso.com/certamus/choosing-what-to-enter.html)
+
+## On the briefs
+
+A competition brief belongs to the organiser who wrote it. Unless a case page
+ says otherwise, the brief on it is restated in our own words and what follows is
+ our own work. Where an organiser has given permission to reproduce theirs, the
+ page says so and names the permission.
+
+
+======================================================================
+
+# DataForge 2026, Pathway track
+
+> DataForge 2026, Pathway track, Pathway. Finalist.
+
+Source: https://conyso.com/certamus/pathway.html
+
+The brief below is restated in our own words. The original belongs to the organiser.
+
+## A track that does not want a demo
+
+The brief asked for an explainer rather than a product. Pick one frontier idea
+in machine learning, build something a working engineer can interact with, and
+make the idea click. Connect it to the host's own architecture. Every claim on
+the page has to be defensible, and incorrect claims carry a heavy penalty
+rather than a deduction.
+
+That last rule is what shaped the entry. When wrong claims cost more than thin
+ones, the winning move is not to claim more. It is to make every claim
+checkable in the time a judge is willing to give it.
+
+*The brief belongs to the organiser, so it is restated here in our own words
+rather than reproduced.*
+
+## One claim, and a way to try to break it
+
+The claim was that attention without its softmax can be rewritten as a single
+fixed-size matrix updated one outer product at a time, that the two
+computations agree to floating-point precision, and that the matrix then holds
+exactly as many associations as it is wide.
+
+The page opens already running. There is no button to press before something
+happens, and the first result lands in about a minute.
+
+The reason both columns are drawn is that the equivalence is the kind of thing
+people nod at and do not believe. Showing the two running side by side, on the
+same sequence, with a running maximum of their disagreement, is a different
+kind of argument from writing the identity down.
+
+1. The opening panel, running before the reader touches anything. Left column keeps every key and value and rescans them at each step. Right column keeps one matrix and adds one outer product per token. The readout underneath is the worst disagreement between them, which settles at about 1e-16.
+
+## The part that is measured rather than asserted
+
+The second panel is where the claim could actually fail, so it has the most
+controls on it.
+
+Three results come out of it, and the entry was careful to say which kind of
+result each one is. Two of them are provable rather than discovered: capacity
+under orthogonal keys is exactly the width, and pure accumulation has no
+recency bias because a sum does not care what order it was built in. Stating
+them as findings would have been a claim the brief punishes. Stating them as
+theorems that practitioners routinely disbelieve, and then letting the reader
+watch them hold, is the honest version.
+
+The third is a closed form for the error under random keys, derived rather than
+fitted, and the page plots the derivation against the measurement so the gap is
+visible rather than described.
+
+1. 01*/02*Every dial that matters, and four readouts that recompute on each change. How many memories are written, how wide the matrix is, how the keys are coded, and which memory to inspect. Nothing here is precomputed.
+2. 02*/02*The recency result. Under pure accumulation the oldest memory is not the one you lose, which contradicts the usual mental picture of a recurrent state as a queue. Add a decay term and recency appears, which is what the gated architectures exist to do.
+
+2 slides
+
+## The result that went against us
+
+One finding was genuinely empirical, and it came out the wrong way.
+
+Going in, the expectation was that sparse non-negative keys would reduce
+interference. They do not. At equal width the median error is essentially
+identical. What sparsity changes is the shape of the distribution rather than
+its centre: dense coding recovers almost nothing below a five per cent error
+threshold, sparse coding recovers a couple of memories out of eight.
+
+The page reports that as a hypothesis the measurement refuted, in those words,
+rather than quietly deleting the hypothesis and keeping the part that worked.
+
+1. The required section connecting the concept to the host's own architecture, which is where the sparsity result gets reframed: monosemanticity is what sparse coding buys, not a property that happens to come with it.
+
+## Saying what it does not establish
+
+The thing an explainer is most likely to be caught on is overreach, so the
+entry wrote its own attack list before a judge could.
+
+Nothing on the page is trained. The keys are random draws, which brackets the
+answer rather than settling it: orthogonal coding is the optimistic ceiling and
+independent draws the pessimistic floor, and real learned keys sit somewhere
+between, where published work does not pin them down. The page names that as
+the most important open question rather than leaving it as a gap.
+
+The figures quoted from the host's published systems are labelled as reported
+rather than reproduced, and the cost result they come from is described as a
+cost-efficiency result on one benchmark rather than an accuracy win. The audit
+behind it was run by co-authors at partner institutions, which is a
+reproduction and not an arms-length one. Saying so costs nothing and is the
+difference between a summary and an assessment.
+
+Two of the supporting papers are cited by title, authors and year rather than
+by identifier, because the content was verified and the identifiers were not. A
+wrong identifier is worse than no identifier.
+
+## What the entry was actually built on
+
+Three files that matter, and nothing for a reader to install. The measurement
+code is a plain library with no DOM in it, so it runs in a terminal as easily
+as in the page, and the page is a consumer of it rather than a container for
+it. Forty-six assertions, one for each quantitative claim the page makes, run
+in about two seconds.
+
+The packaging mattered more than expected. The page originally loaded its
+library with a script tag, which works behind a web server and fails silently
+when the file is opened directly from disk, with every panel dead and the
+console full of errors. Anyone who downloaded the single file would have seen
+nothing work at all. The library is now inlined into the page by a build step,
+a test asserts the two copies are byte-identical, and that test fails with the
+exact command to run when they drift.
+
+## What we would do differently
+
+The honest limitation is the same one the page already names: none of this is
+trained, so it brackets the capacity question rather than answering it. A
+version that took even one small trained model and measured where its learned
+keys actually sit between the orthogonal ceiling and the random floor would
+move the entry from a teaching artifact to a small result.
+
+That is a bigger piece of work than a hackathon window allows, which is the
+right reason to have left it out and the wrong reason to pretend it was not
+missing.
+
+## Who did what
+
+- [Krishna Chagti](https://conyso.com/certamus/team-krishna.html)Chose the claim, wrote the measurement bench and the page, and defended every number on it. A solo entry with no mentor
+
+
+======================================================================
+
+# People Matrix
+
+> People Matrix, CHRIST (Deemed to be University), Delhi NCR. Finalist.
+
+Source: https://conyso.com/certamus/people-matrix.html
+
+The brief below is restated in our own words. The original belongs to the organiser.
+
+## The recommendation nobody had priced
+
+The brief put us in the chair of an HR head at a thirty-store restaurant
+group, three days from telling two founders whether to roll a manager
+incentive plan out across the chain. The plan had run as a pilot in two stores.
+Both had been picked as high-potential. Both had done well on the headline
+number.
+
+So the expected answer was yes, with conditions.
+
+We read the exhibits before we read the plan, and the exhibits said the
+recommendation on the table handed roughly half the founders' own store profit
+away, permanently, on evidence from two hand-picked outlets with nothing to
+compare them against.
+
+*The brief belongs to the organiser, so it is restated here in our own words
+rather than reproduced.*
+
+1. There were two pay problems, and the plan addressed half of one. Managers were about 18% under benchmark, but the expensive number was crew turnover at 90%, which costs somewhere between two and seven times what fixing manager pay would.
+
+## The word that was doing the hiding
+
+The plan called what it paid out incremental profit. Then, further down, it
+defined that as net controllable profit minus lease.
+
+Those are not the same thing. The second one is not an increase at all. It is
+the whole level, with the lease as the only hurdle it has to clear first.
+
+The difference is not academic and it is not small. Thirty-five per cent of the
+actual increase would have paid a manager about 178 dollars a week. Thirty-five
+per cent of the level computes to 1,018. The plan's own exhibit shows 1,013
+actually paid.
+
+That third number is the one that settles it. We were not arguing about
+interpretation against the plan's authors. We were pointing at their own
+payout table and showing that it matched the reading they said was not the
+reading.
+
+We also worked out what it would take for the plan to stop costing the owners
+money, which is the sort of thing a panel asks when a finding is this blunt.
+The lease charge would have to be about 3.1 times actual occupancy. That went
+on the slide before anyone could ask for it.
+
+1. The finding the whole recommendation turned on, and the reason we put it on a slide of its own. Two of these numbers are what the plan says it does. The third is what its own exhibit shows it did.
+
+## The metric was right. The price was wrong.
+
+The easy version of this answer is to kill the plan, and we did not give it.
+
+Paying on profit instead of sales volume is the correct fix, and it answers a
+real grievance: under the old scheme a manager who ran the most profitable
+store in the region got nothing for it, because the old plan paid on volume,
+reset every year and was guaranteed for a year anyway. Keeping the quarterly
+cycle was right too.
+
+What was wrong was the level. Not the idea.
+
+1. Owner profit falling from 23.9 index units to 13.3, built from the plan's own exhibits. A store that improves nothing loses 57%.
+
+## One incentive, two managers, opposite behaviour
+
+The two pilot stores were given an identical instrument and did nearly
+opposite things with it.
+
+One built revenue: up 18%, catering from nothing to 7% of prior-year sales,
+marketing spend up about 2.4 times, and ingredient spend up with it. The other
+went down 1.5% on revenue and got there by cutting: ingredients down 11.4%,
+crew labour down 14%, one planned hire quietly not made and covered by the
+managers themselves.
+
+This is the part that makes the pilot uninterpretable rather than encouraging.
+Pay and autonomy were granted together, so nothing in the result can be
+attributed to either one. And the founders' own doubt, that these two stores
+might have improved anyway, makes the owners' loss bigger rather than smaller:
+if they would have grown regardless, the plan is paying half the profit for
+growth it did not cause.
+
+1. 01*/02*Same money, opposite behaviour. The incentive did not produce one response. It amplified whatever each manager already knew how to do.
+2. 02*/02*And the customers noticed. Freshness, wait time and likelihood to recommend all fell at the store that cut. Both of these managers had been pre-selected as flexible and high-potential.
+
+2 slides
+
+## A job design failure wearing a pay problem's clothes
+
+When half a job can be measured and half cannot, paying hard for the measurable
+half reorganises the whole job around it.
+
+That is not our observation. Holmström and Milgrom set it out in 1991, and the
+useful part of their result is the counterintuitive one: muting the intensity
+of an incentive can be the optimal move, not a soft one. Hong, Hossain, List
+and Tanaka showed the same thing in the field in 2018, where incentivised
+quantity went up and unincentivised quality went down.
+
+Herzberg splits the rest of it. Pay is hygiene, so closing an 18% market gap
+removes a reason to leave and motivates nobody. Autonomy and achievement are
+the motivators, which is exactly why the only real revenue growth came from the
+store that used the freedom rather than the money.
+
+The plan fused a pay rise, a metric change and an autonomy grant into one
+instrument, and then charged 35% of store profit for the bundle.
+
+1. The two columns that carry the argument: what the job is, and which parts of it the plan put a price on. Everything in the right-hand column is unpriced, and the priced column is where both managers went.
+
+## Unbundle it, then sequence it
+
+Our recommendation was a hiatus, because it is the only one of the four options
+on the table that separates the two variables and stops the transfer while it
+does so. Rolling out keeps the confound. A larger trial keeps the same confound
+at greater cost and keeps paying out for another six months. Abandoning throws
+away a metric that was right and puts managers back on the below-market
+guarantee that produced 41% salaried turnover in the first place.
+
+Then three separate answers to the three things the plan had fused: pay the
+market base and argue it on hiring rather than retention, reprice the share
+from 35% to 12% with the bonus gated on crew and standards and part of it
+banked into a vesting account, and release the autonomy under a single rule.
+Additions permitted, substitutions prohibited. That one line licenses
+everything the growing store did and forbids everything the cutting store did.
+
+The sequencing mattered more than usual here because the person giving the
+advice had eighteen months of standing and no budget authority. An answer they
+cannot get approved is not an answer. So every step is easier to say yes to
+than the one after it, and each phase carries a kill switch that is defined
+before it starts rather than argued about afterwards.
+
+We also named what the redesign costs rather than leaving it for the panel to
+find. The strong store's manager earned about 87,800 dollars under the original
+plan and lands near 59,300 under ours. This is priced for the median manager,
+and exceptional ones need a promotion ladder instead of a bigger percentage. We
+would rather say that on the slide than be shown it.
+
+1. 01*/02*Run against a store that improves like the pilot and a store that improves nothing, the redesign returns roughly 50% more owner profit than the rollout in both cases.
+2. 02*/02*Ninety days, ordered by what the founders will agree to rather than by what matters most. Guardrails first because they increase founder control, then their money, then freedom, and pay last.
+
+2 slides
+
+## The final we did not turn up to
+
+We reached the final and did not contest it. Mid-semester exams were running
+and travelling to the campus was not something we could make work, so the deck
+above is where this one stops.
+
+Worth recording anyway, because the finding in it is the cleanest we have
+produced: not a judgement call about strategy but a definitional gap between
+what a plan said it paid and what its own exhibit showed it paying. Those are
+rare, and they are the only kind of argument that does not depend on the panel
+sharing your priors.
+
+## Who did what
+
+- [Krishna Chagti](https://conyso.com/certamus/team-krishna.html)
+- [Krishay Nayyar](https://conyso.com/certamus/team-krishay.html)
+- [Drishti Soni](https://conyso.com/certamus/team-drishti.html)
+
+
+======================================================================
+
+# Picking the team
+
+> Most competitions allow four, so four of us go. When the limit is three it is the three who started this, because rehearsal time compounds and a settled line-up is worth more than an optimised one.
+
+Source: https://conyso.com/certamus/picking-the-team.html
+
+## Four when we can
+
+Most case competitions cap a team at four, and when they do, all four of us
+enter. There is no selection to make and no case for making one.
+
+That matters more than it sounds. A team that reshuffles per brief spends part
+of every competition working out how it works. A team that does not gets to
+spend that time on the case.
+
+## Three when we must
+
+When the limit is three it is Krishna, Krishay and Drishti. Not because the
+brief called for that combination, and not because of any read on who suits
+which sector. It is the three who started this.
+
+That is worth saying plainly rather than dressing up as a selection
+philosophy. Teams that claim they assemble per case are usually describing
+availability after the fact. Ours is a founding trio and a fourth who is part
+of the team, and when a rule forces a cut the cut follows history rather than
+a matrix.
+
+## Why a settled line-up wins
+
+The parts of a competition that are actually hard are the parts that improve
+with repetition between specific people: who takes which section, how a
+handoff sounds, who steps in when a question lands badly.
+
+None of that transfers. It is built between individuals, and it is thrown away
+every time the line-up changes. Over a season a settled team is rehearsing the
+things that decide finals while a rotating one is still rehearsing itself.
+
+The cost is real and worth naming. A fixed trio means the fourth person sits
+out competitions they would have been good at, and the team does not get the
+benefit of matching a specialist to a brief. We think the compounding is worth
+more, but it is a trade rather than a free win.
+
+
+======================================================================
+
+# Sankriya 11.0
+
+> Sankriya 11.0, Club Kaizen, IBS Hyderabad. Pending.
+
+Source: https://conyso.com/certamus/sankriya-11.html
+
+The brief below is restated in our own words. The original belongs to the organiser.
+
+## Seventeen things had gone wrong
+
+The brief handed us a company in trouble. A logistics group grown out of a
+Mumbai freight-forwarding operation into freight, warehousing, cold chain and
+last-mile delivery on every continent but one. And then two years of it being
+hit.
+
+A systems intrusion that locked the tracking and warehouse platforms. New
+tariffs. A currency fall. A cyclone. A sea corridor that had to be rerouted. A
+terminal strike. A vaccine shipment that spoiled in transit and ended up on
+social media.
+
+We counted seventeen distinct risks. The obvious deck writes itself: seventeen
+risks, seventeen fixes, one slide each.
+
+We opened by saying none of it was their fault.
+
+*The brief belongs to the organiser, so it is restated here in our own words
+rather than reproduced.*
+
+1. All seventeen, scored and grouped, on one slide. Likelihood times impact, the scale printed on the slide rather than assumed, and every rupee figure marked a team estimate. One incident can raise risk in more than one domain, so each domain is scored on its own and nothing is counted twice.
+
+## The question that changed the answer
+
+Fifteen of the seventeen began outside the company. Nobody orders a cyclone.
+We wanted that said early, because it changes what the rest of the analysis is
+for.
+
+So we stopped asking what had hit them, and asked why each hit cost so much.
+
+That question has a different answer. Sixteen of the seventeen were made worse
+by something internal, and when we lined the incidents up they stopped looking
+random. The breach took down tracking and warehousing together, because it was
+one flat network. A one-week strike became weeks of backlog, because too much
+cargo moved through a single terminal. A site flooded twice in one year and was
+still in the same place. The vaccines spoiled and they found out afterwards.
+
+Three faults: risk that was never priced, single points of failure, and blind
+spots.
+
+Three is a suspiciously tidy number, so we set the test before we did the
+grouping: a fault only counted if fixing it would have made at least three past
+incidents shorter or cheaper. Competitive pressure failed that test. We left it
+out rather than force a fourth box, and said so on the slide.
+
+1. The slide the argument turns on. Fifteen of seventeen shocks started outside the company, sixteen of seventeen were made worse inside it, and the market pressure that failed our own test is shown as its own row with no internal fault against it.
+
+## Where the money actually was
+
+The brief gave no financials. We built them in the open, put all six
+assumptions on the last slide, and said plainly that the finding was the
+ranking, not the rupees.
+
+The interesting part is what is *not* at the top. The cyber attack is the
+headline and costs about 54 crore when it lands. The largest line is contracts:
+fuel and wages rising about 6% a year against roughly 3% priced in, on a
+fixed-price book worth 6,000 crore. That gap is 75 crore, and unlike the breach
+it arrives every single year.
+
+The same is true of the risk their own leadership called routine. Festive-peak
+swings scored 20 out of 25, because India is down to roughly 55 drivers for
+every 100 trucks and each peak now costs more than the last.
+
+Then we tried to break our own ranking before the panel could. You have to cut
+the contract figures by about a third before the top of the list changes. That
+sensitivity went on the slide too.
+
+*Expected annual loss by fault, in crore. Risk the company never priced drives 53% of it, which is why the contracts get fixed first even though the cyber attack is the larger single event.*
+
+1. 01*/02*The same finding as the team drew it: about 291 crore of expected loss a year, roughly 28% of assumed EBITDA, with the build of the largest line shown underneath rather than kept in an appendix.
+2. 02*/02*Eight risks land in the critical band. The costliest is not the cyber attack but the contract book, and the festive peak their leadership called routine sits at 20 out of 25.
+
+2 slides
+
+## Three fixes, not seventeen
+
+Price the risk in: index fuel, wages and currency at renewal, starting where
+they are hardest to replace, and cap the penalty clauses they were eating on
+somebody else's customs delay.
+
+Spread it out: split the platforms so one failure cannot take the others,
+contract a backup terminal, and move or protect the warehouse that had flooded
+twice.
+
+See it early: point their own visibility platform inward before selling it
+outward. Which was the line we wanted the board to hear — they were selling
+visibility they did not have.
+
+The shape of that second chart is the part we expected to be challenged on, so
+we raised it ourselves. Splitting the network is the worst deal on an annual
+average: 120 crore in, 41 back. We funded it anyway, because an annual average
+is the wrong test for the thing that can shut your network for a month. Money
+follows what each fix costs; timing follows what is actually possible, and
+contracts only change at renewal.
+
+Payback lands around month twenty-five. If clients concede only 40% instead of
+the 80% we assumed, month thirty. That 80% was the shakiest number in the
+model, so we broke it ourselves rather than wait.
+
+And it is gated: if a recovery drill cannot restore systems inside 72 hours,
+the next phase of spend does not happen.
+
+*What each fix costs against what it avoids. The second one is the worst deal on an annual average and was funded anyway: it is the one that stops a multi-week outage, and an average is the wrong test for that.*
+
+1. 01*/02*One structural fix per fault, with every one of the seventeen risks named against the fix that answers it, and the concession cost of the first fix deducted on the slide rather than left out of the total.
+2. 02*/02*Money follows what each fix costs, timing follows when each can start, and each phase carries a gate that has to be passed before the next one is funded.
+
+2 slides
+
+## What we would do differently
+
+Every number rests on an assumed revenue and margin. The panel was entitled to
+push on that harder than it did, and a version built on even one real
+comparable company's cost base would be materially harder to argue with. Next
+time we go looking for that comparable before building the model, not after.
+
+1. The last slide, and the one this section is about: six assumptions and nine sources, with the revenue and margin the whole model rests on stated first.
+
+## Who did what
+
+- [Krishna Chagti](https://conyso.com/certamus/team-krishna.html)Opened on the answer rather than the analysis, and made the root-cause argument: that the shocks were external but the cost of each one was not
+- [Krishay Nayyar](https://conyso.com/certamus/team-krishay.html)Built the risk classification and the scoring, sized the annual loss from a revenue base the brief never gave, and costed the programme
+- [Drishti Soni](https://conyso.com/certamus/team-drishti.html)Owned the mitigation plan, the longest stretch of the talk, and closed on the question we wanted the judges left holding
+
+
+======================================================================
+
+# Say the weak part first
+
+> Every analysis has a soft spot. Naming it before the judges find it is not modesty, it is the cheapest way to keep the rest of your numbers believable.
+
+Source: https://conyso.com/certamus/say-the-weak-part-first.html
+
+## Judges are going to find it anyway
+
+Any model has an assumption holding more weight than the others, a result that
+is not statistically significant, or a dataset that does not cover what you
+implied it covers. A panel that finds one you did not mention starts wondering
+what else is in there.
+
+*The weakness does not change. What changes is who names it and when. Said early it is a bound you set; found late it is the first thing a panel assumes you missed, and everything else you claimed inherits that doubt.*
+
+So the soft spot goes in the talk, in your own words, before anyone asks. Not
+buried in an appendix, not phrased so carefully it slides past. Stated.
+
+## What that sounds like in practice
+
+In a fund pitch, it meant saying out loud that the excess return was not
+statistically significant over five years, that the trend rule was the best of
+three settings tested, that the backtest ran on index funds rather than the
+28 stocks actually held, and that the rating agency covered only part of the
+index so a chunk of the book was simply unrated.
+
+In a risk case, it meant printing the scoring scale on the slide so the panel
+could argue with the numbers, then showing what happened to the ranking when
+the biggest assumption was cut by a third.
+
+## Break your own number before they do
+
+The strongest version of this is not an admission, it is a test. Take the
+assumption your recommendation leans on hardest, move it to a plausibly worse
+value, and show what survives.
+
+If the ranking holds, you have converted your weakest point into evidence. If
+it does not hold, you have found that out before the room did rather than
+in front of it.
+
+## Write down when you would be wrong
+
+Both of these arrive at the same place: a stated condition under which the
+recommendation should be abandoned. A tracking error above a threshold. A
+recovery drill that fails its target, gating the next phase of spend.
+
+A recommendation with no failure condition is not a recommendation, it is an
+opinion. Naming the condition is what makes it checkable, and checkable is the
+whole argument.
+
+
+======================================================================
+
+# Seeking Alpha 2026
+
+> Seeking Alpha 2026, Findmenon, NMIMS. Finalist.
+
+Source: https://conyso.com/certamus/seeking-alpha.html
+
+The brief below is restated in our own words. The original belongs to the organiser.
+
+## We built the obvious fund first, and it lost
+
+The task was a long-only Indian equity fund. Fifty crore. We called it Meridian
+Crest.
+
+The obvious build is a large-cap factor fund: take the top 100 or 200 names,
+tilt to momentum and quality, rebalance. That is roughly what everyone does. We
+built it.
+
+It returned 8.1% a year. The benchmark returned 9.9%. It lost, and its factors
+were working.
+
+## The reason had nothing to do with factors
+
+Midcaps returned 16.3% a year over the period. The Nifty 50 returned 7.2%.
+Nine points, just for being smaller.
+
+Against that, the factors are rounding errors. Momentum added 2.7 points over
+the Nifty 50 and low volatility 1.6. Quality and value added nothing at all.
+
+So a fund that picks only from large caps, benchmarked against the whole
+market, starts nine points in a hole and spends its factor edge climbing out.
+Most factor funds that lag their benchmark are losing to a size mismatch they
+never chose and mostly do not discuss.
+
+The fix is structural and slightly boring: copy the benchmark's size mix. 65%
+large, 22% mid, 10% small, 3% cash. Take your bets *inside* each bucket, never
+across them. Our measured size exposure against the benchmark came out at 0.00,
+which is the point — this is not a midcap bet, it is the removal of one.
+
+1. The slide the whole argument rests on. Midcaps returned 16.3% a year against the Nifty 50's 7.2%: nine points, just for being smaller. Against that, momentum added 2.7 points and low volatility 1.6, and quality and value added nothing at all.
+
+## One question a month
+
+On top of that sits a single rule. At each month end: is the Nifty 500 above
+its 10-month average? If yes, hold momentum and low volatility. If no, hold
+quality and low volatility.
+
+That is the whole machine. Low volatility stays in both books deliberately,
+because momentum falls apart exactly when market leadership rotates.
+
+Underneath, every stock comes out of a formula rather than a view. Momentum is
+the 12-month return skipping the most recent one, divided by volatility — the
+skip is there because stocks that just ran hard tend to give some back. Every
+name is scored against its own size group, so a small cap is not competing with
+Reliance. Five hundred stocks become 450 eligible after the screens, and we
+hold 28. Past roughly 25 names you have diversified away most single-stock risk
+and each additional name dilutes the factor you are being paid for.
+
+Sizing is inverse to volatility, capped at 7% per stock. We deliberately did
+not use mean-variance optimisation: five years of return data is far too noisy
+for it, and it would have looked precise while being wrong.
+
+1. One structural rule, two factor settings, and a switch nobody decides by feel.
+
+## Did it work, and the three things that do not flatter us
+
+10.9% a year against 9.9%, after a 0.5% fee. Sharpe 0.39 against 0.32.
+
+Then the three we put in the talk before anyone asked.
+
+The switch makes no money. Without it the return is the same 10.9%. What it
+buys is a gentler fall — 21.1% instead of 22.6% — and smaller losses on down
+days. That is worth having, but it is not what it looks like.
+
+Strip out the factor exposure and our alpha is about zero. We were not claiming
+to be good stock pickers. We were claiming cheap, disciplined exposure to two
+factors without the size hole.
+
+And five years is not long enough to call any of it statistically significant.
+The information ratio of 0.26 is roughly a t-statistic of 0.6. The 10-month
+lookback was the best of three we tested, and all ten designs we tried are in
+the appendix rather than only the one that won.
+
+One more, unprompted: the backtest runs on investable factor index funds, not
+on our own 28 stocks, because point-in-time fundamentals for all 500 companies
+are not publicly available. We labelled it a proxy on the slide rather than
+letting it read as a live track record.
+
+1. The results slide, with the weak spots on it rather than in the appendix: the switch adds no return, the alpha after factors is about zero, and five years is not long enough for any of it to be significant.
+
+## The ESG gap we raised ourselves
+
+ESG here is a gate, a tilt and a floor. Out: tobacco, alcohol, gambling, coal.
+Also out by written rule, for 24 months, anyone hit with a regulator's adverse
+order, a material restatement or criminal charges.
+
+48% of the fund is rated Strong or Excellent against a 35% mandate. And the
+awkward part, which we said before the panel could ask: our rating source
+covers only 42% of the index, so 39% of the book is simply unrated, and unrated
+names never count toward that floor.
+
+We also tested what the screens cost. Turn them all off and 21 of the 28 names
+are unchanged; the seven that move lift the average signal by 0.06 of a
+standard deviation. So it is an ethics policy we can afford, rather than
+performance quietly given away.
+
+## Why not just buy the index
+
+That is the right question to ask a fund manager, so Drishti closed on it
+rather than avoiding it.
+
+After our fee and our trading, about 0.7 to 1 point a year ahead of a Nifty 500
+index fund, with a beta under 1. On fifty crore that is roughly 3.9 crore over
+five years. If we stop clearing that, a client should fire us — and we wrote
+down in advance what "stop clearing it" means: tracking error above 8%, or
+trailing the index by more than five points over twelve months.
+
+1. The closing slide: the fund beats the benchmark in 69 to 79% of simulated five-year paths, and the margin is widest when markets are worst.
+
+## What we would do differently
+
+The proxy backtest is the real limitation, and we knew it going in. Getting
+point-in-time fundamentals — even for a single size bucket, even for three
+years — would let us test the actual holdings rather than a stand-in for them.
+That is the difference between a strategy we can describe and one we can
+evidence, and it is the first thing we would buy time for.
+
+## Who did what
+
+- [Krishna Chagti](https://conyso.com/certamus/team-krishna.html)Built the selection and sizing rules, and presented the live positioning and the scenario and stress work, including when the fund should be fired
+- [Krishay Nayyar](https://conyso.com/certamus/team-krishay.html)Owned the structural rule and the regime switch, and presented the results, including the three things about them that do not flatter us
+- [Drishti Soni](https://conyso.com/certamus/team-drishti.html)Opened on the finding, built the ESG gate and the honest gap in it, and closed on whether a client should just buy the index instead
+
+
+======================================================================
+
+# Sizing what you are not given
+
+> Most briefs withhold the number the recommendation depends on. Build it in the open, show the chain, and test whether your ranking survives being wrong.
+
+Source: https://conyso.com/certamus/sizing-what-you-are-not-given.html
+
+## Assume out loud
+
+Briefs routinely leave out the financials the answer depends on. No revenue, no
+margin, no cost base, and a question that cannot be answered without them.
+
+*The brief gave no financials, so the largest number in the answer was built in four visible steps from stated assumptions. Publishing the chain is what makes the estimate arguable instead of asserted.*
+
+There are two responses. Avoid the number, which produces a recommendation
+nobody can act on. Or build it, say exactly what you assumed, and show the
+chain. The second is the only one that scores.
+
+State it plainly on the slide: revenue assumed at X, margin at Y, and every
+figure after this is derived from those two. A panel is not testing whether you
+had the real number. They are testing whether you knew you did not.
+
+## Show the chain, not the conclusion
+
+A sized number is only credible if the reader can walk it.
+
+Forty per cent of revenue is on fixed-price contracts, so six thousand crore.
+Cost base is ninety-three per cent of that. Fuel and wages are forty-five per
+cent of the cost base. Costs rise six per cent a year against three per cent
+priced in, so the gap is seventy-five crore, and at an eighty per cent
+likelihood that is sixty crore a year.
+
+Every step is arguable and every step is visible. That is the point. A single
+figure with no chain invites the question "where did that come from", and you
+lose the next two minutes answering it.
+
+## The finding is the ranking
+
+Say this out loud, because it protects everything else: what you are claiming
+is the order, not the decimals.
+
+If your sizing says the contracts problem is larger than the cyber problem,
+that ordering is the finding. Whether it is sixty crore or ninety is secondary,
+and pretending otherwise invites an argument you cannot win.
+
+## Then break it yourself
+
+Take the assumption the ranking leans on hardest and move it somewhere
+plausibly worse. Does the order hold?
+
+If it holds until an input moves by a third, say that on the slide. You have
+just converted your weakest point into a strength, and pre-empted the question
+the sharpest judge in the room was about to ask.
+
+If it does not hold, you have found that out in a working session rather than
+in a final, which is exactly where you want to find it.
+
+
+======================================================================
+
+# Aksh Kansara
+
+> Aksh Kansara: the competitions they entered with Conyso, and what they contributed.
+
+Source: https://conyso.com/certamus/team-aksh.html
+
+## About
+
+I love exploring where numbers, economics, and human behavior connect, with a long-term goal of building my career in finance. My strength isn't in making loud pitches, but in staying curious, asking thoughtful questions, testing our assumptions, and using simple data to make sure our ideas actually hold up.
+
+
+======================================================================
+
+# Akshit
+
+> Akshit: the competitions they entered with Conyso, and what they contributed.
+
+Source: https://conyso.com/certamus/team-akshit.html
+
+## About
+
+I build the thing that runs. I am a computer science student at SDGI Global University reading B.Tech Honours in AI and ML, and CTO of Arcavon, a student startup building a game-tech platform, where I own the technical direction and most of the code.
+
+That means the practical end rather than the theoretical one: a production deployment holding around 99% uptime, a modular frontend that cut feature time by roughly a third, page loads optimised rather than assumed. React and Next on the front, Node behind it, and enough Python and C++ to not be precious about the language.
+
+Outside that I run the GeeksforGeeks student community on campus and have been a Google Student Ambassador, which between them is a lot of workshops for a lot of people. Side projects are where I test things properly: a customer retention app, a decision simulator, and a generative tool that turns a prompt into usable React components.
+
+Hackathons are the format where all of that is the point. The output either runs or it does not, and there is no version of the argument that saves a build which does not work.
+
+
+======================================================================
+
+# Drishti Soni
+
+> Drishti Soni: the competitions they entered with Conyso, and what they contributed.
+
+Source: https://conyso.com/certamus/team-drishti.html
+
+3
+
+entered
+
+2
+
+finals reached
+
+## What they worked on
+
+September 2026 · Case competition
+
+### [Sankriya 11.0](https://conyso.com/certamus/sankriya-11.html)
+
+Club Kaizen, IBS Hyderabad · Final round
+
+> Owned the mitigation plan, the longest stretch of the talk, and closed on the question we wanted the judges left holding
+
+Pending
+
+result pending
+
+September 2026 · Case competition
+
+### [Seeking Alpha 2026](https://conyso.com/certamus/seeking-alpha.html)
+
+Findmenon, NMIMS · Final round
+
+> Opened on the finding, built the ESG gate and the honest gap in it, and closed on whether a client should just buy the index instead
+
+Finalist
+
+result
+
+September 2026 · Case competition
+
+### [People Matrix](https://conyso.com/certamus/people-matrix.html)
+
+CHRIST (Deemed to be University), Delhi NCR · did not contest it
+
+Finalist
+
+result
+
+## Alongside
+
+- [Krishay Nayyar](https://conyso.com/certamus/team-krishay.html)3 together
+- [Krishna Chagti](https://conyso.com/certamus/team-krishna.html)3 together
+
+
+======================================================================
+
+# Krishay Nayyar
+
+> Krishay Nayyar: the competitions they entered with Conyso, and what they contributed.
+
+Source: https://conyso.com/certamus/team-krishay.html
+
+## About
+
+I am the one who wants the number pinned down. On a case that usually means taking the pile of things that went wrong and turning it into something countable: four buckets, a scale printed on the slide, and a rule that one incident can sit in more than one bucket but its cost is only counted once.
+
+Then the sizing, which is the part people skip. A brief that gives no financials still has to be costed, so you build the base in the open, show the arithmetic step by step, and say plainly that the finding is the ranking rather than the rupees. On the fund I owned the structural rule and the regime switch, and presented the results, including the three things about them that did not flatter us.
+
+Outside this I play basketball, at district and zonal level, and I volunteer teaching basic maths at the Dakshta Foundation and helping at an animal rescue. I am disciplined but not fixed. I would rather be shown a better framing than defend the one I arrived with.
+
+3
+
+entered
+
+2
+
+finals reached
+
+## What they worked on
+
+September 2026 · Case competition
+
+### [Sankriya 11.0](https://conyso.com/certamus/sankriya-11.html)
+
+Club Kaizen, IBS Hyderabad · Final round
+
+> Built the risk classification and the scoring, sized the annual loss from a revenue base the brief never gave, and costed the programme
+
+Pending
+
+result pending
+
+September 2026 · Case competition
+
+### [Seeking Alpha 2026](https://conyso.com/certamus/seeking-alpha.html)
+
+Findmenon, NMIMS · Final round
+
+> Owned the structural rule and the regime switch, and presented the results, including the three things about them that do not flatter us
+
+Finalist
+
+result
+
+September 2026 · Case competition
+
+### [People Matrix](https://conyso.com/certamus/people-matrix.html)
+
+CHRIST (Deemed to be University), Delhi NCR · did not contest it
+
+Finalist
+
+result
+
+## Alongside
+
+- [Drishti Soni](https://conyso.com/certamus/team-drishti.html)3 together
+- [Krishna Chagti](https://conyso.com/certamus/team-krishna.html)3 together
+
+
+======================================================================
+
+# Krishna Chagti
+
+> Krishna Chagti: the competitions they entered with Conyso, and what they contributed.
+
+Source: https://conyso.com/certamus/team-krishna.html
+
+## About
+
+I came to case competitions from building things that either compute the right number or do not, and that is still how I approach a brief. The first question is never what the answer is. It is which part of the answer would fall over first if someone pushed on it.
+
+So most of my work on a case is upstream of the recommendation: framing the problem so the analysis has somewhere to go, building the model that sizes it, and then trying to break that model before a panel does. In practice that means writing down the test before doing the grouping, printing the scoring scale so it can be argued with, and saying the unflattering thing about our own numbers in the talk rather than the appendix.
+
+The habit comes from the software. A backtest that is not significant is not significant no matter how good the slide looks, and the only useful response is to say so and explain why the thing is still worth funding. Panels are quicker than people expect at spotting the number you skipped past.
+
+4
+
+entered
+
+3
+
+finals reached
+
+## What they worked on
+
+September 2026 · Hackathon
+
+### [DataForge 2026, Pathway track](https://conyso.com/certamus/pathway.html)
+
+Pathway · Final round
+
+> Chose the claim, wrote the measurement bench and the page, and defended every number on it. A solo entry with no mentor
+
+Finalist
+
+result
+
+September 2026 · Case competition
+
+### [Sankriya 11.0](https://conyso.com/certamus/sankriya-11.html)
+
+Club Kaizen, IBS Hyderabad · Final round
+
+> Opened on the answer rather than the analysis, and made the root-cause argument: that the shocks were external but the cost of each one was not
+
+Pending
+
+result pending
+
+September 2026 · Case competition
+
+### [Seeking Alpha 2026](https://conyso.com/certamus/seeking-alpha.html)
+
+Findmenon, NMIMS · Final round
+
+> Built the selection and sizing rules, and presented the live positioning and the scenario and stress work, including when the fund should be fired
+
+Finalist
+
+result
+
+September 2026 · Case competition
+
+### [People Matrix](https://conyso.com/certamus/people-matrix.html)
+
+CHRIST (Deemed to be University), Delhi NCR · did not contest it
+
+Finalist
+
+result
+
+## Alongside
+
+- [Drishti Soni](https://conyso.com/certamus/team-drishti.html)3 together
+- [Krishay Nayyar](https://conyso.com/certamus/team-krishay.html)3 together
+
+
+======================================================================
+
+# The defence
+
+> Most of Q&A should already be answered. We build the likely question list first, fold the answers into the talk, and keep the rest of the defence for what genuinely could not be anticipated.
+
+Source: https://conyso.com/certamus/the-defence.html
+
+## Answer the questions inside the talk
+
+Q&A is the hardest part of a competition, so most of the work on it happens
+before it starts.
+
+*The order matters more than the content. A panel reads context before an answer as an attempt to avoid giving one, and a bound you volunteer is worth more than the same bound extracted from you.*
+
+We write the list of questions a panel is most likely to ask, then build the
+answers into the presentation itself rather than saving them. The cost is a
+slightly longer talk. The return is that by the time questions open, the
+obvious ones are spent, and what is left is narrower and better.
+
+This is why our scripts note that the run time includes the likely questions
+answered inside it. It is not padding, it is Q&A moved upstream where we
+control the framing.
+
+## The ones you cannot anticipate
+
+Something always survives the list. For those the rule is to say you do not
+know, then give the bound you can defend and how you would close it.
+
+An admitted range beats a confident guess in both directions. If you are right,
+the range was honest and the panel saw you reason under uncertainty. If you are
+wrong, you were wrong about a bound you had already flagged rather than about a
+number you asserted.
+
+The failure mode is the opposite reflex: producing a specific figure because a
+specific figure sounds like competence. Panels are quick at spotting a number
+invented in the moment, and once they spot one they revisit everything else you
+said.
+
+## The part that does not get easier
+
+Q&A is the only genuinely live section. The deck can be rehearsed, the script
+can be cut to length, the handoffs can be practised. This cannot.
+
+Two things make it harder than it looks. Time pressure, because answers are
+wanted short and the honest answer is often long. And framing, because a
+question is sometimes delivered in a way designed to unsettle rather than to
+inform, and the delivery has to be separated from the question before you
+answer it.
+
+The only preparation that reliably helps is knowing your own weak numbers
+better than the panel does. Which is the same discipline as
+[say the weak part first](https://conyso.com/certamus/say-the-weak-part-first.html), arriving from the
+other end.
+
+
+======================================================================
+
+# The first slide
+
+> Restate the question in one line, and let the answer ride on the restatement. If the reframe is right, the recommendation is already implied.
+
+Source: https://conyso.com/certamus/the-first-slide.html
+
+## Earn the answer by restating the question
+
+The first slide is not context and it is not an agenda. It is our version of
+what the brief is actually asking, compressed to a line.
+
+*What the opening slide has to carry. The claim sits at the top in one sentence, the number that makes it true sits under it, and the assumptions are on the same slide rather than in an appendix nobody reaches.*
+
+"Seventeen risks, three faults." That is a case brief about a company that had
+a terrible two years, restated as a claim about where the damage actually came
+from. Nobody has heard the analysis yet, and the argument is already made.
+
+The test is whether the reframe carries the recommendation inside it. If you
+can read the first line and correctly guess where the deck lands, it is doing
+its job. If it only describes the situation, it is a title slide with ambitions.
+
+## It is the same move as leading with the answer
+
+A pitch brief looks different on the surface. For a fund the opening line was
+that matching the benchmark's size mix turns a factor fund that lags into one
+that beats it by about a point a year after fees.
+
+That reads as the finding rather than a reframe, and it is both. The question
+handed to us was "pitch a fund". The line restates it as "here is why funds
+like this usually lose, and it is not what you think" and answers it in the
+same breath.
+
+So there is one rule rather than two. Restate the question so precisely that
+the answer follows, then say the answer.
+
+## Why not build up to it
+
+Because a panel is not an audience. They are deciding, and they start deciding
+immediately. A deck that withholds its conclusion for six slides spends those
+slides being evaluated by people who do not yet know what they are evaluating.
+
+Holding the answer back also costs you the only thing worth having in the room,
+which is their attention on your reasoning rather than on guessing your
+destination.
+
+The risk is real: lead with the answer and a weak one gets found fast. We think
+that is the correct trade. A recommendation that cannot survive being said
+first was not going to survive Q&A either.
+
+
+======================================================================
+
+# What actually loses
+
+> Not weak analysis. Teams lose by answering a question nobody asked, by hiding the assumption that matters, and by running out of time to rehearse.
+
+Source: https://conyso.com/certamus/what-actually-loses.html
+
+## Answering the wrong question
+
+The most common loss is a good deck about something adjacent.
+
+*The two lists teams confuse. Everything on the left is real work and none of it decides the result. It absorbs the hours because it is easier and more visible than the right-hand column.*
+
+It happens because the interesting problem and the asked problem are rarely
+identical, and the interesting one is more fun to solve. A team finds a rich
+thread, follows it, and presents an excellent answer to a question the brief
+did not pose.
+
+The fix is mechanical. At the end, put the prompt next to your headline slides
+and check them off line by line. If a requirement in the brief has no slide
+against it, you have found your gap.
+
+## Hiding the load-bearing assumption
+
+Every recommendation rests on one input more than the others. The panel will
+find it, because they have read the brief more times than you have.
+
+Teams bury it, usually not deliberately. It ends up in the appendix, or stated
+once quickly, or phrased so it sounds settled. Then a judge surfaces it in Q&A
+and the answer sounds defensive, because it is.
+
+Put it in the talk instead, name it as the shakiest thing in the model, and
+show what happens when it moves. You lose nothing you were going to keep.
+
+## Running out of rehearsal
+
+The deck finishes late, so the talk is under-practised, so the handoffs are
+ragged and the timing is wrong and someone overruns and the close gets cut.
+
+The analysis was fine. The delivery of it was not, and only the delivery is
+marked.
+
+This one is almost universal and almost never admitted. Treat your practice
+run as the real deadline. Whatever is not finished by then ships unfinished.
+
+## Nine recommendations
+
+A deck that recommends everything has decided nothing, and deciding is the
+skill on trial.
+
+If the analysis produced nine things worth doing, the work is not finished. Say
+which three, in what order, and what you would drop if the budget halved.
+
+## Being unable to say what you do not know
+
+Panels do not expect certainty. They expect you to know the shape of your own
+uncertainty.
+
+"I do not know that exactly, here is the range I can defend and how I would
+close it" reads as competence. A confident number invented in the moment reads
+as the opposite, and once a panel catches one they re-examine everything else
+you said.
+
+
+======================================================================
+
+# Your first case competition
+
+> What actually happens, what the deadline really means, and the three things that separate a team that places from one that submits.
+
+Source: https://conyso.com/certamus/your-first-case-competition.html
+
+## What you are actually being asked
+
+A case brief looks like a business problem. It is really a test of whether you
+can decide something under conditions where nobody can be certain.
+
+*Where the time goes in a competition that is won. The answer is decided early and the deck is built late; the common failure is the reverse, which spends the week decorating a claim nobody settled.*
+
+That distinction matters on day one. Teams entering their first competition
+tend to treat the brief as a research task: gather everything, understand the
+industry, then form a view. You run out of time at step two, every time.
+
+Work the other way. Form a rough view in the first hour, then spend the rest of
+the time trying to break it. You will be wrong early, which is cheap, instead of
+uncertain late, which is fatal.
+
+## The deadline is not when you think
+
+If submission is Sunday night, your deck is finished Saturday. The gap is not
+slack, it is the only chance you get to rehearse, and an unrehearsed talk
+wastes analysis you already did.
+
+Almost every team gets this wrong, including us. The honest version is that
+work expands until the deadline eats the rehearsal, and the only fix is
+treating the practice run as the real deadline and defending it.
+
+## Three things that separate placing from submitting
+
+**Answer the question they asked.** Not the adjacent question you had better
+material for. Read the prompt again at the end and check, line by line, that
+you addressed it.
+
+**Show your arithmetic.** If the brief gives no financials, build them in the
+open, put the assumptions on a slide, and say that the finding is the ranking
+rather than the exact number. A panel forgives an assumption they can see. They
+do not forgive one they have to go looking for.
+
+**Cut to three.** Whatever the analysis produced, the recommendation is at most
+three things. A deck with nine recommendations reads as a team that could not
+decide, and deciding is the thing being marked.
+
+## What nobody tells you
+
+Most of the competition happens before you present. Judges have read the same
+brief twenty times, and by the third team they know which assumption is load
+bearing. They are not waiting to be impressed, they are waiting to see whether
+you found it.
+
+So find it, and say it first. There is more on that in
+[say the weak part first](https://conyso.com/certamus/say-the-weak-part-first.html).
+
+
+======================================================================
+
+# Surviving your first Q&A
+
+> Most of Q&A is decided before it starts. Build the question list, answer the obvious ones inside the talk, and agree who speaks before anyone is under pressure.
+
+Source: https://conyso.com/certamus/your-first-qa.html
+
+## Write the question list first
+
+Before the deck is finished, write down every question you would ask if you
+were on the panel. Be honest rather than flattering: the list should include
+the ones you are hoping nobody raises.
+
+Then answer as many as you can inside the presentation itself. It costs a
+minute of run time and it removes the easiest questions from the room, so what
+is left is narrower and you have already framed it.
+
+This is the highest-leverage preparation available, and it is invisible. A
+panel does not notice that their first three questions were pre-empted. They
+notice that the session felt sharp.
+
+## Decide who answers, before you are asked
+
+Four people and one question produces either two people starting at once or
+nobody starting at all. Both look bad, and both are avoidable.
+
+Agree the routing in advance. Numbers questions go to whoever built the model.
+Recommendation questions go to whoever presented it. Anything hostile or
+open-ended goes to one nominated person, so the decision is already made when
+the room is tense.
+
+One person answers. The others stay quiet unless invited. A team piling on to
+one question reads as a team that does not trust its own answer.
+
+## Answer the question, then stop
+
+The most common Q&A failure is talking past the answer.
+
+Say the thing, give the reason, stop. Silence after a complete answer feels
+much longer to you than to the panel. Filling it is how teams talk themselves
+into a qualification they did not need to make.
+
+## What to do when you do not know
+
+Say so, then give the bound.
+
+"We did not size that. My estimate is it sits between X and Y, and the way to
+settle it is Z." That is a complete, professional answer, and it is far
+stronger than a specific figure produced under pressure.
+
+Never invent a number in Q&A. It is the single fastest way to lose a panel,
+because the moment they doubt one figure they revisit all of them.
+
+## Separate the question from how it was asked
+
+Some questions arrive sharply. Occasionally that is a test of composure rather
+than a real objection.
+
+Take the content, leave the tone. Answer as though it had been asked neutrally.
+If there is a fair point inside an aggressive question, agree with that part
+out loud before you respond to the rest. Agreeing with a true criticism costs
+you nothing and buys you the room.

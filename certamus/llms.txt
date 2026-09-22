@@ -1,0 +1,26 @@
+# Certamus
+
+> Certamus — part of Conyso (https://conyso.com).
+
+- [About Certamus](https://conyso.com/certamus/about.md): What this page is, what goes on it, and what deliberately does not.
+- [Aksh Kansara](https://conyso.com/certamus/team-aksh.md): Aksh Kansara: the competitions they entered with Conyso, and what they contributed.
+- [Akshit](https://conyso.com/certamus/team-akshit.md): Akshit: the competitions they entered with Conyso, and what they contributed.
+- [Building the deck](https://conyso.com/certamus/building-the-deck.md): One idea per slide, the headline doing the work, and an appendix that exists to be opened in Q&A rather than skipped in the talk.
+- [Certamus](https://conyso.com/certamus/index.md): Every case competition and hackathon Conyso has entered, what we argued, and how it went.
+- [Choosing what to enter](https://conyso.com/certamus/choosing-what-to-enter.md): You cannot enter everything. Pick for the brief you want to get better at, not for the prize, and treat the first round as the real filter.
+- [DataForge 2026, Pathway track](https://conyso.com/certamus/pathway.md): DataForge 2026, Pathway track, Pathway. Finalist.
+- [Drishti Soni](https://conyso.com/certamus/team-drishti.md): Drishti Soni: the competitions they entered with Conyso, and what they contributed.
+- [How we work a case](https://conyso.com/certamus/how-we-work-a-case.md): Reduce the list to its causes, set the rule before the analysis, size what the case leaves out, and show the ranking rather than the decimals.
+- [Krishay Nayyar](https://conyso.com/certamus/team-krishay.md): Krishay Nayyar: the competitions they entered with Conyso, and what they contributed.
+- [Krishna Chagti](https://conyso.com/certamus/team-krishna.md): Krishna Chagti: the competitions they entered with Conyso, and what they contributed.
+- [People Matrix](https://conyso.com/certamus/people-matrix.md): People Matrix, CHRIST (Deemed to be University), Delhi NCR. Finalist.
+- [Picking the team](https://conyso.com/certamus/picking-the-team.md): Most competitions allow four, so four of us go. When the limit is three it is the three who started this, because rehearsal time compounds and a settled line-up…
+- [Sankriya 11.0](https://conyso.com/certamus/sankriya-11.md): Sankriya 11.0, Club Kaizen, IBS Hyderabad. Pending.
+- [Say the weak part first](https://conyso.com/certamus/say-the-weak-part-first.md): Every analysis has a soft spot. Naming it before the judges find it is not modesty, it is the cheapest way to keep the rest of your numbers believable.
+- [Seeking Alpha 2026](https://conyso.com/certamus/seeking-alpha.md): Seeking Alpha 2026, Findmenon, NMIMS. Finalist.
+- [Sizing what you are not given](https://conyso.com/certamus/sizing-what-you-are-not-given.md): Most briefs withhold the number the recommendation depends on. Build it in the open, show the chain, and test whether your ranking survives being wrong.
+- [Surviving your first Q&A](https://conyso.com/certamus/your-first-qa.md): Most of Q&A is decided before it starts. Build the question list, answer the obvious ones inside the talk, and agree who speaks before anyone is under pressure.
+- [The defence](https://conyso.com/certamus/the-defence.md): Most of Q&A should already be answered. We build the likely question list first, fold the answers into the talk, and keep the rest of the defence for what genui…
+- [The first slide](https://conyso.com/certamus/the-first-slide.md): Restate the question in one line, and let the answer ride on the restatement. If the reframe is right, the recommendation is already implied.
+- [What actually loses](https://conyso.com/certamus/what-actually-loses.md): Not weak analysis. Teams lose by answering a question nobody asked, by hiding the assumption that matters, and by running out of time to rehearse.
+- [Your first case competition](https://conyso.com/certamus/your-first-case-competition.md): What actually happens, what the deadline really means, and the three things that separate a team that places from one that submits.

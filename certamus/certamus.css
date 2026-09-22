@@ -1,0 +1,954 @@
+/* ===========================================================
+   CERTAMUS - venture skin. Scaffolded by new_microsite.py.
+
+   Everything is scoped to body.ce, so redefining the shared --cy-* tokens
+   flips the shared nav, footer and section furniture along with the page
+   instead of leaving them dark on light. That sentence is founder/kc.css's
+   and it is the contract in one line: style.css consumes these tokens at
+   ~820 sites, so eleven redefinitions here reskin all 820 at once.
+
+   The values below are PLACEHOLDERS with a measured floor, not a design.
+   Replace them. Keep the structure.
+
+   What is deliberately NOT here: --cy-accent, --cy-accent-rgb and --cy-grad.
+   They live in style.css's body.ce block, where all six ventures set them.
+   A venture that moves its accent into its skin breaks the one arrangement
+   that is currently universal. docs/microsite-kit.md sections 3a and 3e.
+   =========================================================== */
+
+body.ce {
+    /* --- the eleven contract tokens (microsite_kit.CONTRACT_TOKENS) ------
+       Each one is redefined from style.css's :root. The comment says what it
+       controls on the SHARED surface, which is the part you cannot see by
+       reading this file. */
+    --cy-bg:         #F7F5F0;              /* page ground: body, hero, footer */
+    --cy-bg-soft:    #EFECE4;              /* alternating bands, cards, raised panels */
+    --cy-ink:        #1A1712;              /* primary text and headings */
+    --cy-ink-1:      rgba(26,23,18,0.88);  /* body copy one step down from headings */
+    --cy-ink-2:      rgba(26,23,18,0.62);  /* captions, meta, footer links */
+    --cy-ink-dim:    rgba(26,23,18,0.70);  /* subheads and lede paragraphs */
+    --cy-ink-faint:  rgba(26,23,18,0.64);  /* labels and eyebrows; 0.58 measures 4.27 on this ground, under AA */
+    --cy-muted:      rgba(26,23,18,0.55);  /* disabled and de-emphasised text */
+    --cy-rule:       rgba(26,23,18,0.12);  /* section dividers and card borders */
+    --cy-rule-faint: rgba(26,23,18,0.08);  /* hairlines inside light bands */
+    --cy-gold:       #7A5F18;              /* the shared brand metal: this venture's accent */
+
+    /* --- type ------------------------------------------------------------
+       Half of a distinct look, and not in CONTRACT_TOKENS, so it has to be
+       set deliberately. System stacks by default: fonts.css self-hosts only
+       Cormorant Garamond, Montserrat and Playfair Display, and pulling Google
+       Fonts would add an external request and log EU visitors' IPs, which
+       this site does not do. Point these at a self-hosted face instead if one
+       of the three suits the venture. */
+    /* The estate's faces, already loaded by ../fonts.css. The scaffold defaults
+       to system stacks, which renders Certamus in Georgia while every other
+       Conyso property is in Playfair Display, so it reads as a different
+       company's site. */
+    --cy-sans:  'Montserrat', system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    --cy-serif: 'Playfair Display', Georgia, "Times New Roman", serif;
+
+    /* --- the "by Conyso" lockup's two hook tokens ------------------------
+       .cy-by in style.css resolves through var(--cy-by-ink, var(--cy-ink-2))
+       and var(--cy-by-mark, var(--cy-ink)). Those fallbacks are the DARK main
+       site's :root ink. This skin redefines --cy-ink-2 and --cy-ink above, so
+       the fallback would in fact land correctly today; they are set anyway,
+       explicitly, because the failure mode is silent. Shipped unset on a light
+       ground with a private namespace, the word "Conyso" measured 1.16:1 and
+       every other check passed. One line is cheaper than measuring again. */
+    --cy-by-ink:  var(--cy-ink-2);
+    --cy-by-mark: var(--cy-ink);
+
+    /* --- private tokens --------------------------------------------------
+       Prefix them with THIS venture's two letters. founder's private prefix is
+       --cs-*, which is also consulting's body class; nothing breaks because
+       both are scoped, but do not repeat it. docs/microsite-kit.md 3d. */
+    --ce-wide: 1120px;
+    --ce-pad:  clamp(1.25rem, 5vw, 2.5rem);
+
+    background: var(--cy-bg);
+    color: var(--cy-ink);
+    font-family: var(--cy-sans);
+    line-height: 1.6;
+}
+
+/* Cursor fix: the shared style.css sets a pale gold custom cursor tuned for its
+   dark theme, which is invisible on a light ground. beacon-forge and the-read
+   both carry this; a light-ground venture needs it too. */
+body.ce, body.ce * { cursor: auto; }
+body.ce a, body.ce button, body.ce summary,
+body.ce [role="button"] { cursor: pointer; }
+
+/* --- layout ------------------------------------------------------------- */
+body.ce .ce-head,
+body.ce .ce-hero,
+body.ce .ce-band,
+body.ce .ce-foot {
+    max-width: var(--ce-wide);
+    margin-inline: auto;
+    padding-inline: var(--ce-pad);
+}
+
+body.ce .ce-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 1.5rem; flex-wrap: wrap;
+    padding-block: 1.75rem;
+    border-bottom: 1px solid var(--cy-rule);
+}
+body.ce .ce-word {
+    font-family: var(--cy-serif); font-size: 1.35rem; letter-spacing: 0.01em;
+    color: var(--cy-ink); text-decoration: none;
+}
+body.ce .ce-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+body.ce .ce-nav a {
+    font-size: 0.9rem; color: var(--cy-ink-2); text-decoration: none;
+}
+body.ce .ce-nav a:hover { color: var(--cy-gold); }
+
+body.ce .ce-hero { padding-block: clamp(3rem, 10vh, 6rem) 2rem; }
+body.ce .ce-hero h1 {
+    font-family: var(--cy-serif); font-weight: 400; line-height: 1.05;
+    font-size: clamp(2.4rem, 1.7rem + 3vw, 4rem);
+    margin: 0 0 1rem; color: var(--cy-ink);
+}
+body.ce .ce-lede {
+    font-size: clamp(1.05rem, 1rem + 0.3vw, 1.25rem);
+    color: var(--cy-ink-dim); max-width: 46ch; margin: 0;
+}
+
+body.ce .ce-band {
+    padding-block: clamp(2.5rem, 7vh, 4.5rem);
+    border-top: 1px solid var(--cy-rule-faint);
+}
+body.ce .ce-band h2 {
+    font-family: var(--cy-serif); font-weight: 400;
+    font-size: clamp(1.5rem, 1.25rem + 1vw, 2.2rem);
+    margin: 0 0 0.75rem; color: var(--cy-ink);
+}
+body.ce .ce-band p { color: var(--cy-ink-1); max-width: 62ch; margin: 0; }
+
+body.ce .ce-foot {
+    padding-block: 2.5rem 0;
+    border-top: 1px solid var(--cy-rule);
+}
+body.ce .ce-foot-base {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    font-size: 0.85rem; color: var(--cy-ink-2);
+}
+
+/* Focus: visible on the venture's own ground, not the shared dark one. */
+body.ce a:focus-visible, body.ce button:focus-visible,
+body.ce summary:focus-visible {
+    outline: 2px solid var(--cy-ink); outline-offset: 3px; border-radius: 2px;
+}
+
+/* ==========================================================================
+   Certamus components
+
+   The record is a table because it is a table: a reader comparing events
+   across years wants columns that line up, not cards they have to scan.
+   On a phone the columns collapse to stacked rows, since a five-column
+   table at 375px is unreadable however it is styled.
+   ========================================================================== */
+
+.ce-wrap { max-width: 62rem; margin: 0 auto; padding: 0 1.5rem; }
+
+.ce-hero { padding: 5rem 0 2.5rem; }
+.ce-eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cy-accent); margin: 0 0 1rem; }
+.ce-eyebrow a { color: inherit; }
+.ce-h1 { font-family: var(--cy-serif); font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 1rem; color: var(--cy-ink); }
+.ce-lede { font-size: 1.05rem; line-height: 1.65; color: var(--cy-ink-dim);
+  max-width: 38rem; margin: 0; }
+
+.ce-section { padding: 2.5rem 0; border-top: 1px solid var(--cy-rule); }
+.ce-h2 { font-family: var(--cy-serif); font-size: clamp(1.6rem, 3.1vw, 2.25rem);
+  letter-spacing: -0.022em;
+  margin: 0 0 1.2rem; color: var(--cy-ink); }
+.ce-section p { line-height: 1.7; color: var(--cy-ink-1); max-width: 40rem;
+  margin: 0 0 1.1rem; }
+.ce-section p:last-child { margin-bottom: 0; }
+
+/* The counts. Rendered from the case files, never typed: the data-count and
+   data-value attributes are what the build asserts against. */
+.ce-stats { display: flex; flex-wrap: wrap; gap: 2.5rem; padding: 2rem 0 0; }
+.ce-stat { display: flex; flex-direction: column; }
+.ce-stat-n { font-family: var(--cy-sans); font-weight: 800;
+  font-size: clamp(2.6rem, 5.5vw, 3.8rem); letter-spacing: -0.05em; line-height: 0.92;
+  font-variant-numeric: tabular-nums;
+  color: var(--cy-ink); }
+.ce-stat-k { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--cy-ink-faint); margin-top: 0.45rem; }
+.ce-stat-note { font-size: 0.88rem; color: var(--cy-ink-2); margin: 1.2rem 0 0; }
+
+.ce-empty { color: var(--cy-ink-2); font-style: italic; }
+
+.ce-record { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+.ce-record th { text-align: left; font-size: 0.7rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--cy-ink-faint); font-weight: 600;
+  padding: 0 1rem 0.7rem 0; border-bottom: 1px solid var(--cy-rule); }
+.ce-record td { padding: 0.95rem 1rem 0.95rem 0; border-bottom: 1px solid var(--cy-rule);
+  vertical-align: baseline; color: var(--cy-ink-1); }
+.ce-t-date { white-space: nowrap; color: var(--cy-ink-2); font-variant-numeric: tabular-nums; }
+.ce-t-comp a { font-weight: 600; color: var(--cy-ink); }
+.ce-t-host { display: block; font-size: 0.82rem; color: var(--cy-ink-2); margin-top: 0.15rem; }
+.ce-t-res { font-weight: 600; white-space: nowrap; }
+.ce-stage { display: block; font-size: 0.78rem; font-weight: 400; color: var(--cy-ink-2); }
+
+.ce-tag { display: inline-block; font-size: 0.68rem; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 0.22rem 0.5rem; border-radius: 3px;
+  border: 1px solid var(--cy-rule); color: var(--cy-ink-2); white-space: nowrap; }
+.ce-tag-hackathon { border-color: var(--cy-accent); color: var(--cy-accent); }
+
+.ce-team, .ce-who, .ce-mine { list-style: none; padding: 0; margin: 0; }
+.ce-team { display: flex; flex-wrap: wrap; gap: 0.6rem 1.8rem; }
+/* 24px minimum target, the inline-link-in-a-sentence exemption does not
+   apply to a list of links. */
+.ce-team a, .ce-who a, .ce-mine a, .ce-t-comp a { display: inline-block;
+  padding: 0.35rem 0; margin: -0.35rem 0; min-height: 24px; }
+
+.ce-who li, .ce-mycase { padding: 0.9rem 0; border-bottom: 1px solid var(--cy-rule); }
+.ce-did { display: block; font-size: 0.9rem; line-height: 1.6; color: var(--cy-ink-1);
+  margin: 0.3rem 0 0; max-width: 42rem; }
+
+.ce-clearance { font-size: 0.85rem; color: var(--cy-ink-2); border-left: 2px solid var(--cy-rule);
+  padding: 0.1rem 0 0.1rem 0.9rem; margin: 1.5rem 0 0; max-width: 40rem; }
+.ce-clearance-repro { border-left-color: var(--cy-accent); }
+
+.ce-note p { font-size: 0.92rem; color: var(--cy-ink-2); }
+.ce-foot-note { font-size: 0.82rem; color: var(--cy-ink-2); margin: 0; }
+
+@media (max-width: 40rem) {
+  .ce-hero { padding-top: 3rem; }
+  .ce-stats { gap: 1.6rem 2rem; }
+  /* Five columns do not fit a phone. Each row becomes a block and the
+     headers are dropped, since the values are self-describing. */
+  .ce-record, .ce-record tbody, .ce-record tr, .ce-record td { display: block; width: 100%; }
+  .ce-record thead { position: absolute; left: -9999px; }
+  .ce-record tr { padding: 1rem 0; border-bottom: 1px solid var(--cy-rule); }
+  .ce-record td { border: 0; padding: 0.15rem 0; }
+  .ce-t-comp a { font-size: 1.05rem; }
+}
+
+/* Portraits. Four very different source shots, cropped to one square so the
+   row reads as a team rather than a pile of photos. */
+.ce-team { gap: 1.6rem 2rem; }
+.ce-person a { display: flex; flex-direction: column; gap: 0.6rem; text-decoration: none; }
+.ce-person { display: flex; flex-direction: column; gap: 0.6rem; }
+.ce-face { width: 92px; height: 92px; border-radius: 50%; object-fit: cover;
+  display: block; background: var(--cy-bg-soft); }
+.ce-name { font-size: 0.92rem; color: var(--cy-ink); }
+.ce-person a:hover .ce-name { color: var(--cy-accent); }
+
+.ce-hero-person { display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap; }
+.ce-face-lg { width: 132px; height: 132px; }
+
+@media (max-width: 40rem) {
+  .ce-face { width: 76px; height: 76px; }
+  .ce-face-lg { width: 104px; height: 104px; }
+  .ce-hero-person { gap: 1.2rem; }
+}
+
+/* Method pages listed on the index. */
+.ce-methods { list-style: none; padding: 0; margin: 0; display: grid; gap: 1px;
+  background: var(--cy-rule); border-block: 1px solid var(--cy-rule); }
+.ce-method a { display: block; padding: 1.1rem 0; background: var(--cy-bg);
+  text-decoration: none; }
+.ce-m-t { display: block; font-weight: 600; color: var(--cy-ink); margin-bottom: 0.25rem; }
+.ce-m-b { display: block; font-size: 0.9rem; line-height: 1.6; color: var(--cy-ink-2);
+  max-width: 44rem; }
+.ce-method a:hover .ce-m-t { color: var(--cy-accent); }
+
+/* Figures. Drawn for the paper ground; see certamus_figs.py on why that is
+   stated rather than assumed. */
+.ce-fig { margin: 1.8rem 0; max-width: 40rem; }
+.ce-fig svg { width: 100%; height: auto; display: block; }
+.ce-fig-cap { font-size: 0.85rem; line-height: 1.6; color: var(--cy-ink-2);
+  margin-top: 0.7rem; padding-top: 0.7rem; border-top: 1px solid var(--cy-rule); }
+
+/* Submitted slides. Shown on the page ground with a hairline, not a heavy
+   frame: the slide already has its own edge. */
+.ce-slide { margin: 1.8rem 0; max-width: 46rem; }
+.ce-slide img { width: 100%; height: auto; display: block;
+  border: 1px solid var(--cy-rule); border-radius: 3px; }
+.ce-slide .ce-fig-cap { border-top: 0; padding-top: 0.6rem; }
+
+/* ==========================================================================
+   Motion
+
+   Every at-rest hidden state below is scoped to html.ce-js, which certamus.js
+   adds. Without JavaScript the page renders complete and static. Under
+   html.ce-reduce it renders complete too: the script adds that class and stops.
+   ========================================================================== */
+
+/* The full stop in "We compete." resolves into the parent wordmark's gold dot. */
+.ce-dot { color: var(--cy-accent); display: inline-block; }
+html.ce-js:not(.ce-reduce) .ce-dot {
+  transform: scale(0.35); opacity: 0; transform-origin: 50% 82%; }
+html.ce-js:not(.ce-reduce) .ce-dot.is-in {
+  transform: none; opacity: 1;
+  transition: transform 0.62s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.38s ease-out; }
+
+/* Section rules draw rather than appear. The page is built out of hairlines,
+   so this is the structure arriving, not an effect over it. */
+html.ce-js:not(.ce-reduce) .ce-section { border-top-color: transparent; position: relative; }
+html.ce-js:not(.ce-reduce) .ce-section::before {
+  content: ""; position: absolute; inset-inline-start: 0; top: -1px; height: 1px;
+  width: 100%; background: var(--cy-rule);
+  transform: scaleX(0); transform-origin: left center; }
+html.ce-js:not(.ce-reduce) .ce-section.is-in::before {
+  transform: scaleX(1); transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
+
+/* Section contents follow the rule in. */
+html.ce-js:not(.ce-reduce) .ce-section > * {
+  opacity: 0; transform: translateY(8px); }
+html.ce-js:not(.ce-reduce) .ce-section.is-in > * {
+  opacity: 1; transform: none;
+  transition: opacity 0.6s ease-out 0.12s,
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.12s; }
+
+/* A record row brings its result in last, because the result is the point. */
+html.ce-js:not(.ce-reduce) .ce-record tbody tr td {
+  opacity: 0; transform: translateY(6px); }
+html.ce-js:not(.ce-reduce) .ce-record tbody tr.is-in td {
+  opacity: 1; transform: none;
+  transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+html.ce-js:not(.ce-reduce) .ce-record tbody tr.is-in td.ce-t-res {
+  transition-delay: 0.22s; }
+
+/* Bars grow from their own left edge. transform-box keeps the origin on the
+   rect: without it the origin is the whole SVG and bars slide in instead. */
+html.ce-js:not(.ce-reduce) .ce-fig svg rect {
+  transform: scaleX(0); transform-box: fill-box; transform-origin: left center; }
+html.ce-js:not(.ce-reduce) .ce-fig svg rect.is-in {
+  transform: none; transition: transform 0.72s cubic-bezier(0.16, 1, 0.3, 1); }
+html.ce-js:not(.ce-reduce) .ce-fig svg text { opacity: 0; }
+html.ce-js:not(.ce-reduce) .ce-fig svg text.is-in {
+  opacity: 1; transition: opacity 0.45s ease-out; }
+
+/* Slides, portraits, method rows. */
+html.ce-js:not(.ce-reduce) .ce-slide,
+html.ce-js:not(.ce-reduce) .ce-person,
+html.ce-js:not(.ce-reduce) .ce-method,
+html.ce-js:not(.ce-reduce) .ce-mycase { opacity: 0; transform: translateY(10px); }
+html.ce-js:not(.ce-reduce) .ce-slide.is-in,
+html.ce-js:not(.ce-reduce) .ce-person.is-in,
+html.ce-js:not(.ce-reduce) .ce-method.is-in,
+html.ce-js:not(.ce-reduce) .ce-mycase.is-in {
+  opacity: 1; transform: none;
+  transition: opacity 0.65s ease-out, transform 0.65s cubic-bezier(0.16,1,0.3,1); }
+
+/* Portrait hover: a ring draws around it rather than the photo jumping. */
+.ce-face { transition: box-shadow 0.4s cubic-bezier(0.16,1,0.3,1); }
+.ce-person a:hover .ce-face,
+.ce-person a:focus-visible .ce-face {
+  box-shadow: 0 0 0 3px var(--cy-bg), 0 0 0 4px var(--cy-accent); }
+
+/* The competition link in the record gets a rule that draws under it. */
+.ce-t-comp a, .ce-method a .ce-m-t { background-image:
+    linear-gradient(var(--cy-accent), var(--cy-accent));
+  background-size: 0% 1px; background-repeat: no-repeat;
+  background-position: left 88%; transition: background-size 0.4s cubic-bezier(0.16,1,0.3,1); }
+.ce-t-comp a:hover, .ce-t-comp a:focus-visible,
+.ce-method a:hover .ce-m-t { background-size: 100% 1px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ce-face, .ce-t-comp a, .ce-method a .ce-m-t { transition: none; }
+}
+
+/* ==========================================================================
+   The title page
+
+   Classical composition: a double-ruled frame with cut corners, a laurel and
+   the Conyso dot, the name at display size, and a lemma in small caps. The
+   name is Latin and the subject is contests, so this is the reference the
+   property already implies rather than decoration borrowed from elsewhere.
+   ========================================================================== */
+
+/* The title block was a centred wordmark inside a cut-corner double rule: a
+   certificate, which is the most editorial object that was on the page. The
+   frame is gone and the whole block is left-aligned and much larger. The
+   crest stays, because it is Conyso's device, but it drops to a mark sitting
+   under the wordmark rather than presiding over it from above. */
+.ce-title { position: relative; margin: 2.6rem 0 1.6rem; padding: 0; text-align: left; }
+.ce-title-inner { position: relative; }
+.ce-crest { display: block; margin: 0; }
+.ce-title-mark { margin-top: 0.4rem; opacity: 0.9; }
+.ce-wordmark { font-size: clamp(3.4rem, 13vw, 8rem); line-height: 0.88;
+  letter-spacing: -0.045em; margin: 0.2rem 0 0; }
+.ce-lemma { font-size: 0.66rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--cy-ink-2); margin: 0; font-family: var(--cy-sans); font-weight: 600; }
+.ce-lemma .ce-sep { color: var(--cy-accent); margin: 0 0.35em; }
+body.ce .ce-lede-wide { max-width: 40rem; margin: 0 0 1rem; text-align: left;
+  font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.6; color: var(--cy-ink-1); }
+
+.ce-divider { display: flex; justify-content: center; padding: 1.6rem 0 0.2rem; }
+.ce-orn { max-width: 100%; height: auto; }
+
+/* The small mark on a case or method page. */
+.ce-mark { margin-bottom: 0.9rem; }
+.ce-mark .ce-crest { margin: 0; }
+
+/* Numbered sections inside a case, set in the margin where there is room and
+   above the heading where there is not. */
+.ce-numbered { position: relative; }
+/* Section numbers carry the attitude now. They were roman numerals set small
+   in the serif, which is the single most magazine-like thing on the page.
+   Same information, stated as a heavy number: sophisticated ground, bold
+   mark. The crest stays, because that is Conyso's device and not decoration. */
+.ce-num { font-family: var(--cy-sans); font-size: clamp(1.9rem, 4.2vw, 3.1rem);
+  font-weight: 800; letter-spacing: -0.045em; line-height: 0.9;
+  color: var(--cy-accent); display: block; margin-bottom: 0.15rem;
+  font-variant-numeric: tabular-nums; }
+@media (min-width: 64rem) {
+  .ce-num { position: absolute; left: -5.6rem; top: 0.15rem; margin: 0;
+    text-align: right; width: 4.2rem; }
+}
+
+/* The drop cap is gone. It is the other magazine tell, and a 3.5em floated
+   letter beside a heavy section number was two competing entrances to the
+   same paragraph. The opening paragraph is now simply set larger. */
+.ce-drop > p:first-of-type {
+  font-size: clamp(1.02rem, 1.9vw, 1.18rem); line-height: 1.62;
+  color: var(--cy-ink-1); }
+
+@media (max-width: 46rem) {
+  .ce-title { padding: 2.4rem 1rem 2.2rem; margin-top: 2rem; }
+  .ce-lemma { letter-spacing: 0.24em; font-size: 0.62rem; }
+}
+
+/* The counts sit under a centred title block, so they centre too. */
+/* Left, like everything else in the header now. These were centred to sit
+   under a centred wordmark that no longer exists. */
+.ce-stats { justify-content: flex-start; text-align: left; padding-top: 1.4rem; }
+.ce-stat { align-items: flex-start; }
+
+/* ==========================================================================
+   Alternating blocks
+
+   A two-column row whose sides swap on every other item, so a list of things
+   reads as a rhythm rather than a stack. On a phone it collapses to one column
+   in source order, which is why the side column is written second.
+   ========================================================================== */
+.ce-altstack { display: flex; flex-direction: column; }
+.ce-altrow { display: grid; gap: 1.2rem 2.5rem; padding: 1.8rem 0;
+  border-bottom: 1px solid var(--cy-rule);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 8.5rem); align-items: start; }
+.ce-altrow:last-child { border-bottom: 0; }
+.ce-altrow.is-flip { grid-template-columns: minmax(0, 8.5rem) minmax(0, 1fr); }
+.ce-altrow.is-flip .ce-alt-text { order: 2; }
+.ce-altrow.is-flip .ce-alt-side { order: 1; text-align: left; }
+.ce-alt-side { text-align: right; display: flex; flex-direction: column; gap: 0.2rem; }
+.ce-alt-h { font-family: var(--cy-serif); font-size: 1.3rem; margin: 0.3rem 0 0.35rem;
+  letter-spacing: -0.01em; }
+.ce-alt-h a { color: var(--cy-ink); }
+.ce-alt-h a:hover { color: var(--cy-accent); }
+.ce-bigres { font-family: var(--cy-serif); font-size: 1.45rem; line-height: 1;
+  color: var(--cy-ink); }
+
+/* A contribution set as a pull quote: it is the person's own line from the
+   case file, so it is given the weight of a quotation rather than a caption. */
+.ce-pull { margin: 0.85rem 0 0; padding-left: 1rem;
+  border-left: 2px solid var(--cy-accent); font-size: 0.95rem; line-height: 1.65;
+  color: var(--cy-ink-1); max-width: 40rem; }
+
+.ce-alongside { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; }
+.ce-alongside li { display: flex; flex-direction: column; }
+.ce-alongside a { font-weight: 600; color: var(--cy-ink); }
+.ce-alongside a:hover { color: var(--cy-accent); }
+
+.ce-hero-person .ce-stats { justify-content: flex-start; text-align: left; }
+.ce-hero-person .ce-stat { align-items: flex-start; }
+
+@media (max-width: 46rem) {
+  .ce-altrow, .ce-altrow.is-flip { grid-template-columns: 1fr; gap: 0.7rem; }
+  .ce-altrow.is-flip .ce-alt-text { order: 1; }
+  .ce-altrow.is-flip .ce-alt-side { order: 2; }
+  .ce-alt-side, .ce-altrow.is-flip .ce-alt-side { text-align: left;
+    flex-direction: row; align-items: baseline; gap: 0.5rem; }
+}
+
+/* The two lanes, set side by side because they are different problems. */
+.ce-lanes { display: grid; gap: 1px; background: var(--cy-rule);
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  border: 1px solid var(--cy-rule); }
+.ce-lane { background: var(--cy-bg); padding: 1.5rem 1.4rem; }
+.ce-lane-h { font-family: var(--cy-serif); font-size: 1.25rem; margin: 0.2rem 0 0.6rem; }
+.ce-lane-b { font-size: 0.92rem; line-height: 1.65; color: var(--cy-ink-1); margin: 0 0 0.9rem; }
+.ce-lane-state { margin-top: 0.9rem; padding-top: 0.8rem;
+  border-top: 1px solid var(--cy-rule); display: flex; align-items: baseline; gap: 0.5rem; }
+.ce-lane-n { font-family: var(--cy-serif); font-size: 1.8rem; line-height: 1; color: var(--cy-ink); }
+/* A lane with no record says so plainly, in the same slot the count occupies. */
+.ce-lane-none { font-size: 0.86rem; color: var(--cy-ink-2); font-style: italic; }
+
+/* Feature block on the home page. */
+.ce-feature { display: grid; gap: 1.6rem 2.6rem; padding: 2rem 0 0;
+  grid-template-columns: minmax(0, 1fr); align-items: center; }
+.ce-feature.has-media { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); }
+.ce-feat-h { font-family: var(--cy-serif); font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+  line-height: 1.1; margin: 0.3rem 0 0.5rem; letter-spacing: -0.015em; }
+.ce-feat-h a { color: var(--cy-ink); }
+.ce-feat-h a:hover { color: var(--cy-accent); }
+.ce-feat-lead { font-size: 0.97rem; line-height: 1.7; color: var(--cy-ink-1);
+  margin: 0.9rem 0 1rem; }
+.ce-feat-media img { width: 100%; height: auto; display: block;
+  border: 1px solid var(--cy-rule); border-radius: 3px; }
+.ce-more { font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--cy-accent); display: inline-block; padding: 0.35rem 0; margin: -0.35rem 0; }
+
+.ce-school { font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--cy-ink-2); margin: 0.2rem 0 0.7rem; }
+.ce-bio p { max-width: 40rem; line-height: 1.75; }
+.ce-stats-left { justify-content: flex-start; text-align: left; }
+.ce-stats-left .ce-stat { align-items: flex-start; }
+
+@media (max-width: 52rem) {
+  .ce-feature.has-media { grid-template-columns: minmax(0, 1fr); }
+}
+.ce-feat-fig { border: 1px solid var(--cy-rule); border-radius: 3px; padding: 1.1rem 1rem; }
+.ce-feat-fig .ce-fig { margin: 0; max-width: none; }
+
+/* A lane is a line-up, so it shows faces. */
+.ce-lane-roster { list-style: none; padding: 0; margin: 0.2rem 0 0;
+  display: flex; flex-wrap: wrap; gap: 0.9rem 1.1rem; }
+.ce-lane-p { display: flex; flex-direction: column; align-items: center;
+  gap: 0.35rem; width: 4.2rem; }
+.ce-face-sm { width: 46px; height: 46px; }
+.ce-lane-n2 { font-size: 0.7rem; line-height: 1.25; text-align: center;
+  color: var(--cy-ink-2); }
+
+/* Role and motto. The motto is set in quotes and italic because it is the
+   person's own sentence, not a label applied to them. */
+.ce-person { width: 8.5rem; text-align: center; }
+.ce-person a { align-items: center; }
+.ce-role { display: block; font-size: 0.68rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--cy-accent); margin-top: 0.15rem;
+  line-height: 1.35; }
+.ce-motto { display: block; font-family: var(--cy-serif); font-style: italic;
+  font-size: 0.8rem; line-height: 1.45; color: var(--cy-ink-2); margin-top: 0.4rem; }
+/* A collaborator sits in the same grid as the core four but says so. The page
+   describes two lanes, so it has to show both; the marker is what keeps
+   "everyone on this page" from reading as "everyone is core". */
+.ce-standing { display: block; font-size: 0.6rem; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--cy-ink-faint); margin-top: 0.35rem; }
+.ce-person-guest .ce-standing::before { content: ""; display: inline-block;
+  width: 0.9rem; height: 1px; background: var(--cy-rule);
+  vertical-align: 0.28em; margin-right: 0.4rem; }
+
+.ce-motto-lg { font-family: var(--cy-serif); font-style: italic;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem); line-height: 1.45;
+  color: var(--cy-ink-1); margin: 0.5rem 0 0.8rem; max-width: 34rem;
+  padding-left: 0.9rem; border-left: 2px solid var(--cy-accent); }
+
+/* ==========================================================================
+   The canvas
+
+   The page was a centred column on blank paper with nothing happening at the
+   edges. Three things fix that, all cheap and all part of the same idea: this
+   is a ruled page, not a document floating in space.
+
+     1. A laid-paper texture, two hairline gradients at very low alpha. It
+        should be felt rather than seen; if you can name the lines it is too
+        strong.
+     2. Vertical rules down both sides of the measure, running the full height,
+        so the column is held rather than adrift.
+     3. Full-bleed tinted bands on alternating sections, which is what gives a
+        long page rhythm as you scroll.
+   ========================================================================== */
+
+body.ce {
+  background-color: var(--cy-bg);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(26,23,18,0.016) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(90deg, rgba(26,23,18,0.010) 0 1px, transparent 1px 26px);
+  background-attachment: fixed;
+}
+
+/* The two rules that hold the measure. Drawn on the wrap so they track it, and
+   hidden on narrow screens where there is no margin to draw them in. */
+body.ce .ce-wrap { position: relative; }
+@media (min-width: 72rem) {
+  .ce-wrap::before, .ce-wrap::after {
+    content: ""; position: absolute; top: 0; bottom: 0; width: 1px;
+    background: linear-gradient(180deg, transparent, var(--cy-rule) 6rem,
+                var(--cy-rule) calc(100% - 6rem), transparent);
+    pointer-events: none;
+  }
+  .ce-wrap::before { left: -2.4rem; }
+  .ce-wrap::after  { right: -2.4rem; }
+}
+
+/* Full-bleed band. margin/padding rather than a box-shadow spread, because a
+   spread that wide reintroduces a horizontal scrollbar on some widths. */
+.ce-tint {
+  background: var(--cy-bg-soft);
+  margin-inline: calc(50% - 50vw);
+  padding-inline: calc(50vw - 50%);
+  border-top: 1px solid var(--cy-rule);
+  border-bottom: 1px solid var(--cy-rule);
+}
+html.ce-js:not(.ce-reduce) .ce-tint { border-top-color: transparent; }
+.ce-tint + .ce-tint { border-top: 0; }
+
+/* Two columns when a section carries media, sides swapping on alternate
+   sections. Collapses to one column in source order on a phone. */
+.ce-split { display: grid; gap: 1.4rem 2.8rem; align-items: start;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.ce-split.is-flip .ce-split-text { order: 2; }
+.ce-split.is-flip .ce-split-media { order: 1; }
+.ce-split-media .ce-fig, .ce-split-media .ce-slide { margin: 0; max-width: none; }
+.ce-split-text > .ce-num { position: static; width: auto; text-align: left;
+  margin-bottom: 0.4rem; }
+
+@media (max-width: 62rem) {
+  .ce-split { grid-template-columns: minmax(0, 1fr); }
+  .ce-split.is-flip .ce-split-text { order: 1; }
+  .ce-split.is-flip .ce-split-media { order: 2; }
+}
+.ce-lane-r { display: block; font-size: 0.62rem; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--cy-accent); line-height: 1.3;
+  margin-top: 0.15rem; text-align: center; }
+.ce-lane-p { width: 5.4rem; }
+
+/* Links inside a lede were falling through to the browser default blue. */
+body.ce .ce-lede a, body.ce .ce-bio a {
+  color: var(--cy-accent); text-decoration: underline;
+  text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+body.ce .ce-lede a:hover, body.ce .ce-bio a:hover { color: var(--cy-ink); }
+
+/* ==========================================================================
+   The slide rail
+
+   Submitted slides used to sit in the half-width media column next to the
+   prose. A deck slide is a dense 1400px artefact and at 700px it is a grey
+   smudge: you cannot read a number off it, which defeats the entire reason
+   for showing the real slide rather than my redrawing of it.
+
+   So they get the full viewport and move sideways. Three things follow:
+
+   1. The band is ink, not paper. The slides ARE paper, so a dark ground makes
+      each one read as an object on a table rather than another block in the
+      column. It is also the one place on the site that is not a page, which
+      is what stops the whole thing feeling like a magazine.
+   2. Scroll-snap, so a flick lands on a slide rather than between two.
+   3. No JavaScript anywhere in it. With the script dead this is still a
+      scrollable row of readable slides.
+
+   Colours are redeclared here rather than reused: the page tokens are tuned
+   for ink on paper and every one of them is wrong on this band. #7A5F18 gold
+   on #16130F is 1.8:1 and unreadable, so the accent is lifted to #E0B94A
+   (9.6:1) and the caption ink to #E8E3D8 (13.5:1).
+   ========================================================================== */
+.ce-rail {
+  --rail-bg:    #16130F;
+  --rail-ink:   #E8E3D8;
+  --rail-faint: rgba(232,227,216,0.58);
+  --rail-gold:  #E0B94A;
+
+  margin-inline: calc(50% - 50vw);
+  width: 100vw;
+  max-width: 100vw;
+  background: var(--rail-bg);
+  padding: clamp(1.6rem, 4vw, 3rem) 0 clamp(1rem, 2vw, 1.6rem);
+  margin-block: clamp(2rem, 5vw, 3.4rem);
+  position: relative;
+  overflow: hidden;              /* the TRACK scrolls, not this */
+}
+
+.ce-rail-track {
+  list-style: none;
+  margin: 0;
+  padding: 0 max(1.25rem, calc(50vw - 34rem));
+  display: flex;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: max(1.25rem, calc(50vw - 34rem));
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(232,227,216,0.28) transparent;
+}
+.ce-rail-track::-webkit-scrollbar { height: 6px; }
+.ce-rail-track::-webkit-scrollbar-thumb {
+  background: rgba(232,227,216,0.28); border-radius: 3px; }
+.ce-rail-track:focus-visible { outline: 2px solid var(--rail-gold); outline-offset: 4px; }
+
+.ce-rail-cell {
+  /* 80vw put a 1400px slide on screen at a size you could not take in at a
+     glance. 62vw capped at 880 is the band where the whole slide is visible
+     and its smallest label is still legible. */
+  flex: 0 0 clamp(250px, 62vw, 880px);
+  scroll-snap-align: start;
+  position: relative;
+  list-style: none;          /* belt and braces: the track is an <ol> */
+}
+.ce-rail-cell::marker { content: ""; }
+
+/* The counter is the aggressive bit: set large, in the gold, sitting on the
+   band rather than inside the slide. */
+.ce-rail-n {
+  display: block;
+  font-family: var(--cy-sans);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--rail-gold);
+  margin-bottom: 0.7rem;
+}
+.ce-rail-n i { font-style: normal; font-weight: 400; font-size: 0.42em;
+  color: var(--rail-faint); letter-spacing: 0; margin-left: 0.15em; }
+
+/* The slide is a physical object on the band: it lifts toward you when you
+   point at it, and a sheen travels across the glass. The sheen is a gradient
+   on a pseudo-element, so it costs nothing and never touches the image. */
+.ce-railslide { margin: 0; }
+.ce-rail-glass {
+  position: relative; display: block; border-radius: 5px; overflow: hidden;
+  transform: translateZ(0);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.12), 0 14px 34px rgba(0,0,0,0.5);
+}
+.ce-railslide img {
+  width: 100%; height: auto; display: block; border: 0; border-radius: 5px;
+}
+/* the travelling sheen */
+.ce-rail-glass::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, rgba(255,255,255,0) 38%,
+              rgba(255,255,255,0.42) 50%, rgba(255,255,255,0) 62%);
+  transform: translateX(-120%);
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.ce-rail-cell:hover .ce-rail-glass,
+.ce-rail-cell:focus-within .ce-rail-glass {
+  transform: translateY(-8px) scale(1.012);
+  box-shadow: 0 2px 0 rgba(255,255,255,0.18), 0 30px 66px rgba(0,0,0,0.62);
+}
+.ce-rail-cell:hover .ce-rail-glass::after,
+.ce-rail-cell:focus-within .ce-rail-glass::after { transform: translateX(120%); }
+
+/* the slide the rail is currently snapped to gets the gold edge */
+.ce-rail-cell.is-here .ce-rail-glass { box-shadow: 0 0 0 2px var(--rail-gold),
+  0 20px 48px rgba(0,0,0,0.55); }
+.ce-rail-cell.is-here .ce-rail-n { color: var(--rail-gold); }
+.ce-rail-cell:not(.is-here) .ce-rail-n { color: var(--rail-faint); }
+
+html.ce-reduce .ce-rail-glass,
+html.ce-reduce .ce-rail-glass::after { transition: none; }
+.ce-railslide .ce-fig-cap {
+  border-top: 0;
+  padding-top: 0.9rem;
+  color: var(--rail-faint);
+  font-size: 0.86rem;
+  line-height: 1.6;
+  max-width: 44rem;
+}
+.ce-railslide .ce-fig-cap em { color: var(--rail-ink); font-style: italic; }
+
+.ce-rail-hint {
+  margin: 1.1rem 0 0;
+  padding-inline: max(1.25rem, calc(50vw - 34rem));
+  font-family: var(--cy-sans);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rail-faint);
+}
+.ce-rail-arrow { color: var(--rail-gold); margin-right: 0.35rem; }
+
+/* The rail fades in as one object. Individual cells are deliberately NOT in
+   the reveal set: a cell scrolled off to the right never intersects the
+   viewport, so it would sit at opacity 0 until someone scrolled to it and
+   then flash. */
+html.ce-js:not(.ce-reduce) .ce-rail { opacity: 0; }
+html.ce-js:not(.ce-reduce) .ce-rail.is-in {
+  opacity: 1; transition: opacity 0.7s ease-out; }
+
+/* The pace line. The record table can only show cases we still have a deck
+   for, which makes a fast-moving team look like a slow one. This says the
+   real number and, more importantly, says why the table is shorter than it,
+   so a short table reads as honesty rather than as the whole career. */
+.ce-pace { max-width: 46rem; margin: 1.1rem 0 0; padding-left: 1rem;
+  border-left: 3px solid var(--cy-accent);
+  font-family: var(--cy-sans); font-size: 0.92rem; line-height: 1.62;
+  color: var(--cy-ink-1); }
+
+/* --- alternating rail tone -------------------------------------------------
+   Several rails down one page read as one repeated black bar. Every other one
+   takes a warm brown-black with a lifted gold, so scrolling the case moves
+   through two temperatures rather than flashing the same band. Both are
+   checked against their own foreground: #EDE6D6 on #241B12 is 12.9:1, and the
+   gold #F0C75A on #241B12 is 9.8:1. */
+.ce-rail-warm {
+  --rail-bg:    #241B12;
+  --rail-ink:   #EDE6D6;
+  --rail-faint: rgba(237,230,214,0.56);
+  --rail-gold:  #F0C75A;
+}
+.ce-rail-warm::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(120% 90% at 82% 0%,
+    rgba(240,199,90,0.11), rgba(240,199,90,0) 62%);
+}
+
+/* the cool one gets its own wash, from the other corner */
+.ce-rail::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(120% 90% at 12% 0%,
+    rgba(224,185,74,0.09), rgba(224,185,74,0) 58%);
+}
+
+/* --- rail footer: count, progress, buttons -------------------------------- */
+.ce-rail-foot {
+  position: relative;
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.1rem max(1.25rem, calc(50vw - 34rem)) 0;
+}
+.ce-rail-hint {
+  margin: 0; font-family: var(--cy-sans); font-size: 0.66rem;
+  letter-spacing: 0.16em; text-transform: uppercase; color: var(--rail-faint);
+  white-space: nowrap;
+}
+.ce-rail-bar {
+  flex: 1 1 auto; height: 2px; background: rgba(255,255,255,0.14);
+  border-radius: 2px; overflow: hidden; min-width: 3rem;
+}
+.ce-rail-bar > span {
+  display: block; height: 100%; width: 12%;
+  background: var(--rail-gold); border-radius: 2px;
+  transform-origin: left center;
+  transition: width 0.28s ease-out, transform 0.28s ease-out;
+}
+.ce-rail-nav { display: flex; gap: 0.4rem; }
+.ce-rail-b {
+  width: 2.35rem; height: 2.35rem; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.22);
+  background: transparent; color: var(--rail-ink);
+  font-size: 0.95rem; line-height: 1; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+}
+.ce-rail-b:hover:not(:disabled) {
+  background: var(--rail-gold); border-color: var(--rail-gold);
+  color: #16130F; transform: translateY(-2px);
+}
+.ce-rail-b:focus-visible { outline: 2px solid var(--rail-gold); outline-offset: 3px; }
+.ce-rail-b:disabled { opacity: 0.3; cursor: default; }
+
+@media (max-width: 40rem) {
+  .ce-rail-nav { display: none; }   /* a thumb already swipes; buttons crowd */
+}
+
+/* The nav buttons are rendered by the server so they sit in the tab order and
+   the markup does not change under JavaScript. They only appear once the
+   script has wired them: a visible button that does nothing when clicked is
+   worse than no button. */
+.ce-rail-nav { display: none; }
+.ce-rail.is-wired .ce-rail-nav { display: flex; }
+
+/* ==========================================================================
+   Nav and footer
+
+   The site shipped with twenty pages and no navigation. A reader who landed
+   on a guide from search could reach the index only with the back button, and
+   nothing anywhere pointed at the parent company. Every sibling microsite on
+   this domain has a nav; this one did not.
+
+   The bar is sticky because the case pages are long and the rails interrupt
+   the column, so "where am I" is a real question halfway down one.
+   ========================================================================== */
+.ce-nav {
+  position: sticky; top: 0; z-index: 30;
+  display: flex; align-items: center; gap: 1.2rem;
+  padding: 0.7rem max(1.25rem, calc(50vw - 34rem));
+  background: rgba(247,245,240,0.88);
+  backdrop-filter: saturate(150%) blur(10px);
+  -webkit-backdrop-filter: saturate(150%) blur(10px);
+  border-bottom: 1px solid var(--cy-rule);
+}
+@supports not (backdrop-filter: blur(10px)) {
+  .ce-nav { background: var(--cy-paper, #F7F5F0); }
+}
+.ce-nav-mark {
+  font-family: var(--cy-serif); font-size: 1.05rem; letter-spacing: -0.02em;
+  color: var(--cy-ink); text-decoration: none; margin-right: auto;
+}
+.ce-nav-mark:hover { color: var(--cy-accent); }
+.ce-nav-list {
+  display: flex; gap: 1.1rem; list-style: none; margin: 0; padding: 0;
+  flex-wrap: wrap;
+}
+.ce-nav-list a, .ce-nav-out {
+  font-family: var(--cy-sans); font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--cy-ink-2); text-decoration: none;
+  padding: 0.5rem 0; display: inline-block;   /* 24px tap target */
+  border-bottom: 2px solid transparent;
+}
+.ce-nav-list a:hover, .ce-nav-out:hover { color: var(--cy-accent); }
+.ce-nav-list a[aria-current="page"] {
+  color: var(--cy-ink); border-bottom-color: var(--cy-accent);
+}
+.ce-nav-out { margin-left: 0.6rem; color: var(--cy-accent); }
+.ce-nav a:focus-visible {
+  outline: 2px solid var(--cy-accent); outline-offset: 3px; border-radius: 2px; }
+
+@media (max-width: 46rem) {
+  .ce-nav { gap: 0.8rem; padding-top: 0.55rem; padding-bottom: 0.55rem; }
+  .ce-nav-list { gap: 0.8rem; }
+  .ce-nav-list a, .ce-nav-out { font-size: 0.66rem; letter-spacing: 0.06em; }
+  .ce-nav-mark { font-size: 0.95rem; }
+}
+
+/* --- footer --------------------------------------------------------------- */
+.ce-foot-cols {
+  display: grid; gap: 1.6rem 2.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  margin-bottom: 1.6rem;
+}
+.ce-foot-h {
+  font-family: var(--cy-sans); font-size: 0.66rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--cy-ink-faint); margin: 0 0 0.6rem;
+}
+.ce-foot-l { list-style: none; margin: 0; padding: 0; }
+.ce-foot-l li { margin-bottom: 0.35rem; }
+.ce-foot-l a {
+  font-size: 0.88rem; color: var(--cy-ink-1); text-decoration: none;
+  border-bottom: 1px solid transparent; padding: 0.15rem 0; display: inline-block;
+}
+.ce-foot-l a:hover { color: var(--cy-accent); border-bottom-color: var(--cy-accent); }
+.ce-foot-note {
+  border-top: 1px solid var(--cy-rule); padding-top: 1rem;
+  font-size: 0.82rem; line-height: 1.6; color: var(--cy-ink-2); margin: 0;
+  max-width: 44rem;
+}
+
+/* style.css lays .cy-footer-inner out as `grid-template-columns: 2fr 1fr 1fr`,
+   which is right for the main site's four-block footer and wrong here: it put
+   this footer's column grid into the 2fr cell and the note into the next one,
+   so the columns wrapped and the note floated up beside them. Reset it to a
+   block for this microsite and let .ce-foot-cols do the column work.
+
+   This is the third time a parent rule has quietly claimed a Certamus layout.
+   Check the computed box, not the markup, when a block lands somewhere odd. */
+body.ce .cy-footer-inner { display: block; }
+
+/* --- drawn diagrams -------------------------------------------------------
+   certamus_figs draws charts, which have a quantity on an axis and animate
+   bar by bar. These are structural: a flow, two columns, a timeline. Bars
+   growing would be wrong for them, so .ce-dia is deliberately NOT in the
+   chart animation selector and reveals as one object instead. */
+.ce-dia { margin: 2rem 0; max-width: 42rem; }
+.ce-dia svg { width: 100%; height: auto; display: block; }
+.ce-dia .ce-fig-cap { border-top: 1px solid var(--cy-rule); padding-top: 0.7rem; }
+.ce-split-media .ce-dia { margin: 0; max-width: none; }
+
+html.ce-js:not(.ce-reduce) .ce-dia { opacity: 0; transform: translateY(10px); }
+html.ce-js:not(.ce-reduce) .ce-dia.is-in {
+  opacity: 1; transform: none;
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.16,1,0.3,1); }
