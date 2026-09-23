@@ -406,7 +406,11 @@ body.ce .ce-lede-wide { max-width: 40rem; margin: 0 0 1rem; text-align: left;
   font-weight: 700; letter-spacing: -0.045em; line-height: 0.9;
   color: var(--cy-accent); display: block; margin-bottom: 0.15rem;
   font-variant-numeric: tabular-nums; }
-@media (min-width: 64rem) {
+/* 74rem, not 64: the number needs 5.6rem of margin beside a 59rem column,
+   and between 64 and 74rem there is less than that, so every number hung
+   off the left edge (measured at x = -12 at 1100px). Below 74rem it sits
+   above its heading, as it does on a phone. */
+@media (min-width: 74rem) {
   .ce-num { position: absolute; left: -5.6rem; top: 0.15rem; margin: 0;
     text-align: right; width: 4.2rem; }
 }
@@ -1441,4 +1445,421 @@ html:has(> body.ce) { scrollbar-color: rgba(15,20,25,0.32) #F4F6FA; }
   /* -- calls to action: full width, a thumb's height ---------------------- */
   body.ce .ce-feature .ce-more { display: flex; justify-content: center;
     padding-block: 0.95rem; font-size: 1.05rem; }
+}
+
+/* ==========================================================================
+   Phones: Poster
+
+   Picked from three layouts rendered side by side at 375px (App, with a
+   bottom tab bar and swipe decks; Poster; Scoreboard, dense and data-first).
+   Poster turns the phone page into full-width colour bands: an ink hero, the
+   record on paper, the lanes on ink, the team on cobalt, the method on paper,
+   the guides on ink. Index section headings run edge to edge.
+
+   The bands re-theme by redefining the colour tokens on the band element
+   rather than restyling each component, so every card, rule, face ring and
+   label inside picks up the band's palette through the var() it already
+   uses. Measured on the band, composited: ink band text 17.1 / 8.1 / 7.84,
+   periwinkle 7.97; cobalt band paper 7.03, role text 5.98.
+
+   Desktop is untouched: ce-band-* classes paint nothing above 40rem.
+   ========================================================================== */
+@media (max-width: 40rem) {
+  .ce-title, body.ce .ce-hero, .ce-band-ink, body.ce .cy-footer {
+    --cy-bg: #121417; --cy-bg-soft: #1C1F24;
+    --cy-ink: #F4F6FA; --cy-ink-1: rgba(244,246,250,0.9);
+    --cy-ink-2: rgba(231,233,236,0.74); --cy-ink-dim: rgba(231,233,236,0.82);
+    --cy-ink-faint: rgba(231,233,236,0.7);
+    --cy-rule: rgba(255,255,255,0.14); --cy-rule-faint: rgba(255,255,255,0.08);
+    --cy-accent: #8FA6FF; --cy-accent-rgb: 143,166,255;
+  }
+  .ce-band-cobalt {
+    --cy-bg: #2A3FD4; --cy-bg-soft: #3448DA;
+    --cy-ink: #F4F6FA; --cy-ink-1: rgba(244,246,250,0.94);
+    --cy-ink-2: rgba(244,246,250,0.88); --cy-ink-dim: rgba(244,246,250,0.9);
+    --cy-ink-faint: rgba(244,246,250,0.88);
+    --cy-rule: rgba(255,255,255,0.22); --cy-rule-faint: rgba(255,255,255,0.12);
+    --cy-accent: #DDE3FF; --cy-accent-rgb: 221,227,255;
+  }
+
+  /* -- bands run to the screen edge ------------------------------------- */
+  .ce-title, body.ce .ce-hero, .ce-band-ink, .ce-band-cobalt {
+    background: var(--cy-bg); color: var(--cy-ink);
+    margin-inline: calc(-1 * var(--ce-gut)); padding-inline: var(--ce-gut);
+  }
+  .ce-title { margin-top: 0; margin-bottom: 0; padding-top: 1.7rem; padding-bottom: 2.1rem; }
+  body.ce .ce-hero { padding-top: 1.7rem; padding-bottom: 2rem; }
+  .ce-title-mark path, .ce-title-mark circle,
+  body.ce .ce-hero .ce-mark path, body.ce .ce-hero .ce-mark circle { stroke: var(--cy-accent); }
+  body.ce .ce-title .ce-stat:nth-child(2) .ce-stat-n { color: var(--cy-accent); }
+  .ce-hero .ce-eyebrow, .ce-hero .ce-eyebrow a { color: var(--cy-accent); }
+  .ce-feature { padding-top: 2.2rem; }
+  /* the clearance note sits straight under a case hero; give it air */
+  body.ce .ce-hero + .ce-clearance { margin-top: 1.6rem; }
+
+  /* -- index sections: no divider bars, headings edge to edge ----------- */
+  .ce-divider:has(+ #record), .ce-divider:has(+ #lanes), .ce-divider:has(+ #team),
+  .ce-divider:has(+ #method), .ce-divider:has(+ #guides) { display: none; }
+  #record, #lanes, #team, #method, #guides {
+    border-top: 0; padding-top: 2.4rem; padding-bottom: 2.6rem;
+  }
+  #lanes, #team, #guides { margin-top: 0; }
+  body.ce #record > .ce-h2, body.ce #lanes > .ce-h2, body.ce #team > .ce-h2,
+  body.ce #method > .ce-h2, body.ce #guides > .ce-h2 {
+    font-size: 17.5vw; line-height: 0.9; letter-spacing: -0.005em; margin: 0 0 1.4rem;
+  }
+  body.ce .ce-section > .ce-h2 { font-size: 2.3rem; }
+
+  /* -- the record, numbered --------------------------------------------- */
+  .ce-record tbody { counter-reset: rec; }
+  .ce-record tr { counter-increment: rec; position: relative; padding-left: 3.4rem; }
+  .ce-record tr::before {
+    content: counter(rec, decimal-leading-zero); position: absolute; left: 0; top: 1.1rem;
+    font-family: var(--ce-display); font-size: 2.6rem; line-height: 1; color: var(--cy-accent);
+  }
+
+  /* -- the team: square photo tiles on the cobalt band ------------------- */
+  .ce-team { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem 0.7rem; }
+  .ce-person { width: auto; text-align: left; }
+  .ce-person a { align-items: stretch; gap: 0.35rem; text-align: left; }
+  body.ce .ce-team .ce-face {
+    width: 100%; height: auto; aspect-ratio: 1; border-radius: 3px;
+    box-shadow: none;
+  }
+  body.ce .ce-person a:hover .ce-face, body.ce .ce-person a:focus-visible .ce-face {
+    box-shadow: 0 0 0 3px var(--cy-ink); }
+  body.ce .ce-team .ce-name { font-size: 1.3rem; text-align: left; }
+  .ce-team .ce-role { text-align: left; font-size: 0.6rem; }
+  /* The motto is the person's own line and it is on their page, set large.
+     In a two-up tile it wrapped to five lines under every photo and broke
+     the grid, which is why the tiles carry name and role only. */
+  .ce-team .ce-motto { display: none; }
+
+  /* -- method and guides: a big numeral and the title -------------------- */
+  #method .ce-methods, #guides .ce-methods { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  #method .ce-method a, #guides .ce-method a {
+    background: transparent; border: 0; border-bottom: 1px solid var(--cy-rule); border-radius: 0;
+    display: grid; grid-template-columns: 3.6rem minmax(0, 1fr); align-items: center;
+    padding: 0.95rem 0; min-height: 44px;
+  }
+  #method .ce-method a:hover, #guides .ce-method a:hover { transform: none; }
+  #method .ce-method a::before, #guides .ce-method a::before { font-size: 2.8rem; margin: 0; }
+  #method .ce-m-b, #guides .ce-m-b { display: none; }
+  #method .ce-m-t, #guides .ce-m-t { font-size: 1.35rem; margin: 0; }
+  #guides .ce-lede, #lanes .ce-lede { color: var(--cy-ink-dim); }
+
+  /* The page closes on the ink it opened with. style.css paints the footer
+     from its own tokens, so the background is set here as well as the
+     palette; the links and the note read through the redefined vars. */
+  body.ce .cy-footer { background: var(--cy-bg); color: var(--cy-ink-2);
+    border-top: 0;
+    /* The lockup's two tokens are declared on body.ce as var(--cy-ink) and
+       var(--cy-ink-2), and a custom property resolves where it is declared:
+       they stay the paper page's dark ink however the band redefines
+       --cy-ink. Unset here, "Conyso" measured about 1.1:1 on this ground. */
+    --cy-by-ink: var(--cy-ink-2); --cy-by-mark: var(--cy-ink); }
+  body.ce .cy-footer .ce-foot-l a { color: var(--cy-ink-1); }
+}
+
+/* ==========================================================================
+   Phones: the menu, the footer, and air
+
+   Picked from rendered options: a MENU button that opens a full-screen ink
+   panel (over a two-row bar and a bottom tab bar), and a compact two-up
+   footer (over a sign-off and a minimal one). Then a spacing pass asked for
+   as "more breathing room, lighter": fewer things on the screen and more
+   room around each, rather than the same content packed tighter.
+
+   What leaves the phone screen, and where it still lives:
+   - the pace paragraph   -> one line under the counts; full text on desktop
+   - the feature's slide  -> it was a 1400px deck page at 340px, unreadable;
+                             the case page shows it at a readable size
+   - the line-up on each record row -> the case page and the team band
+   - "On the briefs"      -> the footer note says the same thing on every page
+   ========================================================================== */
+.ce-menu-btn, .ce-menu { display: none; }
+.ce-menu[hidden] { display: none !important; }
+.ce-pace-short { display: none; }
+
+@media (max-width: 40rem) {
+  /* -- the bar: mark and MENU, once the script has wired the button ------ */
+  html.ce-menu-wired .ce-nav-list, html.ce-menu-wired .ce-nav-out { display: none; }
+  html.ce-menu-wired .ce-nav { justify-content: space-between; }
+  html.ce-menu-wired .ce-menu-btn {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    background: none; border: 0; margin: 0; padding: 0.8rem 0; min-height: 44px;
+    font-family: var(--ce-display); font-size: 1.05rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--cy-ink); cursor: pointer;
+  }
+  .ce-menu-btn i {
+    display: block; width: 20px; height: 2px; background: currentColor;
+    box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
+  }
+  .ce-menu-btn:focus-visible, .ce-menu-close:focus-visible, .ce-menu a:focus-visible {
+    outline: 2px solid var(--cy-accent); outline-offset: 3px; }
+
+  /* -- the panel --------------------------------------------------------- */
+  html.ce-menu-open, html.ce-menu-open body { overflow: hidden; }
+  .ce-menu {
+    --cy-accent: #8FA6FF;
+    position: fixed; inset: 0; z-index: 60; overflow-y: auto;
+    display: flex; flex-direction: column;
+    background: #121417; color: #F4F6FA;
+    padding: 0 var(--ce-gut) calc(2rem + env(safe-area-inset-bottom));
+  }
+  .ce-menu-top {
+    display: flex; justify-content: space-between; align-items: center;
+    min-height: 49px; border-bottom: 1px solid rgba(255,255,255,0.14);
+  }
+  .ce-menu-mark {
+    font-family: var(--ce-display); text-transform: uppercase; font-size: 1.2rem;
+    letter-spacing: 0.03em; color: #F4F6FA; text-decoration: none;
+  }
+  .ce-menu-close {
+    background: none; border: 0; padding: 0.8rem 0; min-height: 44px; cursor: pointer;
+    font-family: var(--ce-display); font-size: 1.05rem; letter-spacing: 0.06em;
+    text-transform: uppercase; color: #F4F6FA;
+  }
+  .ce-menu-close span { font-family: var(--cy-sans); font-size: 1.3rem; margin-left: 0.3rem; }
+  .ce-menu-list { list-style: none; margin: 1.6rem 0 0; padding: 0; counter-reset: m; }
+  .ce-menu-list li { counter-increment: m; border-bottom: 1px solid rgba(255,255,255,0.14); }
+  .ce-menu-list a {
+    /* flex-start is explicit: an inherited rule centred these on first
+       render, which read as a title card rather than a list. */
+    display: flex; justify-content: flex-start; align-items: baseline;
+    gap: 0.9rem; padding: 0.6rem 0;
+    font-family: var(--ce-display); text-transform: uppercase;
+    font-size: min(13.5vw, 4.2rem); line-height: 1; letter-spacing: 0.005em;
+    color: #F4F6FA; text-decoration: none;
+  }
+  .ce-menu-list a::before {
+    content: counter(m, decimal-leading-zero); font-family: var(--cy-sans);
+    font-size: 0.9rem; font-weight: 700; color: #8FA6FF; min-width: 1.4rem;
+  }
+  .ce-menu-list a[aria-current="page"] { color: #8FA6FF; }
+  .ce-menu-out {
+    align-self: flex-start; margin-top: auto; padding-top: 2rem;
+    font-family: var(--cy-sans); font-weight: 600; font-size: 1rem;
+    color: #8FA6FF; text-decoration: none;
+  }
+  .ce-menu-out span { margin-left: 0.25rem; }
+
+  /* -- footer: two-up, tighter rows -------------------------------------- */
+  body.ce .cy-footer { padding-top: 2.6rem; padding-bottom: 2rem; }
+  /* On the index the last thing above the footer is the ink guides band, and
+     style.css's footer margin left a 112px strip of paper between two inks.
+     They meet on a hairline instead. Other pages end on paper and keep it. */
+  body.ce main:has(#guides) + .cy-footer {
+    margin-top: 0; border-top: 1px solid rgba(255,255,255,0.14); }
+  .ce-foot-cols { grid-template-columns: 1fr 1fr; gap: 1.6rem 1rem; margin-bottom: 1.4rem; }
+  .ce-foot-col:last-child { grid-column: 1 / -1; }
+  .ce-foot-col:last-child .ce-foot-l { columns: 2; column-gap: 1rem; }
+  .ce-foot-l li { margin-bottom: 0; break-inside: avoid; }
+  .ce-foot-l a { font-size: 0.84rem; padding: 0.55rem 0; line-height: 1.3; }
+  .ce-foot-h { color: var(--cy-accent); }
+  .ce-foot-note { font-size: 0.76rem; }
+
+  /* -- less on the screen ------------------------------------------------ */
+  .ce-title .ce-pace { display: none; }
+  .ce-pace-short {
+    display: block; margin: 1.3rem 0 0; font-size: 0.64rem; font-weight: 600;
+    letter-spacing: 0.07em; text-transform: uppercase; color: var(--cy-ink-faint);
+  }
+  /* breaks only at the dots: one line at 375, two clean ones at 320 */
+  .ce-pace-short span:not(.ce-sep) { white-space: nowrap; }
+  .ce-pace-short .ce-sep { color: var(--cy-accent); margin: 0 0.3em; }
+  .ce-feature .ce-feat-media { display: none; }
+  .ce-feature.has-media { grid-template-columns: minmax(0, 1fr); }
+  .ce-feat-lead {
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+  .ce-record td.ce-t-who { display: none; }
+  .ce-record tr { grid-template-areas: "date date res" "comp comp comp" "fmt fmt fmt"; }
+  .ce-section.ce-note { display: none; }
+
+  /* -- more room around what stays --------------------------------------- */
+  .ce-title { padding-top: 2.2rem; padding-bottom: 2.8rem; }
+  body.ce .ce-title-side .ce-lede-wide { margin-top: 1.8rem; line-height: 1.7; }
+  body.ce .ce-hero { padding-top: 2.2rem; padding-bottom: 2.6rem; }
+  .ce-feature { padding-top: 3rem; padding-bottom: 1rem; gap: 1.2rem; }
+  #record, #lanes, #team, #method, #guides { padding-top: 3.4rem; padding-bottom: 3.6rem; }
+  body.ce #record > .ce-h2, body.ce #lanes > .ce-h2, body.ce #team > .ce-h2,
+  body.ce #method > .ce-h2, body.ce #guides > .ce-h2 {
+    font-size: 15vw; margin-bottom: 1.9rem; }
+  .ce-record tr { padding-top: 1.55rem; padding-bottom: 1.55rem; }
+  .ce-record tr::before { top: 1.55rem; }
+  .ce-record tr { border-bottom-color: var(--cy-rule-faint); }
+  .ce-lanes { gap: 1.2rem; background: transparent; border: 0; }
+  .ce-lane { padding: 1.7rem 1.3rem; border: 1px solid var(--cy-rule); border-radius: 3px; }
+  .ce-team { gap: 1.9rem 0.8rem; }
+  #method .ce-method a, #guides .ce-method a { padding: 1.15rem 0; border-bottom-color: var(--cy-rule-faint); }
+  #method .ce-lede, #guides .ce-lede { margin-bottom: 1.4rem; }
+  .ce-section p { line-height: 1.75; margin-bottom: 1.35rem; }
+  body.ce .ce-section:not([id]) { padding-top: 3rem; padding-bottom: 3rem; }
+  .ce-guide .ce-section { padding-top: 3rem; padding-bottom: 3rem; }
+}
+
+/* -- phones: the lanes as two tiles ----------------------------------------
+   Each lane was a 1,100px block on a phone: a paragraph, then four faces
+   each with a name and a two-line role. Side by side as tiles it is the
+   point of the section at a glance: two lanes, who runs each, how many.
+   Nothing is lost: the team band directly below carries every name and
+   role, and About explains the two lanes in full. */
+@media (max-width: 40rem) {
+  #lanes .ce-lanes { grid-template-columns: 1fr 1fr; gap: 0.7rem; }
+  #lanes .ce-lane { padding: 1.15rem 1rem 1.1rem; display: flex; flex-direction: column; }
+  #lanes .ce-lane-b, #lanes .ce-lane-n2, #lanes .ce-lane-r { display: none; }
+  #lanes .ce-eyebrow { font-size: 0.58rem; letter-spacing: 0.14em; margin-bottom: 0.5rem; }
+  body.ce #lanes .ce-lane-h { font-size: 1.3rem; line-height: 1; margin: 0 0 1rem; }
+  #lanes .ce-lane-roster { gap: 0; margin: 0 0 auto; padding-left: 8px; }
+  #lanes .ce-lane-p { width: auto; margin-left: -8px; }
+  #lanes .ce-face-sm { width: 36px; height: 36px; box-shadow: 0 0 0 2px var(--cy-bg); }
+  #lanes .ce-lane-state { margin-top: 1.1rem; padding-top: 0.7rem; }
+  body.ce #lanes .ce-lane-n { font-size: 2.6rem; }
+}
+
+/* ==========================================================================
+   Phones: the reader in control
+
+   Asked for after the Poster pass: long sections and sideways areas felt as
+   if the page, not the reader, decided what to see and when. So:
+   - a long section shows its first paragraph and a button saying how much
+     is behind it; a lane is a tile until tapped (it then takes the row);
+   - index headings drop from 15vw to 12vw, so each is a line, not a screen;
+   - the team is three across, so the band is one screen rather than three;
+   - slides get their previous/next buttons back at 44px, and a tap opens
+     the slide full screen; diagrams show whole, with an Enlarge button,
+     instead of a frame you had to swipe to discover.
+   Everything folded is still in the page, and without the script nothing
+   is folded at all: every rule here that hides is behind a ce-*-wired class.
+   ========================================================================== */
+.ce-dia-open { display: none; }
+.ce-view { display: none; }
+/* The script un-hides every fold button; above 40rem nothing is folded, so
+   nothing may show a button claiming it is. */
+.ce-fold-btn { display: none; }
+
+@media (max-width: 40rem) {
+  /* -- folds ------------------------------------------------------------- */
+  html.ce-fold-wired .ce-fold-body:not(.is-open) { display: none; }
+  .ce-fold-btn {
+    display: inline-flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap;
+    margin: 0.2rem 0 0; padding: 0.75rem 1rem; min-height: 44px;
+    background: transparent; border: 1.5px solid var(--cy-ink); border-radius: 2px;
+    font-family: var(--ce-display); font-size: 0.95rem; letter-spacing: 0.05em;
+    text-transform: uppercase; color: var(--cy-ink); cursor: pointer;
+  }
+  .ce-fold-btn::after { content: "\2193"; font-family: var(--cy-sans); font-weight: 700; }
+  .ce-fold-btn[aria-expanded="true"]::after { content: "\2191"; }
+  .ce-fold-btn .ce-fold-n {
+    font-family: var(--cy-sans); font-size: 0.66rem; font-weight: 600;
+    letter-spacing: 0.08em; color: var(--cy-ink-2); order: 2;
+  }
+  .ce-fold-btn:focus-visible { outline: 2px solid var(--cy-accent); outline-offset: 3px; }
+  .ce-fold-body.is-open { margin-bottom: 1rem; }
+  .ce-fold-btn[hidden] { display: none; }
+
+  /* -- lanes: tile until opened ------------------------------------------ */
+  html.ce-fold-wired #lanes .ce-lane:not(.is-open) .ce-lane-b,
+  html.ce-fold-wired #lanes .ce-lane:not(.is-open) .ce-lane-n2,
+  html.ce-fold-wired #lanes .ce-lane:not(.is-open) .ce-lane-r { display: none; }
+  #lanes .ce-lane.is-open { grid-column: 1 / -1; }
+  #lanes .ce-lane.is-open .ce-lane-b, #lanes .ce-lane.is-open .ce-lane-n2,
+  #lanes .ce-lane.is-open .ce-lane-r { display: block; }
+  #lanes .ce-lane.is-open .ce-lane-b { font-size: 0.95rem; line-height: 1.7; margin: 0 0 1.2rem; }
+  #lanes .ce-lane.is-open .ce-lane-roster { gap: 0.9rem 1rem; padding-left: 0; }
+  #lanes .ce-lane.is-open .ce-lane-p { width: 4.6rem; margin-left: 0; }
+  #lanes .ce-lane.is-open .ce-face-sm { width: 46px; height: 46px; }
+  #lanes .ce-lane-btn {
+    margin-top: 1rem; padding: 0.6rem 0.7rem; font-size: 0.8rem; align-self: flex-start; }
+  /* when the script is dead the lanes are simply shown in full */
+  html:not(.ce-fold-wired) #lanes .ce-lane-b,
+  html:not(.ce-fold-wired) #lanes .ce-lane-n2,
+  html:not(.ce-fold-wired) #lanes .ce-lane-r { display: block; }
+  html:not(.ce-fold-wired) #lanes .ce-lanes { grid-template-columns: minmax(0, 1fr); }
+
+  /* -- headings a line, not a screen ------------------------------------- */
+  body.ce #record > .ce-h2, body.ce #lanes > .ce-h2, body.ce #team > .ce-h2,
+  body.ce #method > .ce-h2, body.ce #guides > .ce-h2 { font-size: 12vw; margin-bottom: 1.5rem; }
+
+  /* -- team: three across ------------------------------------------------- */
+  .ce-team { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem 0.6rem; }
+  body.ce .ce-team .ce-name { font-size: 1rem; line-height: 1.05; }
+  .ce-team .ce-role { font-size: 0.55rem; letter-spacing: 0.08em; }
+  .ce-team .ce-standing { font-size: 0.55rem; }
+
+  /* -- slides: buttons back, tap to open ---------------------------------- */
+  .ce-rail.is-wired .ce-rail-nav { display: flex; }
+  .ce-rail-b { width: 44px; height: 44px; font-size: 1.05rem; }
+  html.ce-view-wired .ce-rail-glass { cursor: zoom-in; }
+  /* A badge on the slide says it opens; the rail foot has no room for the
+     words at 375px beside the count, the bar and two 44px buttons. */
+  html.ce-view-wired .ce-rail-glass::before {
+    content: "\2922  Open"; position: absolute; top: 0.5rem; right: 0.5rem; z-index: 2;
+    padding: 0.3rem 0.5rem; border-radius: 2px; pointer-events: none;
+    background: rgba(18,20,23,0.82); color: #F4F6FA;
+    font-family: var(--cy-sans); font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  /* -- diagrams: whole, with Enlarge ------------------------------------- */
+  .ce-dia-frame { overflow: visible; margin-inline: 0; padding: 0; }
+  .ce-dia-frame svg { width: 100%; max-width: 100%; }
+  .ce-dia-open:not([hidden]) {
+    display: inline-flex; align-items: center; gap: 0.45rem; margin: 0.7rem 0 0.2rem;
+    padding: 0.65rem 0.95rem; min-height: 44px; cursor: pointer;
+    background: var(--cy-accent); color: #F4F6FA; border: 0; border-radius: 2px;
+    font-family: var(--ce-display); font-size: 0.95rem; letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .ce-dia-open:focus-visible { outline: 2px solid var(--cy-accent); outline-offset: 3px; }
+}
+
+/* -- the viewer (any width; it only opens on request) --------------------- */
+html.ce-view-open, html.ce-view-open body { overflow: hidden; }
+.ce-view:not([hidden]) {
+  display: flex; flex-direction: column; position: fixed; inset: 0; z-index: 70;
+  background: rgba(10,11,13,0.96); color: #E7E9EC; overflow: auto;
+  padding: 0 1rem calc(1.2rem + env(safe-area-inset-bottom));
+}
+.ce-view-top {
+  display: flex; justify-content: space-between; align-items: center;
+  min-height: 52px; position: sticky; top: 0; background: rgba(10,11,13,0.96);
+}
+.ce-view-hint { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(231,233,236,0.7); }
+.ce-view-close {
+  background: none; border: 0; min-height: 44px; padding: 0.6rem 0; cursor: pointer;
+  font-family: var(--ce-display); font-size: 1.05rem; letter-spacing: 0.06em;
+  text-transform: uppercase; color: #F4F6FA;
+}
+.ce-view-close:focus-visible { outline: 2px solid #8FA6FF; outline-offset: 3px; }
+.ce-view-body { margin: auto 0; }
+/* A slide at the page's width is the thumbnail the reader just tapped;
+   720px roughly doubles its smallest text. */
+.ce-view-body img { display: block; width: max(100%, 720px); max-width: none; height: auto;
+  border-radius: 3px; }
+/* the diagram is drawn on the light ground, so it gets its paper back */
+/* Drawn size, not fitted: fitted is what the page already shows. At 640 the
+   smallest label is 9px and the reader pans with a finger they chose to put
+   there, or pinches for more. */
+.ce-view-body { overflow-x: auto; overscroll-behavior: contain; }
+.ce-view-body svg { display: block; width: 640px; max-width: none; height: auto;
+  background: #F4F6FA; border-radius: 3px; padding: 0.6rem; box-sizing: border-box; }
+@media (min-width: 42rem) { .ce-view-body svg { width: 100%; } }
+.ce-view-cap { font-size: 0.84rem; line-height: 1.6; color: rgba(231,233,236,0.78);
+  margin: 1rem 0 0; max-width: 44rem; }
+
+/* -- desktop: section numbers on tinted bands ------------------------------
+   From 64rem the number hangs 5.6rem left of the column. A tinted section is
+   full-bleed (margin-inline: calc(50% - 50vw)), so it is the number's
+   containing block and "left of the column" became left of the screen: 02,
+   04 and 06 on every case page sat at x = -90 and never showed. Found by the
+   phone-pass overflow audit, run at desktop width as the regression check.
+   The column is .ce-wrap's content box, min(59rem, 100vw - 3rem) wide and
+   centred, so the number is placed against that instead. */
+@media (min-width: 74rem) {
+  .ce-tint.ce-numbered .ce-num {
+    left: calc(50% - min(29.5rem, 50vw - 1.5rem) - 5.6rem);
+  }
 }

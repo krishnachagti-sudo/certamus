@@ -30,6 +30,169 @@
   root.classList.add("ce-js");
   if (reduce) { root.classList.add("ce-reduce"); }
 
+  // -- 0a. the phone menu ---------------------------------------------------
+  // Below 40rem the bar is the mark and a MENU button; the sections open as a
+  // full-screen panel. The panel is in the markup already (hidden); this only
+  // shows it. html.ce-menu-wired is what swaps the strip for the button, so
+  // with this script dead the strip stays and every link still works.
+  //
+  // It is a modal: focus moves into it, Tab stays inside it, Escape and the
+  // Close button both put focus back on MENU, and the page underneath does
+  // not scroll while it is open.
+  var menu = document.getElementById("ce-menu");
+  var menuBtn = document.querySelector(".ce-menu-btn");
+  if (menu && menuBtn) {
+    var closeBtn = menu.querySelector(".ce-menu-close");
+    var openMenu = function () {
+      menu.hidden = false;
+      menuBtn.setAttribute("aria-expanded", "true");
+      root.classList.add("ce-menu-open");
+      closeBtn.focus();
+    };
+    var closeMenu = function (refocus) {
+      if (menu.hidden) { return; }
+      menu.hidden = true;
+      menuBtn.setAttribute("aria-expanded", "false");
+      root.classList.remove("ce-menu-open");
+      if (refocus) { menuBtn.focus(); }
+    };
+    menuBtn.addEventListener("click", openMenu);
+    closeBtn.addEventListener("click", function () { closeMenu(true); });
+    // a section link on the same page scrolls there, so close on the way
+    menu.addEventListener("click", function (e) {
+      if (e.target.closest && e.target.closest("a")) { closeMenu(false); }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (menu.hidden) { return; }
+      if (e.key === "Escape") { closeMenu(true); return; }
+      if (e.key !== "Tab") { return; }
+      var f = menu.querySelectorAll("a, button");
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { last.focus(); e.preventDefault(); }
+      else if (!e.shiftKey && document.activeElement === last) { first.focus(); e.preventDefault(); }
+    });
+    // rotating to a width where the full nav shows should not leave a modal up
+    if (window.matchMedia) {
+      var wide = window.matchMedia("(min-width: 40.01rem)");
+      var onWide = function () { if (wide.matches) { closeMenu(false); } };
+      if (wide.addEventListener) { wide.addEventListener("change", onWide); }
+      else if (wide.addListener) { wide.addListener(onWide); }
+    }
+    root.classList.add("ce-menu-wired");
+  }
+
+  // -- 0b. folds: the reader opens what they want ---------------------------
+  // On a phone a long section shows its first paragraph and a button; a
+  // lane shows as a tile. The button says how much is behind it, and it is
+  // the reader who opens it. html.ce-fold-wired is what lets the CSS fold
+  // anything, so with no script nothing is ever hidden.
+  var foldBtns = document.querySelectorAll(".ce-fold-btn");
+  Array.prototype.forEach.call(foldBtns, function (btn) {
+    var target = document.getElementById(btn.getAttribute("aria-controls"));
+    if (!target) { return; }
+    var closedLabel = btn.textContent;
+    var more = btn.getAttribute("data-more");
+    var label = function (open) {
+      btn.textContent = open ? "Show less" : closedLabel;
+      if (!open && more) {
+        var sub = document.createElement("span");
+        sub.className = "ce-fold-n";
+        sub.textContent = more;
+        btn.appendChild(sub);
+      }
+    };
+    label(false);
+    btn.hidden = false;
+    btn.addEventListener("click", function () {
+      var open = !target.classList.contains("is-open");
+      target.classList.toggle("is-open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      label(open);
+      // closing a long section should not strand the reader far below it
+      if (!open) {
+        var top = (target.closest("section") || target).getBoundingClientRect().top;
+        if (top < 0) { window.scrollBy(0, top - 70); }
+      }
+    });
+  });
+  if (foldBtns.length) { root.classList.add("ce-fold-wired"); }
+
+  // -- 0c. the viewer: a slide or a diagram, full screen, on request --------
+  // Tapping a slide, or a diagram's Enlarge button, opens it on its own over
+  // the page. The reader chose to open it, so inside it can be read at a
+  // useful size and zoomed with the usual pinch; Close, Escape or the back
+  // of the panel put them back exactly where they were.
+  var viewer = null, viewerFrom = null;
+  var closeViewer = function () {
+    if (!viewer || viewer.hidden) { return; }
+    viewer.hidden = true;
+    viewer.querySelector(".ce-view-body").innerHTML = "";
+    root.classList.remove("ce-view-open");
+    if (viewerFrom) { viewerFrom.focus(); }
+  };
+  var openViewer = function (node, caption, from) {
+    if (!viewer) {
+      viewer = document.createElement("div");
+      viewer.className = "ce-view";
+      viewer.setAttribute("role", "dialog");
+      viewer.setAttribute("aria-modal", "true");
+      viewer.setAttribute("aria-label", "Enlarged view");
+      viewer.innerHTML = '<div class="ce-view-top"><span class="ce-view-hint"></span>' +
+        '<button class="ce-view-close" type="button">Close <span aria-hidden="true">&times;</span></button></div>' +
+        '<div class="ce-view-body"></div><p class="ce-view-cap"></p>';
+      viewer.hidden = true;
+      document.body.appendChild(viewer);
+      viewer.querySelector(".ce-view-close").addEventListener("click", closeViewer);
+      viewer.addEventListener("click", function (e) { if (e.target === viewer) { closeViewer(); } });
+      document.addEventListener("keydown", function (e) {
+        if (viewer.hidden) { return; }
+        if (e.key === "Escape") { closeViewer(); }
+        // one control inside, so Tab stays on it rather than walking the
+        // page hidden behind the panel
+        if (e.key === "Tab") { e.preventDefault(); viewer.querySelector(".ce-view-close").focus(); }
+      });
+    }
+    viewerFrom = from;
+    var body = viewer.querySelector(".ce-view-body");
+    body.innerHTML = "";
+    body.appendChild(node);
+    viewer.querySelector(".ce-view-cap").textContent = caption || "";
+    viewer.querySelector(".ce-view-hint").textContent =
+      "Drag to pan \u00b7 pinch to zoom";
+    viewer.hidden = false;
+    root.classList.add("ce-view-open");
+    viewer.querySelector(".ce-view-close").focus();
+  };
+  var slideImgs = document.querySelectorAll(".ce-rail-glass img");
+  Array.prototype.forEach.call(slideImgs, function (img) {
+    var glass = img.parentNode;
+    glass.setAttribute("tabindex", "0");
+    glass.setAttribute("role", "button");
+    glass.setAttribute("aria-label", "Open this slide full screen");
+    var go = function () {
+      var big = document.createElement("img");
+      big.src = img.currentSrc || img.src;
+      big.alt = img.alt;
+      var cap = glass.parentNode.querySelector(".ce-fig-cap");
+      openViewer(big, cap ? cap.textContent : "", glass);
+    };
+    glass.addEventListener("click", go);
+    glass.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); }
+    });
+  });
+  var diaBtns = document.querySelectorAll(".ce-dia-open");
+  Array.prototype.forEach.call(diaBtns, function (btn) {
+    var fig = btn.closest(".ce-dia");
+    btn.hidden = false;
+    btn.addEventListener("click", function () {
+      var svg = fig.querySelector("svg").cloneNode(true);
+      var cap = fig.querySelector(".ce-fig-cap");
+      openViewer(svg, cap ? cap.textContent : "", btn);
+    });
+  });
+  if (slideImgs.length || diaBtns.length) { root.classList.add("ce-view-wired"); }
+
   // -- 0. the nav strip on a phone ------------------------------------------
   // Below 40rem the section links scroll sideways between the mark and the
   // Conyso link, with a fade on the right to say there is more. Two jobs:
