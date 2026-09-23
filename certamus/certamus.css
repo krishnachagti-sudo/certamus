@@ -1462,7 +1462,9 @@ html:has(> body.ce) { scrollbar-color: rgba(15,20,25,0.32) #F4F6FA; }
    uses. Measured on the band, composited: ink band text 17.1 / 8.1 / 7.84,
    periwinkle 7.97; cobalt band paper 7.03, role text 5.98.
 
-   Desktop is untouched: ce-band-* classes paint nothing above 40rem.
+   The palette and band edges also apply on desktop (see "Desktop: the
+   Poster palette" at the end of this file); the phone-only layout below
+   (numbered record, photo tiles, edge-to-edge headings) does not.
    ========================================================================== */
 @media (max-width: 40rem) {
   .ce-title, body.ce .ce-hero, .ce-band-ink, body.ce .cy-footer {
@@ -1862,4 +1864,61 @@ html.ce-view-open, html.ce-view-open body { overflow: hidden; }
   .ce-tint.ce-numbered .ce-num {
     left: calc(50% - min(29.5rem, 50vw - 1.5rem) - 5.6rem);
   }
+}
+
+/* ==========================================================================
+   Desktop: the Poster palette
+
+   Asked for after seeing the two side by side: the phone's colours read
+   better than the desktop's, so desktop takes them. Ink hero, lanes on ink,
+   the team on cobalt, guides and footer on ink, the record and method on
+   paper. Same tokens as the phone block, so every component inside a band
+   re-themes through the var() it already uses, and the same measured
+   contrast (ink band 17.1 / 8.1 / 7.84, periwinkle 7.97; cobalt 7.03, 5.98).
+   Only the palette and the band edges come across; the desktop layout (two
+   column hero, table record, team row, card grid) stays as it is.
+   ========================================================================== */
+@media (min-width: 40.01rem) {
+  .ce-title, body.ce .ce-hero, .ce-band-ink, body.ce .cy-footer {
+    --cy-bg: #121417; --cy-bg-soft: #1C1F24;
+    --cy-ink: #F4F6FA; --cy-ink-1: rgba(244,246,250,0.9);
+    --cy-ink-2: rgba(231,233,236,0.74); --cy-ink-dim: rgba(231,233,236,0.82);
+    --cy-ink-faint: rgba(231,233,236,0.7);
+    --cy-rule: rgba(255,255,255,0.14); --cy-rule-faint: rgba(255,255,255,0.08);
+    --cy-accent: #8FA6FF; --cy-accent-rgb: 143,166,255;
+  }
+  .ce-band-cobalt {
+    --cy-bg: #2A3FD4; --cy-bg-soft: #3448DA;
+    --cy-ink: #F4F6FA; --cy-ink-1: rgba(244,246,250,0.94);
+    --cy-ink-2: rgba(244,246,250,0.88); --cy-ink-dim: rgba(244,246,250,0.9);
+    --cy-ink-faint: rgba(244,246,250,0.88);
+    --cy-rule: rgba(255,255,255,0.22); --cy-rule-faint: rgba(255,255,255,0.12);
+    --cy-accent: #DDE3FF; --cy-accent-rgb: 221,227,255;
+  }
+  /* full-bleed, the same way .ce-tint already does it inside the wrap */
+  .ce-title, body.ce .ce-hero, .ce-band-ink, .ce-band-cobalt {
+    background: var(--cy-bg); color: var(--cy-ink);
+    margin-inline: calc(50% - 50vw); padding-inline: calc(50vw - 50%);
+    /* the scaffold caps body.ce .ce-hero at --ce-wide (1120px), which cut
+       the case and guide hero bands short of the right edge */
+    max-width: none;
+  }
+  .ce-title { margin-top: 0; margin-bottom: 0; padding-top: 4.2rem; padding-bottom: 4.2rem; }
+  body.ce .ce-hero { padding-top: 4rem; padding-bottom: 3.4rem; }
+  .ce-title-mark path, .ce-title-mark circle,
+  body.ce .ce-hero .ce-mark path, body.ce .ce-hero .ce-mark circle { stroke: var(--cy-accent); }
+  body.ce .ce-title .ce-stat:nth-child(2) .ce-stat-n { color: var(--cy-accent); }
+  .ce-hero .ce-eyebrow, .ce-hero .ce-eyebrow a { color: var(--cy-accent); }
+  .ce-feature { padding-top: 3.4rem; }
+  body.ce .ce-hero + .ce-clearance { margin-top: 2rem; }
+
+  /* a band carries its own edge, so the cobalt bar above it goes */
+  .ce-divider:has(+ #lanes), .ce-divider:has(+ #team), .ce-divider:has(+ #guides) { display: none; }
+  #lanes, #team, #guides { border-top: 0; margin-top: 0; padding-top: 4.4rem; padding-bottom: 4.6rem; }
+  .ce-divider:has(+ #method) { padding-top: 3.4rem; }
+
+  body.ce .cy-footer { background: var(--cy-bg); color: var(--cy-ink-2); border-top: 0;
+    --cy-by-ink: var(--cy-ink-2); --cy-by-mark: var(--cy-ink); }
+  body.ce .cy-footer .ce-foot-l a { color: var(--cy-ink-1); }
+  body.ce main:has(#guides) + .cy-footer { margin-top: 0; border-top: 1px solid rgba(255,255,255,0.14); }
 }

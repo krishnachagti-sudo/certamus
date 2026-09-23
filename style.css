@@ -4659,7 +4659,10 @@ body.cy-shell a:hover { color: var(--cy-ink); }
 .cy-nav-toggle { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; margin: 0; }
 .cy-burger { display: none; }
 
-@media (max-width: 720px) {
+/* 900px, not 720: with Certamus in the top nav there are eight items, and
+   between 720 and 860px they ran into the wordmark with no gap at all. The
+   burger takes over before that happens. */
+@media (max-width: 900px) {
     .cy-header-inner {
         padding: 0.9rem 1.25rem;
         flex-direction: row;
@@ -7617,7 +7620,7 @@ body.cy-embed .cy-result-capture { display: none; }
 .cy-lk-fields { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: 0.7rem; }
 .cy-lk-field { display: flex; flex-direction: column; gap: 0.3rem; min-width: 8.5rem; flex: 0 1 auto; }
 .cy-lk-field > span { font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cy-ink-2, #a8a59c); }
-.cy-lk-sel { padding: 0.5rem 0.7rem; font-family: 'Montserrat', system-ui, sans-serif; font-size: 0.9rem; color: var(--cy-ink-1, #d8d6cf); background: rgba(10,10,10,0.5); border: 1px solid rgba(245,243,238,0.18); border-radius: 8px; }
+.cy-lk-sel { padding: 0.5rem 0.7rem; font-family: 'Montserrat', system-ui, sans-serif; font-size: 0.9rem; color: var(--cy-ink-1, #1a1712); background: #fff; border: 1px solid rgba(26,23,18,0.22); border-radius: 8px; min-height: 44px; }   /* was dark-theme glass: dark ink on 50% black, about 3:1, on 97 reference pages */
 .cy-lk-sel:focus { outline: 2px solid var(--cy-gold); outline-offset: 1px; }
 .cy-lk-outs { display: flex; flex-wrap: wrap; gap: 1.4rem; margin-top: 1.1rem; padding-top: 0.9rem; border-top: 1px solid rgba(245,243,238,0.1); }
 .cy-lk-out { display: flex; flex-direction: column; gap: 0.15rem; }
@@ -7657,7 +7660,10 @@ body.cy-embed .cy-result-capture { display: none; }
     position: sticky; top: 0; z-index: 50;
     display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: center; justify-content: space-between;
     padding: 1.1rem clamp(1.25rem, 5vw, 4rem);
-    background: rgba(15,17,23,0.82); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%);
+    /* Was rgba(15,17,23,0.82), the dark theme's glass, under chips set in
+       the light theme's dark ink: the filter labels were near-invisible on
+       every width. Paper glass now. */
+    background: rgba(246,244,239,0.9); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%);
     border-bottom: 1px solid var(--cy-rule);
 }
 .cy-dir-search { position: relative; flex: 1 1 320px; max-width: 460px; }
@@ -7669,7 +7675,7 @@ body.cy-embed .cy-result-capture { display: none; }
     transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 #cy-tool-search::placeholder { color: var(--cy-ink-faint); }
-#cy-tool-search:focus { outline: none; border-color: var(--cy-gold); box-shadow: 0 0 0 3px rgba(122, 95, 24,0.16); background: #1E1A15; }
+#cy-tool-search:focus { outline: none; border-color: var(--cy-gold); box-shadow: 0 0 0 3px rgba(122, 95, 24,0.16); background: #fff; }   /* was #1E1A15: dark ground under dark typed text */
 #cy-tool-search::-webkit-search-cancel-button { -webkit-appearance: none; }
 
 .cy-chips { display: flex; flex-wrap: wrap; gap: 0.45rem; }
@@ -7705,7 +7711,9 @@ body.cy-embed .cy-result-capture { display: none; }
 
 @media (max-width: 760px) {
     .cy-dir-bar { position: static; flex-direction: column; align-items: stretch; }
-    .cy-dir-search { max-width: none; }
+    /* flex: none. In a column, the desktop's flex: 1 1 320px is a 320px
+       HEIGHT, which made this bar 519px tall on a phone. */
+    .cy-dir-search { max-width: none; flex: none; }
     .cy-chips { justify-content: flex-start; }
 }
 
@@ -8711,3 +8719,53 @@ a.cy-skip { color: #F5F3EE; }
     animation: none; animation-delay: 0s; transform: scaleX(1);
   }
 }
+
+/* ==========================================================================
+   Certamus, as a branch of the company (homepage section, footer column)
+
+   It was one link under More. It is a standing branch, so the homepage
+   gives it a section in the house voice and the footer a column of its own.
+   The section is rendered by build.py render_certamus_branch() from the case
+   files; this is only how it sits on the page.
+
+   It lands between Research and development (a light band) and "Proven on
+   ourselves first" (plain), so it is plain as well and is set apart from
+   Proven by a rule rather than by breaking the page's alternation.
+   ========================================================================== */
+.cy-cert + #proven { border-top: 1px solid var(--cy-rule); }
+.cy-cert-grid {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.5rem 3.5rem; margin-top: 2.4rem; align-items: start;
+}
+.cy-cert-faces { display: flex; flex-wrap: wrap; gap: 0.9rem; margin: 0.4rem 0 1.8rem; }
+.cy-cert-faces a { display: block; border-radius: 50%; transition: transform 0.2s; }
+.cy-cert-faces a:hover, .cy-cert-faces a:focus-visible { transform: translateY(-3px); }
+.cy-cert-faces img {
+  width: 64px; height: 64px; border-radius: 50%; object-fit: cover; display: block;
+  box-shadow: 0 0 0 1px var(--cy-rule);
+}
+.cy-cert-rec { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--cy-rule); }
+.cy-cert-rec li {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.25rem 1rem;
+  padding: 1rem 0; border-bottom: 1px solid var(--cy-rule);
+}
+.cy-cert-rec a {
+  font-family: var(--cy-serif); font-size: 1.25rem; line-height: 1.25;
+  color: inherit; text-decoration: none;
+}
+.cy-cert-rec a:hover { color: var(--cy-gold); }
+.cy-cert-m { grid-column: 1; font-size: 0.8rem; color: var(--cy-ink-2); }
+.cy-cert-r {
+  grid-row: 1 / 3; grid-column: 2; align-self: center;
+  font-size: 0.66rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--cy-gold);
+}
+.cy-cert-r.is-pending { color: var(--cy-ink-2); }
+@media (max-width: 860px) {
+  .cy-cert-grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Seven footer columns once Competition has its own. */
+.cy-footer-inner-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+@media (max-width: 1100px) { .cy-footer-inner-7 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 640px)  { .cy-footer-inner-7 { grid-template-columns: 1fr 1fr; } }
