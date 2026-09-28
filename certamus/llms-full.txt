@@ -285,6 +285,122 @@ assemble a deck.
 
 ======================================================================
 
+# Crack the Case
+
+> Crack the Case, Entreuzest &#x27;26, Maharaja Agrasen College. Finalist.
+
+Source: https://conyso.com/certamus/entreuzest-26.html
+
+The brief below is restated in our own words. The original belongs to the organiser.
+
+## Four slides on a very large bet
+
+The brief was an invented Indian infrastructure company deciding whether to
+build an AI-ready data-centre platform, partner with global firms, or take a
+phased, asset-light route. It wanted a positioning, an operating model, a
+financial model, a partnership and risk plan and a three-year roadmap. All of
+it in four slides.
+
+*The brief belongs to the organiser, so it is restated here in our own words
+rather than reproduced.*
+
+## The number that decides whether a GPU earns
+
+Most of the case reads like a question about building. We thought it was a
+question about utilisation. A GPU rented by the hour at a going rate of about
+₹251 needs roughly 90% utilisation just to cover its own depreciation and rack
+space. Average GPU utilisation in India runs under 20%.
+
+So a platform selling on-demand hours loses money on most of its silicon, and
+a platform whose GPUs are already under contract does not. The same hardware,
+at a different utilisation, is a different business. That made the
+positioning: sovereign, reserved enterprise capacity first, sold on multi-year
+terms to buyers who need their data held in India, with hyperscalers as tenants
+of the building rather than customers we resell.
+
+1. The positioning slide. An uncontracted GPU needs about 90% utilisation to cover its own depreciation and rack space; India's GPUs run below 20%. So the product is reserved capacity on contract, not hours on demand.
+
+## Lock the slow assets, buy the fast ones on contract
+
+The second call came from lead times. Power and cooling take years to secure
+and are scarce. GPUs take weeks to buy, and their rental price keeps falling.
+So we commit early to the slow, scarce things (land, a sanctioned grid
+connection, power contracts, liquid-cooled halls) and buy GPUs only once a
+contract exists to pay for them.
+
+In the meantime we lease a small, air-cooled space to start selling, rather
+than waiting for a building. The one thing we own before any demand is proven
+is the sanctioned power, because giving it up means rejoining a queue measured
+in years.
+
+1. The operating model, split by lead time. A new grid connection takes three to four years and liquid-cooling units most of a year; GPU servers arrive in weeks and their rental prices have fallen sharply.
+
+## ₹450 crore is the only uncontracted bet
+
+Building the full 100 MW and 50,000 GPUs upfront costs about ₹38,700 crore and,
+filled at the market's average utilisation, loses around ₹7,000 crore a year.
+Our three-year plan costs ₹8,406 crore. Of that, ₹450 crore buys the option
+(land, the sanctioned load and long-lead deposits), about ₹3,040 crore builds
+the shell behind gates, and every GPU is bought against a take-or-pay contract.
+
+EBITDA margin rises from 49% to 69% over three years and EBIT is positive from
+the first. Profit after interest is negative for all three, and we put that on
+the slide rather than leaving it to be found: it is depreciation and debt
+service on the GPUs, and each contracted batch repays inside its own contract
+term.
+
+The sensitivity is where the argument lives. Moving power price by 20% barely
+touches the result. Dropping the contracted share from 95% to 70% wipes out
+year-three EBIT entirely. Utilisation is the business; the rest is detail.
+
+1. The financial slide. Building everything upfront costs ₹38,700 crore and loses money at market utilisation; our three-year plan costs ₹8,406 crore, of which ₹450 crore is the only spend not backed by a contract.
+
+## Gates, not dates
+
+The roadmap is a sequence of decisions. Build the first block only once the
+leased space is fully contracted and letters of intent cover half of it. Start
+the second only when the first is mostly pre-let at the target price. Stop
+buying GPUs if the price falls below the floor or GPU cost rises without an
+index clause.
+
+The question we expected most was what happens if nobody signs. The answer is
+the third gate: if under 30% of the first block is contracted by month twelve,
+we stop being a compute company and lease the powered, cooled shell to the
+operators who build most of India's capacity. The worst case is the ₹450 crore
+option, and the land keeps its value.
+
+1. The roadmap as three decision gates: accelerate on contracts, pause on price, redesign as a landlord if nobody signs.
+
+## Where it is weakest
+
+The most exposed numbers on the slides are ours, not sourced. The site, the
+split of capacity, the gate thresholds and several cost inputs (facility cost
+per megawatt, colocation rates, the size of the power position) are
+assumptions, labelled as assumptions on the slide. The 90% break-even is
+derived from a reported rate and a five-year life, not observed.
+
+And the plan rests on buyers signing multi-year contracts with a new entrant.
+The evidence we had is that reserved capacity is where the shortage still
+bites, and that one listed Indian operator has signed exactly that kind of
+contract. That is support, not proof, and a final would have been the place to
+be pushed on it.
+
+## The final we did not turn up to
+
+The written round shortlisted ten teams for a final on 28 September, and we
+were one of them. We did not contest it. It fell on a day of classes at IIM
+Sirmaur, so the four slides above are where this one stops.
+
+## Who did what
+
+- [Krishna Chagti](https://conyso.com/certamus/team-krishna.html)Framed the case as a utilisation problem rather than a building one, and built the positioning and the operating model on that
+- [Krishay Nayyar](https://conyso.com/certamus/team-krishay.html)Sized it: the capital plan, the three-year financials, and the sensitivity that shows contracted share is the only input that matters
+- [Drishti Soni](https://conyso.com/certamus/team-drishti.html)Built the roadmap as three decision gates, and closed on the one number the whole plan rests on
+- [Aksh Kansara](https://conyso.com/certamus/team-aksh.html)Tested the assumptions, and wrote the question each slide answers before a panel could ask it
+
+
+======================================================================
+
 # How we work a case
 
 > Reduce the list to its causes, set the rule before the analysis, size what the case leaves out, and show the ranking rather than the decimals.
@@ -395,22 +511,24 @@ It will change. That is the point: when it changes, you know something.
 
 Source: https://conyso.com/certamus/
 
-Most recent · Hackathon
+Most recent · Case competition
 
-## [DataForge 2026, Pathway track](https://conyso.com/certamus/pathway.html)
+## [Crack the Case](https://conyso.com/certamus/entreuzest-26.html)
 
-Pathway · Final round · **Finalist**
+Entreuzest '26, Maharaja Agrasen College · did not contest it · **Finalist**
 
-The brief asked for an explainer rather than a product. Pick one frontier idea in machine learning, build something a working engineer can interact with, and make the idea click. Connect it to the host's own architecture.
+The brief was an invented Indian infrastructure company deciding whether to build an AI-ready data-centre platform, partner with global firms, or take a phased, asset-light route.
 
-[Read the case](https://conyso.com/certamus/pathway.html)
+[Read the case](https://conyso.com/certamus/entreuzest-26.html)
 
-![A slide from the DataForge 2026, Pathway track submission](https://conyso.com/images/certamus/decks/pathway-02.webp)
+![A slide from the Crack the Case submission](https://conyso.com/images/certamus/decks/entreuzest-26-02.webp)
 
 ## Finals and wins
 
 | Date | Competition | Format | Who | Result |
 | --- | --- | --- | --- | --- |
+| 26 September 2026 | [Crack the Case](https://conyso.com/certamus/entreuzest-26.html)Entreuzest '26, Maharaja Agrasen College | Case | Krishna Chagti, Krishay Nayyar, Drishti Soni, Aksh Kansara | Finalist did not contest it |
+| 25 September 2026 | [The Hot Seat](https://conyso.com/certamus/the-hot-seat.html)Interface '26, BITS Pilani | Case | Krishna Chagti, Krishay Nayyar, Drishti Soni | Finalist Final round |
 | 19 September 2026 | [DataForge 2026, Pathway track](https://conyso.com/certamus/pathway.html)Pathway | Hackathon | Krishna Chagti | Finalist Final round |
 | 19 September 2026 | [Sankriya 11.0](https://conyso.com/certamus/sankriya-11.html)Club Kaizen, IBS Hyderabad | Case | Krishna Chagti, Krishay Nayyar, Drishti Soni | Pending Final round |
 | 19 September 2026 | [Seeking Alpha 2026](https://conyso.com/certamus/seeking-alpha.html)Findmenon, NMIMS | Case | Krishna Chagti, Krishay Nayyar, Drishti Soni | Finalist Final round |
@@ -429,7 +547,7 @@ A brief, a week or a night, and a deck that has to survive a panel who will push
 - Drishti SoniDelivery, and the close
 - Aksh KansaraDefence in Q&A
 
-3
+5
 
 entered
 
@@ -450,7 +568,7 @@ entered
 
 - [Krishna ChagtiCaptain, and the framing“Say the weakest number out loud, before they find it.”](https://conyso.com/certamus/team-krishna.html)
 - [Krishay NayyarClassification, sizing, cost“Leadership is a responsibility, not a position.”](https://conyso.com/certamus/team-krishay.html)
-- [Drishti SoniDelivery, and the close](https://conyso.com/certamus/team-drishti.html)
+- [Drishti SoniDelivery, and the close“I don't wait for chaos to settle. I'm the one who settles it.”](https://conyso.com/certamus/team-drishti.html)
 - [Aksh KansaraDefence in Q&A“It's not about how loud you talk; it's about what you build when no one is watching.”](https://conyso.com/certamus/team-aksh.html)
 - [AkshitThe buildCollaborator](https://conyso.com/certamus/team-akshit.html)
 
@@ -1338,6 +1456,34 @@ Source: https://conyso.com/certamus/team-aksh.html
 
 I love exploring where numbers, economics, and human behavior connect, with a long-term goal of building my career in finance. My strength isn't in making loud pitches, but in staying curious, asking thoughtful questions, testing our assumptions, and using simple data to make sure our ideas actually hold up.
 
+1
+
+entered
+
+1
+
+final reached
+
+## What they worked on
+
+September 2026 · Case competition
+
+### [Crack the Case](https://conyso.com/certamus/entreuzest-26.html)
+
+Entreuzest '26, Maharaja Agrasen College · did not contest it
+
+> Tested the assumptions, and wrote the question each slide answers before a panel could ask it
+
+Finalist
+
+result
+
+## Alongside
+
+- [Drishti Soni](https://conyso.com/certamus/team-drishti.html)1 together
+- [Krishay Nayyar](https://conyso.com/certamus/team-krishay.html)1 together
+- [Krishna Chagti](https://conyso.com/certamus/team-krishna.html)1 together
+
 
 ======================================================================
 
@@ -1366,15 +1512,47 @@ Hackathons are the format where all of that is the point. The output either runs
 
 Source: https://conyso.com/certamus/team-drishti.html
 
-3
+## About
+
+I lead the way most people only claim to: under real deadlines, with real people relying on me. In my first year at IIM Sirmaur I was elected section captain, which made me the point person for coordination, communication and follow-through. I kept the logistics moving, carried updates between the section and the administration, and made sure nothing slipped when priorities collided. It is leadership built in the first year, not the tenth, and it is operational rather than ceremonial.
+
+The stage came much earlier. I have anchored school annual days and district-level public events in Indore since I was nine, and competed in debate, speech and extempore for about as long. So on a case I take the delivery: I open, I make the call, and I close, because the first minute and the last are the ones a panel carries out of the room.
+
+At IIM Sirmaur I have also pitched Pheni Ghar, a restaurant concept built around the traditional sweet, and NAVOCORE, a modular laptop for students and professionals. Outside the case room there is classical and group dance, drawing, and five languages: Hindi, English, Malvi, Mewari and Marwadi.
+
+5
 
 entered
 
-2
+4
 
 finals reached
 
 ## What they worked on
+
+September 2026 · Case competition
+
+### [Crack the Case](https://conyso.com/certamus/entreuzest-26.html)
+
+Entreuzest '26, Maharaja Agrasen College · did not contest it
+
+> Built the roadmap as three decision gates, and closed on the one number the whole plan rests on
+
+Finalist
+
+result
+
+September 2026 · Case competition
+
+### [The Hot Seat](https://conyso.com/certamus/the-hot-seat.html)
+
+Interface '26, BITS Pilani · Final round
+
+> Opened with the answer, made the call between the options, presented the twenty-second limit, closed on the CEO's question, and took the questions on running it
+
+Finalist
+
+result
 
 September 2026 · Case competition
 
@@ -1412,8 +1590,9 @@ result
 
 ## Alongside
 
-- [Krishay Nayyar](https://conyso.com/certamus/team-krishay.html)3 together
-- [Krishna Chagti](https://conyso.com/certamus/team-krishna.html)3 together
+- [Krishay Nayyar](https://conyso.com/certamus/team-krishay.html)5 together
+- [Krishna Chagti](https://conyso.com/certamus/team-krishna.html)5 together
+- [Aksh Kansara](https://conyso.com/certamus/team-aksh.html)1 together
 
 
 ======================================================================
@@ -1432,15 +1611,39 @@ Then the sizing, which is the part people skip. A brief that gives no financials
 
 Outside this I play basketball, at district and zonal level, and I volunteer teaching basic maths at the Dakshta Foundation and helping at an animal rescue. I am disciplined but not fixed. I would rather be shown a better framing than defend the one I arrived with.
 
-3
+5
 
 entered
 
-2
+4
 
 finals reached
 
 ## What they worked on
+
+September 2026 · Case competition
+
+### [Crack the Case](https://conyso.com/certamus/entreuzest-26.html)
+
+Entreuzest '26, Maharaja Agrasen College · did not contest it
+
+> Sized it: the capital plan, the three-year financials, and the sensitivity that shows contracted share is the only input that matters
+
+Finalist
+
+result
+
+September 2026 · Case competition
+
+### [The Hot Seat](https://conyso.com/certamus/the-hot-seat.html)
+
+Interface '26, BITS Pilani · Final round
+
+> Presented the P&L and the trap in it, then the money and its sensitivity, drove the slides throughout, and took the questions on why not B or C
+
+Finalist
+
+result
 
 September 2026 · Case competition
 
@@ -1478,8 +1681,9 @@ result
 
 ## Alongside
 
-- [Drishti Soni](https://conyso.com/certamus/team-drishti.html)3 together
-- [Krishna Chagti](https://conyso.com/certamus/team-krishna.html)3 together
+- [Drishti Soni](https://conyso.com/certamus/team-drishti.html)5 together
+- [Krishna Chagti](https://conyso.com/certamus/team-krishna.html)5 together
+- [Aksh Kansara](https://conyso.com/certamus/team-aksh.html)1 together
 
 
 ======================================================================
@@ -1498,15 +1702,39 @@ So most of my work on a case is upstream of the recommendation: framing the prob
 
 The habit comes from the software. A backtest that is not significant is not significant no matter how good the slide looks, and the only useful response is to say so and explain why the thing is still worth funding. Panels are quicker than people expect at spotting the number you skipped past.
 
-4
+6
 
 entered
 
-3
+5
 
 finals reached
 
 ## What they worked on
+
+September 2026 · Case competition
+
+### [Crack the Case](https://conyso.com/certamus/entreuzest-26.html)
+
+Entreuzest '26, Maharaja Agrasen College · did not contest it
+
+> Framed the case as a utilisation problem rather than a building one, and built the positioning and the operating model on that
+
+Finalist
+
+result
+
+September 2026 · Case competition
+
+### [The Hot Seat](https://conyso.com/certamus/the-hot-seat.html)
+
+Interface '26, BITS Pilani · Final round
+
+> Presented the diagnosis, the empty capacity rather than the losing cities, the network plan city by city and the roadmap and its risk, and took every question with a number in it
+
+Finalist
+
+result
 
 September 2026 · Hackathon
 
@@ -1556,8 +1784,9 @@ result
 
 ## Alongside
 
-- [Drishti Soni](https://conyso.com/certamus/team-drishti.html)3 together
-- [Krishay Nayyar](https://conyso.com/certamus/team-krishay.html)3 together
+- [Drishti Soni](https://conyso.com/certamus/team-drishti.html)5 together
+- [Krishay Nayyar](https://conyso.com/certamus/team-krishay.html)5 together
+- [Aksh Kansara](https://conyso.com/certamus/team-aksh.html)1 together
 
 
 ======================================================================
@@ -1744,6 +1973,139 @@ one picks the fight.
 The first slide is easiest to write once you know what the deck concluded, and
 teams that write it first spend the week defending an opener they chose before
 the analysis.
+
+
+======================================================================
+
+# The Hot Seat
+
+> The Hot Seat, Interface &#x27;26, BITS Pilani. Finalist.
+
+Source: https://conyso.com/certamus/the-hot-seat.html
+
+The brief below is restated in our own words. The original belongs to the organiser.
+
+## A company that was winning, and making nothing
+
+The brief was an invented quick-commerce company. 320 dark stores across eight
+cities, about eleven million orders a month, and a promise of delivery in ten to
+fifteen minutes. From the outside it was growing. Inside, it was not making
+money.
+
+The board gave us ₹50 crore and twelve months to fix the network it already
+had. Three packaged options were on the table: close overlapping stores, close
+some and open some, or open sixty more and grow out of it. The guardrails were
+the interesting part. No more than 30% of the money into things that do not
+lift profit inside a year, no permanent discounting, and delivery could not
+slip past 13.5 minutes on average or below 93% on time.
+
+*The brief belongs to the organiser, so it is restated here in our own words
+rather than reproduced.*
+
+## The losing cities were a distraction
+
+Add up every store's profit and it comes to ₹18.1 crore a month. Head office
+costs ₹18 crore. On ₹639 crore of monthly sales, the company was ending the
+month with about ₹10 lakh.
+
+Everyone's eye goes to the two small cities, because they are the ones losing
+money. Between them they lose ₹16 lakh a month, which is under 1% of the
+problem. The real waste was quieter: the network ran at 64% of its capacity,
+and more than half of the empty space was in Mumbai, Delhi and Bengaluru,
+where stores had been opened on top of each other.
+
+1. The diagnosis. Every store is built for 1,800 orders a day and the network averages 1,158. The gold is space the company pays for and does not use: 205,300 orders a day of it, or 114 whole stores.
+
+## Closing a store is worth about its rent
+
+The brief carried one rule that decided the case. When a store shuts, 90% of
+its orders move to the nearest store and 10% are lost.
+
+So a closure stops ₹5 to ₹7 lakh of rent and staff, and gives up the profit on
+one order in ten. It barely matters whether the store was a good one. What
+matters is whether another store can already reach its customers. "Shut the
+worst stores" is the wrong instruction; "shut the ones whose customers a
+neighbour already serves" is the right one.
+
+That made the choice between options arithmetic rather than taste. A closure
+returns 29% of its cost every month. A new store returns 0.3%, and loses ₹10.4
+lakh across its first year while it ramps. The expansion option did not just
+lose that comparison, it broke the board's own rule, because none of its spend
+improved profit inside twelve months. The balanced option only passed with its
+expansion half set to zero, at which point it was the first option.
+
+1. The call. ₹18 lakh to close an overlapping store returns about ₹5.3 lakh a month; ₹80 lakh to open a new one returns ₹25,000 a month at maturity, after losing money in its first year.
+
+## The limit was seconds, not money
+
+This is the part we expected other teams to miss.
+
+A closed store's customers are served from further away, so their orders take
+a little longer. The average delivery limit had plenty of room: 12.8 minutes
+against 13.5. The on-time floor did not. 94% on time against a floor of 93% is
+one point of room, and working back from one point, each re-routed order could
+afford roughly twenty extra seconds.
+
+So we closed 61 stores, not more, and spent ₹11 crore of the ₹50. More money
+does not buy more seconds. No city was abandoned: Lucknow reaches breakeven
+with two closures, and Indore was left alone with a date on it, a volume it
+had to reach by month nine or we would leave.
+
+Nothing closes on a spreadsheet's say-so either. Each closure gets a two-week
+rehearsal first, with the store still open but its orders sent to the
+neighbour. If on-time falls, it goes back to normal and nothing was spent.
+
+1. The network plan, sized to the one point of on-time headroom rather than to the budget. 320 stores become 259, cut hardest where stores overlap rather than where they lose money.
+
+## What it earns, and the ₹39 crore we did not spend
+
+The company goes from about ₹0.1 crore a month to ₹3.3 crore, roughly ₹40
+crore a year. Each closure pays for itself in about three and a half months.
+If twice as many customers walk away as the brief says, it is ₹2.5 crore a
+month and a four-and-a-half month payback, which still works.
+
+The unspent ₹39 crore was the number we expected to be pushed on, so we put it
+in the opening rather than waiting to be asked. The board asked for a more
+profitable business within ₹50 crore, not for ₹50 crore to be spent. Nothing
+else in the exhibits paid back inside a year. The money funds more closures if
+the delivery data allows, and the rest goes back.
+
+The CEO's fixed closing question was why put another rupee into this network
+instead of buying growth. Our answer was one line: a rupee spent on
+consolidation returns ₹3.50 a year, and a rupee spent on a new store returns
+four paise.
+
+1. The money. ₹3.9 crore a month of fixed cost removed, ₹0.7 crore of contribution given up, store profit from ₹18.1 crore to ₹21.3 crore a month, and all ₹11 crore back by month seven.
+
+## Where we could be wrong
+
+We said these in the room rather than waiting for them.
+
+The whole plan leans on one number the brief never gives: how much slower a
+re-routed order actually gets. Under twenty seconds, all 61 closures hold. At
+fifty, only the first wave does. That is why the waves are gated and the first
+one is measured before the second is paid for.
+
+The on-time arithmetic assumes delivery times spread evenly around the
+average, and real ones do not. And we only had city averages, not store-level
+data, so every closure is modelled as an average store. The overlapping ones
+are probably below average, which would make the real gain larger than the one
+we claimed, but we did not claim it.
+
+## What we would do differently
+
+We said no to the biggest levers in the business, order value and delivery
+cost, because the brief never priced moving either and we would not put a
+number on a slide we could not show the working for. That was the right call
+for a scored round. In a real engagement, pricing those two levers is the
+first thing we would go and get: ₹10 more per order is worth about ₹2.2 crore a
+month on its own, two-thirds of what the whole closure programme earns.
+
+## Who did what
+
+- [Krishna Chagti](https://conyso.com/certamus/team-krishna.html)Presented the diagnosis, the empty capacity rather than the losing cities, the network plan city by city and the roadmap and its risk, and took every question with a number in it
+- [Krishay Nayyar](https://conyso.com/certamus/team-krishay.html)Presented the P&L and the trap in it, then the money and its sensitivity, drove the slides throughout, and took the questions on why not B or C
+- [Drishti Soni](https://conyso.com/certamus/team-drishti.html)Opened with the answer, made the call between the options, presented the twenty-second limit, closed on the CEO's question, and took the questions on running it
 
 
 ======================================================================

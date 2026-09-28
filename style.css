@@ -7766,27 +7766,38 @@ body.cy-shell .cy-section-wide  { padding: clamp(4.5rem, 9vw, 9rem) clamp(1.25re
 }
 
 /* ===== Alternating light bands — beige rhythm (added) ===== */
+/* Sand, picked from three rendered palettes (sand; white and sand; ink).
+   The band was #F1ECE0 against the #F7F5F0 page: 1.08:1, which is why the
+   alternation could not be seen. #E4D8BE is 1.30:1 against the page, with a
+   hairline at each edge. Every text token was re-measured on it, composited:
+   ink 12.6, dim 5.93, secondary .68 5.25, gold 5.05, muted 5.0. The old gold
+   here (#A07E20) was already 3.24 on the old band and 2.70 on this one, so
+   it could not come across. */
 .cy-band-light {
-    --cy-bg: #F1ECE0;
-    --cy-bg-soft: #FBF8F1;
+    --cy-bg: #E4D8BE;
+    --cy-bg-soft: #F2EBDD;
     --cy-ink: #1A1712;
     --cy-ink-dim: rgba(26,23,18,0.72);
-    --cy-ink-2: rgba(26,23,18,0.62); --cy-ink-faint: rgba(26,23,18,0.62);
-    --cy-rule: rgba(26,23,18,0.12);
-    --cy-rule-strong: rgba(26,23,18,0.24);
-    --cy-rule-faint: rgba(26,23,18,0.09);
-    --cy-muted: #6B6456;
-    /* deepen accents so they stay legible on a light background */
-    --cy-gold: #A07E20;
-    --cy-indigo: #4A5BAE;
-    background: #F1ECE0;
+    --cy-ink-2: rgba(26,23,18,0.68); --cy-ink-faint: rgba(26,23,18,0.68);
+    --cy-rule: rgba(26,23,18,0.14);
+    --cy-rule-strong: rgba(26,23,18,0.26);
+    --cy-rule-faint: rgba(26,23,18,0.10);
+    --cy-muted: #5E584B;
+    --cy-gold: #6E5414;
+    --cy-indigo: #3D4C99;
+    background: #E4D8BE;
     color: var(--cy-ink);
+    border-top: 1px solid rgba(26,23,18,0.10);
+    border-bottom: 1px solid rgba(26,23,18,0.10);
 }
 /* full-bleed: beige spans edge-to-edge, content stays centered at --cy-max */
 body.cy-shell .cy-section.cy-band-light {
     max-width: none;
-    padding-left:  max((100% - var(--cy-max)) / 2, clamp(1.25rem, 5vw, 2rem));
-    padding-right: max((100% - var(--cy-max)) / 2, clamp(1.25rem, 5vw, 2rem));
+    /* + 2rem: a paper .cy-section is --cy-max wide including its own 2rem
+       padding, so without it every sand section's content sat 32px left of
+       the paper ones and the page's left edge zig-zagged down the homepage */
+    padding-left:  max((100% - var(--cy-max)) / 2 + 2rem, clamp(1.25rem, 5vw, 2rem));
+    padding-right: max((100% - var(--cy-max)) / 2 + 2rem, clamp(1.25rem, 5vw, 2rem));
 }
 /* on beige, give near-white tiles a whisper of lift so they read as cards */
 .cy-band-light .cy-card { box-shadow: 0 1px 3px rgba(26,23,18,0.05); }
@@ -8728,11 +8739,9 @@ a.cy-skip { color: #F5F3EE; }
    The section is rendered by build.py render_certamus_branch() from the case
    files; this is only how it sits on the page.
 
-   It lands between Research and development (a light band) and "Proven on
-   ourselves first" (plain), so it is plain as well and is set apart from
-   Proven by a rule rather than by breaking the page's alternation.
+   It takes whatever band apply_bands() gives it in the page's rhythm; the
+   renderer preserves that class rather than resetting it.
    ========================================================================== */
-.cy-cert + #proven { border-top: 1px solid var(--cy-rule); }
 .cy-cert-grid {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 2.5rem 3.5rem; margin-top: 2.4rem; align-items: start;
@@ -8769,3 +8778,240 @@ a.cy-skip { color: #F5F3EE; }
 .cy-footer-inner-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
 @media (max-width: 1100px) { .cy-footer-inner-7 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 @media (max-width: 640px)  { .cy-footer-inner-7 { grid-template-columns: 1fr 1fr; } }
+
+/* ==========================================================================
+   Homepage: See it working (render_showcase) and real images
+
+   Real screens of real products, not illustrations, chosen to stop the page
+   reading as generated. Each frame links to the thing it shows.
+   ========================================================================== */
+.cy-show-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.8rem 0 1.3rem; }
+.cy-show-tabs [role="tab"] {
+    font: 600 0.85rem var(--cy-sans); padding: 0.65rem 1.1rem; min-height: 44px; border-radius: 999px;
+    border: 1px solid var(--cy-rule-strong); background: transparent; color: var(--cy-ink); cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.cy-show-tabs [role="tab"]:hover { border-color: var(--cy-gold); }
+.cy-show-tabs [role="tab"][aria-selected="true"] { background: var(--cy-gold); border-color: var(--cy-gold); color: #fff; }
+.cy-show-tabs [role="tab"]:focus-visible { outline: 2px solid var(--cy-gold); outline-offset: 3px; }
+.cy-show-p { margin: 0 0 2rem; max-width: 1100px; }
+html.cy-show-wired .cy-show-p[role="tabpanel"]:not(.is-on) { display: none; }
+.cy-show-frame {
+    display: block; border-radius: 10px; overflow: hidden; background: #fff;
+    box-shadow: 0 30px 60px -22px rgba(26,23,18,0.38), 0 0 0 1px rgba(26,23,18,0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.cy-show-frame:hover { transform: translateY(-4px); box-shadow: 0 40px 70px -24px rgba(26,23,18,0.42), 0 0 0 1px rgba(26,23,18,0.1); }
+.cy-show-bar { display: flex; align-items: center; gap: 6px; padding: 0.6rem 0.9rem; background: #EDEAE3; border-bottom: 1px solid rgba(26,23,18,0.08); }
+.cy-show-bar i { width: 10px; height: 10px; border-radius: 50%; background: #D6D0C4; }
+.cy-show-bar span { margin-left: 0.8rem; font: 500 0.75rem var(--cy-sans); color: rgba(26,23,18,0.66); background: #fff;
+    padding: 0.25rem 0.8rem; border-radius: 6px; flex: 1; max-width: 420px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.cy-show-frame img { display: block; width: 100%; height: auto; }
+.cy-show-p figcaption { margin-top: 0.9rem; font-size: 0.95rem; color: var(--cy-ink-dim); }
+.cy-show-p figcaption .cy-link { margin-left: 0.4rem; }
+@media (prefers-reduced-motion: reduce) { .cy-show-frame, .cy-show-frame:hover { transition: none; transform: none; } }
+@media (max-width: 900px) {
+    /* wrapped, not a sideways-scrolling strip: every tab stays in view */
+    .cy-show-tabs { gap: 0.4rem; }
+    .cy-show-tabs [role="tab"] { padding: 0.6rem 0.95rem; font-size: 0.8rem; }
+    .cy-show-bar span { font-size: 0.68rem; }
+}
+
+/* Portfolio cards carry the real screen of what they link to, edge to edge
+   at the top of the card, lifting a little on hover. */
+.cy-portfolio { overflow: hidden; }
+.cy-portfolio-shot {
+    display: block; width: calc(100% + 4rem); max-width: none; height: 180px;
+    margin: -2.5rem -2rem 1.4rem; object-fit: cover; object-position: top center;
+    border-bottom: 1px solid var(--cy-rule); background: #fff;
+    transition: transform 0.4s ease;
+}
+.cy-portfolio:hover .cy-portfolio-shot { transform: scale(1.03); }
+@media (prefers-reduced-motion: reduce) { .cy-portfolio:hover .cy-portfolio-shot { transform: none; } }
+
+/* The founder, beside the letter. */
+.cy-letter-portrait { float: right; width: 240px; margin: 0.4rem 0 1.5rem 2.5rem; }
+.cy-letter-portrait img {
+    display: block; width: 100%; height: auto; border-radius: 6px;
+    box-shadow: 0 22px 44px -20px rgba(26,23,18,0.45);
+}
+.cy-letter-portrait figcaption { margin-top: 0.7rem; display: flex; flex-direction: column; font-size: 0.88rem; }
+.cy-letter-portrait figcaption span { color: var(--cy-ink-dim); font-size: 0.8rem; }
+@media (max-width: 720px) {
+    .cy-letter-portrait { float: none; width: 170px; margin: 0 0 1.5rem; }
+    .cy-portfolio-shot { height: 150px; }
+}
+
+/* "Proven on ourselves first": each service shows the part of its own page
+   where the work is, not a drawn icon. A different screen from the portfolio
+   cards further down, so the page never shows the same picture twice. */
+.cy-proven-shot {
+    display: block; aspect-ratio: 16 / 10; overflow: hidden; margin-bottom: 1.1rem;
+    border-radius: 8px; background: #fff;
+    box-shadow: 0 18px 36px -20px rgba(26,23,18,0.36), 0 0 0 1px rgba(26,23,18,0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.cy-proven-shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.cy-proven-shot:hover { transform: translateY(-3px); box-shadow: 0 26px 44px -20px rgba(26,23,18,0.42), 0 0 0 1px rgba(26,23,18,0.1); }
+.cy-proven-shot:focus-visible { outline: 2px solid var(--cy-focus); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .cy-proven-shot, .cy-proven-shot:hover { transition: none; transform: none; } }
+
+/* "Try it": guess a replication verdict, shuffle a law. The research as
+   published, so the one playful thing on the page is also evidence. */
+.cy-play { display: grid; grid-template-columns: 1.35fr 1fr; gap: 1.5rem; margin-top: 2.2rem; align-items: stretch; }
+.cy-play-card {
+    display: flex; flex-direction: column; padding: 1.8rem 1.9rem 1.5rem; border-radius: 12px;
+    background: var(--cy-bg-soft); border: 1px solid var(--cy-rule);
+}
+.cy-play-h { font: 600 1.45rem/1.25 var(--cy-serif); color: var(--cy-ink); margin: 0.4rem 0 1.2rem; }
+.cy-play-cat { font: 600 0.72rem var(--cy-sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--cy-muted); margin: 0 0 0.35rem; }
+.cy-play-name { font: 600 1.08rem var(--cy-sans); color: var(--cy-ink); margin: 0 0 0.45rem; }
+.cy-play-q { font-size: 1rem; line-height: 1.6; color: var(--cy-ink-dim); margin: 0 0 1.2rem; }
+.cy-play-opts { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.cy-play-opts button, .cy-play-next {
+    font: 600 0.85rem var(--cy-sans); min-height: 44px; padding: 0.6rem 1.1rem; border-radius: 999px;
+    border: 1px solid var(--cy-rule-strong); background: transparent; color: var(--cy-ink); cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.cy-play-opts button:hover:not(:disabled), .cy-play-next:hover { border-color: var(--cy-gold); }
+.cy-play-opts button:focus-visible, .cy-play-next:focus-visible { outline: 2px solid var(--cy-focus); outline-offset: 3px; }
+.cy-play-opts button:disabled { cursor: default; opacity: 0.55; }
+.cy-play-opts button.is-answer { opacity: 1; background: var(--cy-gold); border-color: var(--cy-gold); color: #fff; }
+.cy-play-opts button.is-wrong { opacity: 1; text-decoration: line-through; border-style: dashed; }
+.cy-play-out { min-height: 1.5rem; }
+.cy-play-verdict { font-size: 0.95rem; line-height: 1.6; color: var(--cy-ink-dim); margin: 0 0 0.6rem; }
+.cy-play-verdict b { color: var(--cy-ink); }
+.cy-play-foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: auto; padding-top: 1.1rem; }
+.cy-play-score { font: 600 0.85rem var(--cy-sans); color: var(--cy-muted); }
+/* without the script the buttons would do nothing, so they stay hidden and
+   the links carry the reader to the answer instead */
+html:not(.cy-play-wired) .cy-play-opts, html:not(.cy-play-wired) .cy-play-next { display: none; }
+/* before a guess, only the guess; after it, the way on */
+html.cy-play-wired .cy-play-guess:not(.is-done) .cy-play-foot { display: none; }
+.cy-play { align-items: start; }
+@media (max-width: 900px) {
+    .cy-play { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.6rem; }
+    .cy-play-card { padding: 1.4rem 1.25rem 1.2rem; }
+    .cy-play-h { font-size: 1.25rem; margin-bottom: 0.9rem; }
+    .cy-play-opts button { flex: 1 1 auto; padding: 0.6rem 0.8rem; }
+}
+
+/* Hero, option H2 (chosen from rendered options): three real screens fanned
+   beside the claim, and the names as one line under the buttons. The front
+   screen is the one a visitor can use right now. */
+@media (min-width: 980px) {
+  .cy-hero-split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+}
+.cy-hero-names { margin: 1.8rem 0 0; max-width: 34rem; font-size: 0.92rem; line-height: 1.7; color: var(--cy-ink-dim); }
+.cy-hero-names b { font-weight: 600; color: var(--cy-ink); }
+.cy-hero-names a { color: var(--cy-ink); text-decoration: underline; text-decoration-color: var(--cy-rule-strong); text-underline-offset: 3px; }
+.cy-hero-names a:hover { text-decoration-color: var(--cy-gold); }
+.cy-hero-fan { position: relative; height: 440px; }
+.cy-fan-f {
+    position: absolute; width: 80%; display: block; border-radius: 10px; overflow: hidden; background: #fff;
+    box-shadow: 0 30px 60px -22px rgba(26,23,18,0.45), 0 0 0 1px rgba(26,23,18,0.08);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.cy-fan-f img { display: block; width: 100%; height: auto; }
+.cy-fan-f .cy-show-bar span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.cy-fan-f:nth-child(1) { left: 0;   top: 0;     transform: rotate(-5deg); }
+.cy-fan-f:nth-child(2) { left: 10%; top: 62px;  transform: rotate(1deg); }
+.cy-fan-f:nth-child(3) { left: 20%; top: 130px; transform: rotate(5deg); }
+/* the one under the pointer comes forward, so each is reachable */
+.cy-fan-f:hover, .cy-fan-f:focus-visible { z-index: 2; transform: rotate(0deg) translateY(-8px) scale(1.02);
+    box-shadow: 0 40px 70px -24px rgba(26,23,18,0.5), 0 0 0 1px rgba(26,23,18,0.1); }
+.cy-fan-f:focus-visible { outline: 2px solid var(--cy-focus); outline-offset: 3px; }
+@media (max-width: 979px) {
+  .cy-hero-fan { height: auto; aspect-ratio: 16 / 12; max-width: 560px; margin-top: 0.5rem; }
+  .cy-fan-f { width: 78%; }
+  .cy-fan-f:nth-child(2) { top: 14%; }
+  .cy-fan-f:nth-child(3) { top: 28%; }
+}
+@media (prefers-reduced-motion: reduce) { .cy-fan-f { transition: none; } }
+/* links inside the names sentence are inline text (WCAG 2.5.8 exempts
+   them); the site's 44px touch-target rule made each one a flex box and
+   broke the sentence into rows on phones */
+.cy-hero-names a { display: inline; min-height: 0; min-width: 0; }
+
+/* Product pages: the app itself under the hero. The apps are dark, so the
+   frame's light chrome is kept and the screen sits on it as shot. */
+.cy-prodshot .cy-show-p { margin-bottom: 0; }
+
+/* Companies page: each name carries a thumbnail of its real screen. The
+   thumbnail spans the row on the left; name (and status pill) then tagline.
+   An entry with no screen yet keeps its columns and leaves the space. */
+.cy-tier-thumb { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left;
+  border-radius: 5px; background: #fff; box-shadow: 0 0 0 1px var(--cy-rule), 0 8px 18px -12px rgba(26,23,18,0.35); }
+.cy-tier-list:has(.cy-tier-thumb) a { grid-template-columns: 7.5rem minmax(9rem, 13rem) 1fr; align-items: center; column-gap: 1.4rem; }
+.cy-tier-list:has(.cy-tier-thumb) .cy-tier-thumb { grid-column: 1; grid-row: 1 / span 2; }
+.cy-tier-list:has(.cy-tier-thumb) .cy-tier-item { grid-column: 2; align-self: end; }
+.cy-tier-list:has(.cy-tier-thumb) .cy-tier-status { grid-column: 2; justify-self: start; margin-left: 0; align-self: start; }
+.cy-tier-list:has(.cy-tier-thumb) .cy-tier-tag { grid-column: 3; grid-row: 1 / span 2; }
+@media (max-width: 640px) {
+  .cy-tier-list:has(.cy-tier-thumb) a { grid-template-columns: 5.5rem 1fr; column-gap: 1rem; row-gap: 0.25rem; }
+  .cy-tier-list:has(.cy-tier-thumb) .cy-tier-thumb { grid-row: 1 / span 3; align-self: start; }
+  .cy-tier-list:has(.cy-tier-thumb) .cy-tier-item,
+  .cy-tier-list:has(.cy-tier-thumb) .cy-tier-status,
+  .cy-tier-list:has(.cy-tier-thumb) .cy-tier-tag { grid-column: 2; grid-row: auto; align-self: start; }
+}
+
+/* Lens page: the engine live. The chart keeps Lens's own dark ground, since
+   that is how the product draws; the table before it is the page's own. */
+.cy-lens-pick { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.8rem 0 1.1rem; }
+.cy-lens-pick button {
+    font: 600 0.85rem var(--cy-sans); min-height: 44px; padding: 0.6rem 1.1rem; border-radius: 999px;
+    border: 1px solid var(--cy-rule-strong); background: transparent; color: var(--cy-ink); cursor: pointer;
+}
+.cy-lens-pick button:hover { border-color: var(--cy-gold); }
+.cy-lens-pick button[aria-pressed="true"] { background: var(--cy-gold); border-color: var(--cy-gold); color: #fff; }
+.cy-lens-pick button:focus-visible { outline: 2px solid var(--cy-focus); outline-offset: 3px; }
+html:not(.cy-lens-wired) .cy-lens-pick { display: none; }
+.cy-lens-stage { position: relative; height: 480px; max-width: 1000px; border-radius: 12px; overflow: hidden;
+    background: var(--cy-bg-soft); border: 1px solid var(--cy-rule); }
+.cy-lens-try.is-live .cy-lens-stage { background: #111113; border-color: #111113; }
+.cy-lens-host { width: 100%; height: 100%; }
+.cy-lens-host > * { height: 100%; }
+.cy-lens-table { margin: 2rem; border-collapse: collapse; font-size: 1rem; }
+.cy-lens-table caption { text-align: left; font: 600 0.72rem var(--cy-sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--cy-muted); padding-bottom: 0.8rem; }
+.cy-lens-table th, .cy-lens-table td { text-align: left; padding: 0.45rem 2rem 0.45rem 0; border-bottom: 1px solid var(--cy-rule); }
+.cy-lens-table td { font-variant-numeric: tabular-nums; font-weight: 600; }
+.cy-lens-try.is-loading .cy-lens-stage::after { content: "Loading Lens\2026"; position: absolute; right: 1rem; bottom: 0.8rem;
+    font: 500 0.8rem var(--cy-sans); color: var(--cy-muted); }
+.cy-lens-note { margin-top: 0.8rem; font-size: 0.85rem; color: var(--cy-ink-dim); }
+@media (max-width: 900px) { .cy-lens-stage { height: 380px; } .cy-lens-pick button { padding: 0.55rem 0.9rem; font-size: 0.8rem; } }
+
+/* About: the six tier cards carry the real screen of each tier, edge to
+   edge across the top, the arrow sitting over it. */
+.cy-card:has(.cy-card-shot) { overflow: hidden; padding-top: 0; }
+.cy-card-shot { display: block; width: calc(100% + 3.5rem); max-width: none; height: 150px; margin: 0 -1.75rem 1.4rem;
+    object-fit: cover; object-position: top center; background: #fff; border-bottom: 1px solid var(--cy-rule);
+    transition: transform 0.4s ease; }
+.cy-card:hover .cy-card-shot { transform: scale(1.03); }
+.cy-card:has(.cy-card-shot) .cy-card-arrow { z-index: 1; background: var(--cy-bg-soft); border-radius: 50%;
+    width: 2rem; height: 2rem; display: grid; place-items: center; top: 0.8rem; right: 0.8rem; }
+@media (prefers-reduced-motion: reduce) { .cy-card:hover .cy-card-shot { transform: none; } }
+
+/* About: the founder, beside his section. */
+.cy-about-portrait { margin: 1.6rem 0 0; max-width: 240px; }
+.cy-about-portrait img { display: block; width: 100%; height: auto; border-radius: 8px;
+    box-shadow: 0 20px 40px -24px rgba(26,23,18,0.45); }
+@media (max-width: 900px) { .cy-about-portrait { max-width: 180px; } }
+
+/* Explainer pages: the calculator the page names, live (render_try_calculator). */
+.cy-try-frame { display: block; width: 100%; max-width: 760px; margin-top: 1.6rem; border: 1px solid var(--cy-rule-strong);
+    border-radius: 12px; background: var(--cy-bg); box-shadow: 0 24px 48px -30px rgba(26,23,18,0.35); }
+.cy-try-open { margin-top: 0.9rem; font-size: 0.92rem; }
+
+/* Numeric reference tables: the lookup bar and the tap crosshair. */
+.cy-lk { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.8rem; margin: 1.2rem 0 0.9rem;
+    padding: 0.8rem 1rem; border: 1px solid var(--cy-rule); border-radius: 10px; background: var(--cy-bg-soft); }
+.cy-lk label { font: 600 0.72rem var(--cy-sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--cy-muted); }
+.cy-lk select { min-height: 44px; padding: 0 0.8rem; border: 1px solid var(--cy-rule-strong); border-radius: 8px;
+    background: var(--cy-bg); color: var(--cy-ink); font: 500 0.95rem var(--cy-sans); }
+.cy-lk-out { margin: 0; font-size: 1rem; color: var(--cy-ink-dim); min-height: 1.5rem; }
+.cy-lk .cy-lk-out { flex: 1 1 14rem; text-align: right; }
+.cy-lk-out b { font: 600 1.35rem var(--cy-serif); color: var(--cy-ink); margin-left: 0.2rem; }
+.cy-lk-table td:not(:first-child) { cursor: pointer; }
+.cy-lk-table tr.is-row td, .cy-lk-table td.is-col, .cy-lk-table th.is-col { background: rgba(122,95,24,0.08); }
+.cy-lk-table tr td.is-hit { background: var(--cy-gold); color: #fff; font-weight: 700; }
+@media (max-width: 640px) { .cy-lk .cy-lk-out { text-align: left; flex-basis: 100%; } }
